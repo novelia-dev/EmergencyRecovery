@@ -1,290 +1,178 @@
-import React from 'react';
-import main from '../Image/image 1.png';
-import Navbar from '../Navbar/SimpleNavbar';
+import React,{useState} from "react";
 
-function jsonnickname(){
-    let json = JSON.parse(localStorage.getItem("cast"));
-    let txt = json.nickname;
-    return txt;
-}
-
-function jsonemail(){
-    let json = JSON.parse(localStorage.getItem("cast"));
-    let txt = json.email;
-    return txt;
-}
-
-function jsongender(){
-    let json = JSON.parse(localStorage.getItem("cast"));
-    let txt = json.gender;
-    return txt;
-}
-
-function jsonage(){
-    let json = JSON.parse(localStorage.getItem("cast"));
-    let txt = json.age;
-    return txt;
-}
-
-class Register4 extends React.Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
-        return(
-            <div>
-                <Text />
-            </div>
-        )
-    }
-}
+function Registerpage4(){
 
 
-
-class Text extends React.Component{
-    constructor(props){
-        super(props);
+    function submitactiveButton(){
+      
+        window.location.href="/register5"; 
     }
 
-    render(){
-        const style={
-            'position':'absolute',
-            'width':'209px',
-            'height':'22px',
-            'margin-top':'90px',
-            'margin-left':'360px',
-            'font-family':'Roboto',
-            'font-weight':700,
-            'font-size':'19px',
-            'line-height':'22.27px',
-            'color':'#000000',
-            'display':'flex',
-            'align-items':'center',
-        }
-        const style1={
-            'position':'absolute',
-            'width':'225px',
-            'height':'19px',
-            'margin-top':'125px',
-            'margin-left':'360px',
-            'font-family':'Roboto',
-            'font-weight':400,
-            'font-size':'16px',
-            'line-height':'19px',
-            'color':'#000000',
-            'display':'flex',
-            'align-items':'center',
-        }
-        const style2={
-            'position':'absolute',
-            'width':'100px',
-            'height':'100px',
-            'margin-top':'250px',
-            'margin-left':'360px',
-        }
-        const style3={
-            'position':'absolute',
-            'width':'Hug',
-            'height':'Hug',
-            'margin-top':'200px',
-            'margin-left':'360px',
-            'display':'flex',
-            'flex-direction':'row',
-            'justify-content':'center',
-            'align-items':'center',
-            'padding':'13px 36px',
-            'gap': '10px',
-            'border':'1px solid #AA0140',
-            'border-radius':'4px',
-            'background-color':'#FFFFFF',
-        }
 
-        const style4={
-            'position':'absolute',
-            'width':'230px',
-            'height':'22px',
-            'margin-left':'360px',
-            'margin-top':'591px',
-            'font-family':'Roboto',
-            'font-style':'normal',
-            'font-weight':400,
-            'font-size':'19px',
-            'line-height':'22px',
-            'display':'flex',
-            'align-items':'center',
-            'color':'#000000',
-        }
-        const style5={
-            'position':'absolute',
-            'width':'225px',
-            'height':'19px',
-            'margin-top':'890px',
-            'margin-left':'360px',
-            'font-family':'Roboto',
-            'font-weight':700,
-            'font-size':'19px',
-            'line-height':'22.27px',
-            'color':'#000000',
-            'display':'flex',
-            'align-items':'center',
-        }
-        return(
-            <div>
-                <Navbar />
-                <table>
-                    <tr>
-            <div style={style}>
-                <h5>기본정보 및 선호/금지태그</h5>
-            </div>
-            <div style={style1}>
-                <h5>기본정보와 선호/금지태그 입니다. </h5>
-            </div>
-            </tr>
-            <tr>
-           
-            <div>
-                <table style={style3}>
-                    <td><img src={main} style={{ width:"100px", height:"100px"}} alt="개인정보" /><button>변경하기</button> </td>
-                </table>
-                 
-                 
-            </div>
-            </tr>
-            <tr>
-            <div style = {style4}>
-                <table>
-                        <tr><h5>기본정보</h5></tr>
-                        <tr><h5>닉네임 :</h5><input value={jsonnickname()}/></tr>
-                        <tr><h5>성별 :</h5><input value={jsongender()} /></tr>
-                        <tr><h5>나이대 :</h5><input value={jsonage()} /></tr>
-                        <tr><h5>이메일 :</h5><input value={jsonemail()} /></tr>
-                </table>
-            </div>
-            <div style={style5}>
-                <h5>선호태그</h5>
-            </div>
-            <div style={{marginLeft:"360px",marginTop:"920px"}}>
-                <table>
-                    <tr>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    </tr>
-                </table>
-            </div>
-            <div style={{marginLeft:"360px",fontFamily:"Roboto",fontSize:"19px"}}>
-                <h5>금지태그</h5>
-            </div>
-            <div style={{marginLeft:"360px"}}>
-                <table>
-                    <tr>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-                    </tr>
-                </table>
-            </div>
-            </tr>
-            </table>
-            </div>
-        )
-    
+    const style ={
+        'position':'absolute',
+        'font-weight': 700,
+        'border-width':"1px",
+        'border-style':"solid",
+        'border-color':"#E5E5E5",
+        'margin-left': "669px",
+        'width':"588px"
     }
+
+    const style1 ={
+        'width':"151px",
+        'height':"17px",
+        'color':"#666666",
+        'font-family': "Roboto",
+        'fontWeight': 700,
+        'font-size': "16px",
+        'line-height': "19px",
+        'display': "flex",
+        'align-items': "center",
+    }
+
+    const style3={
+        'box-sizing':"boreder-box",
+        'display': "flex",
+        'justify-content':"center",
+        'align-items': "center",
+        'gap':"10px",
+        'width':"131px",
+        'height':"45px",
+        'borderRadius': "4px",
+        'font-family': "Roboto",
+        'font-weight': 400,
+        'font-size': "16px",
+        'line-height': "18.75px",
+        'color': "#FFFFFF",
+        'background-color':"#AA0140",
+        'margin-left':"15px",
+        'margin-top':"15px"
+        
+    }
+
+    const Button = () => {
+        const arr = [{id: 1 }, {id: 2 }, { id: 3 }];
+        const [pick, setPick] = useState(arr);
+        const [select, setSelect] = useState([]);
+      
+        return pick.map((item) => (
+          <div className="button_container">
+            
+            <button
+              key={item.id}
+              onClick={() => {
+                !select.includes(item.id)
+                  ? setSelect((select) => [...select, item.id])
+                  : setSelect(select.filter((button) => button !== item.id));
+              }}
+              className={
+                select.includes(item.id)
+                  ? "button_table_btn_ns"
+                  : "button_table_btn_s"
+              }
+              style={{width:"76px",height:"29px"}}
+            >
+              선호태그
+            </button>
+          </div>
+        ));
+      };
+
+      const Button1 = () => {
+        const arr = [{id: 1 }, {id: 2 }, { id: 3 },{id: 4},{id: 5},{id: 6}];
+        const [pick, setPick] = useState(arr);
+        const [select, setSelect] = useState([]);
+      
+        return pick.map((item) => (
+          <div className="button_container">
+            
+            <button
+              key={item.id}
+              onClick={() => {
+                !select.includes(item.id)
+                  ? setSelect((select) => [...select, item.id])
+                  : setSelect(select.filter((button) => button !== item.id));
+              }}
+              className={
+                select.includes(item.id)
+                  ? "button_table_btn_ns"
+                  : "button_table_btn_s"
+              }
+              style={{width:"76px",height:"29px"}}
+            >
+              선호태그
+            </button>
+          </div>
+        ));
+      };
+    return(
+    <div style={{'position':"static"}}>
+        <div style={style}>
+                &nbsp; &nbsp; 회원가입
+            
+        <hr style={{'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}></hr>
+            <div style={style1}> 
+                &nbsp; &nbsp; 선호장르
+            </div>
+            <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                <Button/>
+                <br></br>
+            </div>
+            <br />
+            <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
+             &nbsp; 장르별 태그보기
+            </div>
+            <div style={{marginTop:"5px",marginLeft:"22px"}}>
+            <select name="연재작품 수" style={{width: "248px", height: "38px"}} >
+                    <option defaulValue="0개">0개</option>    
+                </select> 
+            </div>
+            <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
+             &nbsp; 선호태그
+            </div>
+            <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                <Button1/>
+                <br></br>
+            </div>
+            <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                <Button1/>
+                <br></br>
+            </div>
+            <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                <Button1/>
+                <br></br>
+            </div>
+            <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                <Button1/>
+                <br></br>
+            </div>
+            <br />
+            <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
+             &nbsp; 금지태그
+            </div>
+            <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                <Button1/>
+                <br></br>
+            </div>
+            <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                <Button1/>
+                <br></br>
+            </div>
+            <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                <Button1/>
+                <br></br>
+            </div>
+            <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                <Button1/>
+                <br></br>
+            </div>
+            <div style={{marginLeft:"15px",marginTop:"15px"}}>
+        <button style={style3} onClick={submitactiveButton}>입력완료</button>
+        </div>
+        </div>
+    </div>
+    )
 }
 
-
-export default Register4;
+export default Registerpage4;

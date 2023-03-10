@@ -21,6 +21,7 @@ import Registerpage from"./components/Registerpage/Registerpage";
 import Registerpage2 from "./components/Registerpage/Registerpage2";
 import Registerpage3 from "./components/Registerpage/Registerpage3";
 import Registerpage4 from "./components/Registerpage/Registerpage4";
+import Registerpage5 from "./components/Registerpage/Registerpage5";
 import Footer from "./components/Footer/Footer";
 import Readworkpage from "./components/Readworkpage/Readworkpage";
 import Readworkpage2 from "./components/Readworkpage/Readworkpage2";
@@ -90,11 +91,12 @@ function App() {
             <Route path="/" element={<Mainpage />} />
             <Route path="/:id" element={<DetailPage />} />
             <Route path ="/login" element={<Loginpage />} />
-            <Route path ="/login/callback" element={<Mainpage/>} />
+            <Route path ="/login/callback" element={<Loginpage/>} />
             <Route path ="/register" element={<Registerpage />} />
             <Route path ="/register2" element={<Registerpage2 />} />
             <Route path ="/register3" element={<Registerpage3 />} />
             <Route path ="/register4" element={<Registerpage4 />} />
+            <Route path ="/register5" element={<Registerpage5 />} />
             <Route path ="/:id/read1" element={<Readworkpage />} />
             <Route path ="/:id/read2" element={<Readworkpage2 />} />
             <Route path ="/:id/read3" element={<Readworkpage3 />} />

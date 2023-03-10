@@ -332,34 +332,94 @@ function Text(){
            <button style={{marginTop:"15px",marginLeft:"15px"}}>Check</button>
             </div>
             <div style={{marginTop:"15px",marginLeft:"15px"}}>
-            <select name="유입경로" style={{width: "248px", height: "38px"}} onChange={onRoutehandler} >
-                    <option defaulValue="유입경로" hidden>유입경로*</option>    
+              <h4>독자 추가 질문</h4>
+            </div>
+            <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+             유입경로*
+            </div>
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <select name="유입경로" style={{width: "248px", height: "38px"}}  >
+                    <option defaulValue="유입경로">이메일</option>    
                 </select> 
             </div>
-            <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
-             선호장르
+            <div style={{width:"216px",height:"19px", fontSize:"16px" ,fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+             웹소설 이용경험*
+            </div>
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <select name="다른 피드백 서비스 이용경험" style={{width: "248px", height: "38px"}}  >
+                    <option defaulValue="자주 읽는다">자주 읽는다</option>    
+                </select> 
+            </div>
+            <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+              이용 플랫폼*
+            </div>
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <select name="이용 플랫폼" style={{width: "248px", height: "38px"}}>
+                    <option defaulValue="네이버 시리즈">네이버 시리즈</option>    
+                </select> 
             </div>
             <div style={{marginTop:"15px",marginLeft:"15px"}}>
-                <Button/>
-                <br></br>
+              <h4>작가 추가 질문</h4>
             </div>
-          
-            <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
-              선호태그
+            <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+             유입경로*
             </div>
-            <div style={{marginTop:"15px",marginLeft:"15px"}}>
-                <Button1/>
-                <br></br>
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <select name="유입경로" style={{width: "248px", height: "38px"}} >
+                    <option defaulValue="유입경로">이메일</option>    
+                </select> 
             </div>
-            <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
-                금지태그
+            <div style={{width:"216px",height:"19px", fontSize:"16px" ,fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+             다른 피드백 서비스 이용경험*
             </div>
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <select name="다른 피드백 서비스 이용경험" style={{width: "248px", height: "38px"}} >
+                    <option defaulValue="경험없음">경험없음</option>    
+                </select> 
+            </div>
+            <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+              전업 여부*
+            </div>
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <select name="전업 여부" style={{width: "248px", height: "38px"}} >
+                    <option defaulValue="직장인(부업)">직장인(부업)</option>    
+                </select> 
+            </div>
+            <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+              웹소설 집필기간*
+            </div>
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <select name="웹소설 지필기간" style={{width: "248px", height: "38px"}} >
+                    <option defaulValue="1년 미만">1년 미만</option>    
+                </select> 
+            </div>
+            <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+              연재작품 수*
+            </div>
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <select name="연재작품 수" style={{width: "248px", height: "38px"}} >
+                    <option defaulValue="0개">0개</option>    
+                </select> 
+            </div>
+            <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+              연재 플랫폼*
+            </div>
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <select name="연재 플랫폼" style={{width: "248px", height: "38px"}} >
+                    <option defaulValue="네이버 시리즈">네이버 시리즈</option>    
+                </select> 
+            </div>
+            <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+              유료연재 경험*
+            </div>
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <select name="유료연재 경험" style={{width: "248px", height: "38px"}} >
+                    <option defaulValue="아니오">아니오</option>    
+                </select> 
+            </div>
+           
             <div style={{marginLeft:"15px",marginTop:"15px"}}>
-                <Button2/>
-                <br></br>
-            </div>
-            <div style={{marginLeft:"15px",marginTop:"15px"}}>
-        <button style={style3} onClick={submitactiveButton}>입력완료</button>
+        <button style={style3} onClick={submitactiveButton}>다음</button>
         </div>
         </div>
         </div>
