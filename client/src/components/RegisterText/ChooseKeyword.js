@@ -1,8 +1,5 @@
 import React,{useState, useRef} from "react";
 
-function inputok(){
-    alert('작품 등록이 완료되었습니다!');
-}
 
 function ChooseKeyword(){
 
@@ -11,16 +8,50 @@ function ChooseKeyword(){
     const [arr, setarr] = useState([]);
 
     const [text1, setText1] = useState('');
-    const [arr1, setarr1] = useState([]);
+    const [brr, setbrr] = useState([]);
     
     const [text2, setText2] = useState('');
     const [arr2, setarr2] = useState([]);
     
     const [text3, setText3] = useState('');
     const [arr3, setarr3] = useState([]);
+    
+    var size1 = arr.length;
+    var size2 = brr.length;
+    var size3 = arr2.length;
+    var size4 = arr3.length;
+
+    function inputok(){
+
+        if(size1 === 20 && size2 === 20 && size3 === 20 && size4 === 20)
+        {
+            alert('작품 등록이 완료되었습니다!');
+            window.location.href="/myfeedback";
+        }
+        else 
+        {
+            if(window.confirm("아직 키워드를 더 입력할 수 있습니다. 그래도 진행하시겠습니까?"))
+            {
+                alert('작품 등록이 완료되었습니다!');
+                window.location.href="/myfeedback";
+            }
+            else{
+                return ;
+            }
+        }
+    }
 
     const InputText = (e) => {
-        setText(e.target.value);
+        if(size1 <20)
+        {
+            setText(e.target.value);
+        }
+        else if(size1 >= 20)
+        {
+            alert('키워드가 10개를 초과했습니다.');
+            ResetText();
+        }
+        
     }
     const ResetText = () => {
         setText('');
@@ -32,41 +63,65 @@ function ChooseKeyword(){
         setText('');
     }
 
-    const InputText1 = (e) => {
-        setText1(e.target.value);
+    const InputText1 = (f) => {
+        if(size2 <20)
+        {
+            setText1(f.target.value);
+        }
+        else if(size2 >= 20)
+        {
+            alert('키워드가 10개를 초과했습니다.');
+            ResetText1();
+        }
     }
     const ResetText1 = () => {
         setText1('');
     }
 
-    const handleSubmit1 = (e) => {
-        setarr1(arr => [...arr, text]);
-        setarr1(arr => [...arr,' ']);
+    const handleSubmit1 = (f) => {
+        setbrr(arr => [...arr, text1]);
+        setbrr(arr => [...arr,' ']);
         setText1('');
     }
 
-    const InputText2 = (e) => {
-        setText2(e.target.value);
+    const InputText2 = (g) => {
+        if(size3 <20)
+        {
+            setText2(g.target.value);
+        }
+        else if(size3 >= 20)
+        {
+            alert('키워드가 10개를 초과했습니다.');
+            ResetText2();
+        }
     }
     const ResetText2 = () => {
         setText2('');
     }
 
-    const handleSubmit2 = (e) => {
-        setarr2(arr => [...arr, text]);
+    const handleSubmit2 = (g) => {
+        setarr2(arr => [...arr, text2]);
         setarr2(arr => [...arr,' ']);
         setText2('');
     }
 
-    const InputText3 = (e) => {
-        setText3(e.target.value);
+    const InputText3 = (h) => {
+        if(size4 <20)
+        {
+            setText3(h.target.value);
+        }
+        else if(size4 >= 20)
+        {
+            alert('키워드가 10개를 초과했습니다.');
+            ResetText3();
+        }
     }
     const ResetText3 = () => {
         setText3('');
     }
 
-    const handleSubmit3 = (e) => {
-        setarr3(arr=> [...arr, text]);
+    const handleSubmit3 = (h) => {
+        setarr3(arr=> [...arr, text3]);
         setarr3(arr=> [...arr,' ']);
         setText3('');
     }
@@ -81,6 +136,10 @@ function ChooseKeyword(){
             <div>
                 <h5>독자들이 고를 수 있는 객관식 키워드를 입력하세요.</h5>
             </div>
+            <div>
+                <h6>각 카테고리 당 키워드는 최대 10개를 입력하실 수 있습니다.</h6>
+            </div>
+            <hr />
             <div>
                 <h3>캐릭터</h3>
             </div>
@@ -101,7 +160,7 @@ function ChooseKeyword(){
             <button onClick ={ResetText1}>초기화</button>
             </div>
             <div>
-                <b>{arr1}</b>
+                <b>{brr}</b>
             </div>
             <div>
                 <h3>상업성</h3>
@@ -125,6 +184,8 @@ function ChooseKeyword(){
             <div>
                 <b>{arr3}</b>
             </div>
+            <br />
+            <br />
             <div>
                 <button onClick={inputok}>다음</button>
             </div>
