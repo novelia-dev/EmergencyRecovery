@@ -281,11 +281,11 @@ function Text(props){
                     onClose={closeModal}>
                         <div>
                             <h4>다음 중 주인공의 이름은?</h4>
-                            <input type="checkbox" style={{float:"left",width:"24px", height:"24px"}} onClick={handleClick1} />
+                            <input type="radio" name="answer" style={{float:"left",width:"24px", height:"24px"}} onClick={handleClick1} />
                             <h5>주인공</h5>
-                            <input type="checkbox" style={{float:"left", width:"24px", height:"24px"}} onClick={handleClick2} />
+                            <input type="radio" name="answer" style={{float:"left", width:"24px", height:"24px"}} onClick={handleClick2} />
                             <h5>오답1</h5>
-                            <input type="checkbox" style={{float:"left", width:"24px", height:"24px"}} onClick={handleClick3} />
+                            <input type="radio" name="answer" style={{float:"left", width:"24px", height:"24px"}} onClick={handleClick3} />
                             <h5>오답2</h5>
                             <h6>* 오답 시 피드백 참여가 불가합니다.</h6>
                             <button onClick={movetoFeedback}>제출하기</button>
