@@ -331,6 +331,20 @@ function Text(){
             <div>
            <button style={{marginTop:"15px",marginLeft:"15px"}}>Check</button>
             </div>
+
+            <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+             핸드폰 번호*
+            </div>
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <input type="label" style={{width:"240px",height:"30px"}} placeholder="경품지급 용도로만 사용됩니다."></input>
+            </div>
+            <br />
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <select name="회원" style={{width: "248px", height: "38px"}}  >
+                    <option defaulValue="작가">작가*</option>    
+                </select> 
+            </div>
+
             <div style={{marginTop:"15px",marginLeft:"15px"}}>
               <h4>독자 추가 질문</h4>
             </div>

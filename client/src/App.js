@@ -91,7 +91,7 @@ function App() {
             <Route path="/" element={<Mainpage />} />
             <Route path="/:id" element={<DetailPage />} />
             <Route path ="/login" element={<Loginpage />} />
-            <Route path ="/login/callback" element={<Loginpage/>} />
+            <Route path ="/login/callback" element={<Registerpage/>} />
             <Route path ="/register" element={<Registerpage />} />
             <Route path ="/register2" element={<Registerpage2 />} />
             <Route path ="/register3" element={<Registerpage3 />} />
