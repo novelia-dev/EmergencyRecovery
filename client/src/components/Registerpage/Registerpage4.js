@@ -124,8 +124,8 @@ function Registerpage4(){
              &nbsp; 장르별 태그보기
             </div>
             <div style={{marginTop:"5px",marginLeft:"22px"}}>
-            <select name="연재작품 수" style={{width: "248px", height: "38px"}} >
-                    <option defaulValue="0개">0개</option>    
+            <select name="장르별 태그보기" style={{width: "248px", height: "38px"}} >
+                    <option defaulValue="로맨스">로맨스</option>    
                 </select> 
             </div>
             <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>

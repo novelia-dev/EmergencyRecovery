@@ -13,7 +13,9 @@ class Readworkpage extends React.Component{
     }
 }
 
-
+function move(){
+    window.location.href="/:id/read2";
+}
 
 class Text extends React.Component{
     constructor(props)
@@ -142,7 +144,7 @@ class Text extends React.Component{
                 </tr>
             </table>
             <div>
-                <button style={style7}>
+                <button style={style7} onClick={move}>
                     다음화보기
                 </button>
             </div>

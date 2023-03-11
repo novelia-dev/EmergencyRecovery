@@ -3,6 +3,8 @@ import axios from 'axios';
 import {useParams} from 'react-router-dom';
 
 import Dropzone from "react-dropzone";
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import image1 from '../Image/couple-7590701_1920.jpg';
 import image2 from '../Image/fantasy-4379818_1920.jpg';
@@ -65,7 +67,76 @@ function FileUpload(props)
     )
 }
 
+function Modal({className, onClose , maskClosable , closable , visible, children})
+{
 
+    const onMaskClick = (e) => {
+        if(e.target === e.currentTarget)
+        {
+            onClose(e)
+        }
+    }
+
+    const close = (e) => {
+        if(onClose){
+            onClose(e)
+        }
+    }
+
+    return(
+        <>
+            <ModalOverlay visible = {visible} />
+            <ModalWrapper className ={className} onClick={maskClosable ? onMaskClick : null} tabIndex="-1" visible={visible}>
+                <ModalInner tabIndex ="0" className = "modal-inner">
+                    {closable && <button style={{backgroundColor:"#FFFFFF",width:"30px", height:"30px", marginLeft:"500px"}} className="modal-close" onClick={close} >X</button>}
+                    {children}
+                </ModalInner>
+            </ModalWrapper>
+        </>
+    )
+}
+
+Modal.propTypes = {
+    visible: PropTypes.bool,
+}
+
+const ModalWrapper = styled.div`
+    box-sizing: border-box;
+    display: ${(props) => (props.visible ? 'block' : 'none')};
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: auto;
+    outline: 0;
+`;
+
+const ModalOverlay = styled.div`
+    box-sizing: border-box;
+    display: ${(props) => (props.visible ? 'block' : 'none')};
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 999;
+`;
+
+const ModalInner = styled.div`
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.5);
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 600px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    padding: 40px 20px;
+`;
 
 function RegisterText(props){
     const id = useParams();
@@ -83,6 +154,44 @@ function RegisterText(props){
     const [wrong2,setWrong2] = useState("");
 
     const [quizs, setquizs] = useState([]);
+
+    const [modalVisible, setModalVisible] = useState(false);
+
+    const Button1 = () => {
+        const arr = [{id: 1 }, {id: 2 }, { id: 3 },{id: 4},{id: 5},{id: 6}];
+        const [pick, setPick] = useState(arr);
+        const [select, setSelect] = useState([]);
+      
+        return pick.map((item) => (
+          <div className="button_container">
+            
+            <button
+              key={item.id}
+              onClick={() => {
+                !select.includes(item.id)
+                  ? setSelect((select) => [...select, item.id])
+                  : setSelect(select.filter((button) => button !== item.id));
+              }}
+              className={
+                select.includes(item.id)
+                  ? "button_table_btn_ns"
+                  : "button_table_btn_s"
+              }
+              style={{width:"76px",height:"29px"}}
+            >
+              선호태그
+            </button>
+          </div>
+        ));
+      };
+
+    const openModal = () => {
+        setModalVisible(true);
+    }
+
+    const closeModal = () => {
+        setModalVisible(false);
+    }
  
     const updateTitle = (title) => {
         setTitle(title.target.value);
@@ -244,28 +353,54 @@ function RegisterText(props){
         <br />
         <div>
         <table>
-           <td><label>태그등록*</label><input type="text" placeholder="최소 2개 이상 입력" onChange={updateTag} /></td> 
+           <td><button onClick={openModal}>태그등록*</button>
+                {
+                    modalVisible && <Modal  
+                        visible={modalVisible}
+                        closable={true}
+                        maskClosable={true}
+                        onClose={closeModal}>
+                              <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
+                             장르별 태그보기
+                       </div>
+                       <div style={{marginTop:"5px",marginLeft:"22px"}}>
+                          <select name="연재작품 수" style={{width: "248px", height: "38px"}} >
+                          <option defaulValue="로맨스">로맨스</option>    
+                          </select> 
+                       </div>
+                            
+                            <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
+                        &nbsp; 선호태그
+                       </div>
+                       <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                           <Button1/>
+                           <br></br>
+                       </div>
+                       <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                           <Button1/>
+                           <br></br>
+                       </div>
+                       <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                           <Button1/>
+                           <br></br>
+                       </div>
+                       <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                           <Button1/>
+                           <br></br>
+                       </div>
+                       <br />
+                       <br />
+                     
+                        <button style={{marginLeft:"250px"}}>입력완료</button>
+
+                       </Modal>
+                }
+           </td> 
            <td><label>&nbsp; 태그신청 &nbsp;</label><input type="text" placeholder="신규태그를 신청하세요" /></td>
         </table>
         
         </div>
         <br />
-        <div>
-            <table>
-                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>#멋있는</button></td>
-                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>#화려한</button></td>
-                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>#다채로운</button></td>
-                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>#신비로운</button></td>
-                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>#몽환적인</button></td>
-                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>#감동적인</button></td>
-            </table>
-        </div>
         <br />
         <div>
             <label>작품설명 &nbsp;</label>
