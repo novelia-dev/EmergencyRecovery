@@ -282,6 +282,12 @@ function ChooseFeedback(props){
                 </tr>
             </table>
             <br />
+            <div>
+                <h4>객관식 피드백 만족도 별점</h4>
+                {showResult()}
+                <h5>서비스 평가를 남겨주세요.</h5>
+                <input type="text" placeholder="서비스 평가를 남겨주세요." style={{width:"1169px",height:"90px"}} />
+            </div>
             <button>주관식 보기</button>
         </div>
     )
