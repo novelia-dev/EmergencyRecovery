@@ -1,0 +1,11 @@
+.style1 {
+   
+    background: none;
+    position:"absolute";
+    width:"306px"; height:"306px"
+  };
+  .style1:hover {
+    position:"absolute";
+    background: #E2E2E2;
+  }
+    
