@@ -35,6 +35,13 @@ function Button(){
           return tag.target.value;
         });
       };
+    let adddata = ["선호태그","선호태그","선호태그","선호태그","선호태그","선호태그"];
+    let [tag3Active, setTag3Active] = useState("");
+    const toggleaddActive = (tag) =>{
+      setTag3Active((prev) => {
+        return tag.target.value;
+      })
+    }
 
     //금지태그
     let data4=["선호태그","선호태그","선호태그","선호태그","선호태그","선호태그"];
@@ -60,6 +67,14 @@ function Button(){
         });
       };
 
+    let data7=["선호태그","선호태그","선호태그","선호태그","선호태그","선호태그"];
+    let[forb3Active, setForb3Active] = useState("");
+    const toggleActive7 = (forb) => {
+        setForb3Active((prev) => {
+          return forb.target.value;
+        });
+      };
+    
     return(
         <div>
         <div>
@@ -132,6 +147,22 @@ function Button(){
       })}
 
       </tr>
+      <tr>
+      {adddata.map((item, idx) => {
+        return (
+          <>
+            <button
+              value={idx}
+              className={"Btn" + (idx == tag3Active ? " active" : "")}
+              onClick={toggleaddActive}
+            >
+              {item}
+            </button>
+          </>
+        );
+      })}
+
+      </tr>
             </table>
             </div>
             <div>
@@ -185,6 +216,21 @@ function Button(){
         );
       })}
       </tr>
+      <tr>
+      {data7.map((item, idx) => {
+        return (
+          <>
+            <button
+              value={idx}
+              className={"Btn" + (idx == forb3Active ? " active" : "")}
+              onClick={toggleActive7}
+            >
+              {item}
+            </button>
+          </>
+        );
+      })}
+      </tr>
     </table>
             </div>
             </div>
@@ -202,18 +248,20 @@ function MobileRegisterPage2(){
             </div>
             <hr />
             <div>
-              <label>닉네임</label><input type="text" placeholder="플레이스 홀더"/> <button>중복확인</button>
+              <h5>닉네임</h5><input type="text" placeholder="플레이스 홀더"/> <button>중복확인</button>
             </div>
+            <br />
             <div>
-                <select className="성별">
-                    <option value="none" default disabled>성별(남/여)</option>
+                <select className="성별" style={{width:"280px"}}>
+                    <option value="none" default disabled hidden>성별(남/여)</option>
                     <option value="남">남</option>
                     <option value="여">여</option>
                 </select>
             </div>
+            <br />
             <div>
-                <select className="나이">
-                    <option value="none" default disabled>나이대</option>
+                <select className="나이" style={{width:"280px"}}>
+                    <option value="none" default disabled hidden>나이대</option>
                     <option value="10대">10대</option>
                     <option value="20대">20대</option>
                     <option value="30대">30대</option>
@@ -221,13 +269,77 @@ function MobileRegisterPage2(){
                     <option value="50대 이상">50대 이상</option>
                 </select>
             </div>
+            <br />
             <hr />
             <div>
-                <label>이메일</label><input type="email" placeholder="본인인증용 이메일"/> <button>코드받기</button>
+                <h5>이메일</h5><input type="email" style={{width:"280px"}} placeholder="본인인증용 이메일"/> 
+            </div>
+            <br />
+            <div>
+                <h5>핸드폰번호*</h5><input type="text" style={{width:"280px"}} placeholder="경품지급 용도로만 사용됩니다." />
+            </div>
+            <br />
+            <div>
+                <select className="회원" style={{width:"280px"}}>
+                    <option value="작가" default>작가*</option>
+                    <option value="독자">독자*</option>
+                </select>
+            </div>
+            <br />
+            <hr />
+            <div className="작가">
+            <div>
+              <h5>작가 추가 질문</h5>
             </div>
             <div>
-                <label>인증코드</label><input type="text" placeholder="메일로 받으신 코드를 입력하세요" /> <button>인증하기</button>
+                <h5>유입경로*</h5>
+                <select className="유입경로" style={{width:"280px"}}>
+                    <option value="이메일" default>이메일</option>
+                </select>
             </div>
+            <br />
+            <div>
+              <h5>다른 피드백 서비스 이용경험*</h5>
+                <select className="이용경험" style={{width:"280px"}}>
+                    <option value="없음" default>경험없음</option>
+                </select>
+            </div>
+            <br />
+            <div>
+              <h5>전업여부*</h5>
+                <select className="전업여부" style={{width:"280px"}}>
+                    <option value="직장인(부업)" default>직장인(부업)</option>
+                </select>
+            </div>
+            <br />
+            <div>
+              <h5>웹소설 집필기간*</h5>
+                <select className="집필기간" style={{width:"280px"}}>
+                    <option value="1년 미만" default>1년 미만</option>
+                </select>
+            </div>
+            <div>
+                <h5>연재작품 수*</h5>
+                <select className="연재작품 수" style={{width:"280px"}}>
+                    <option value="0개" default>0개</option>
+                </select>
+            </div>
+            <div>
+               <h5>연재 플랫폼*</h5>
+                <select className="연재 플랫폼" style={{width:"280px"}}>
+                    <option value="네이버 시리즈" default>네이버 시리즈</option>
+                </select>
+            </div>
+            <br />
+            <div>
+              <h5>유료연재 경험*</h5>
+                <select className="유료연재 경험" style={{width:"280px"}}>
+                    <option value="아니오" default>아니오</option>
+                    <option value="예">예</option>
+                </select>
+            </div>
+            </div>
+            <br />
             <hr />
             <div>
                 <Button />

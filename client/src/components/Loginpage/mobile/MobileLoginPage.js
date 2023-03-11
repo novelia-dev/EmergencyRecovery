@@ -5,6 +5,10 @@ function movetoregister(){
     window.location.href="/mobileregister";
 }
 
+function movetologin(){
+    window.location.href="/mobilelogin2";
+}
+
 function MobileLoginPage(){
 
     return(
@@ -14,7 +18,7 @@ function MobileLoginPage(){
                 <img src={logo} alt="logo" />
             </div>
             <div>
-            <button>로그인</button>  
+            <button onClick={movetologin}>로그인</button>  
             </div>
             <div>
             <button onClick={movetoregister}>회원가입</button>
