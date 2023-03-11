@@ -88,7 +88,7 @@ function Modal({className, onClose , maskClosable , closable , visible, children
             <ModalOverlay visible = {visible} />
             <ModalWrapper className ={className} onClick={maskClosable ? onMaskClick : null} tabIndex="-1" visible={visible}>
                 <ModalInner tabIndex ="0" className = "modal-inner">
-                    {closable && <button style={{backgroundColor:"#FFFFFF",width:"30px", height:"30px", marginLeft:"400px"}} className="modal-close" onClick={close} >X</button>}
+                    {closable && <button style={{backgroundColor:"#FFFFFF",width:"30px", height:"30px", marginLeft:"500px"}} className="modal-close" onClick={close} >X</button>}
                     {children}
                 </ModalInner>
             </ModalWrapper>
@@ -131,7 +131,7 @@ const ModalInner = styled.div`
     box-shadow: 0 0 6px 0 rgba(0,0,0,0.5);
     background-color: #fff;
     border-radius: 10px;
-    max-width: 480px;
+    max-width: 600px;
     top: 50%;
     transform: translateY(-50%);
     margin: 0 auto;
@@ -359,16 +359,8 @@ function RegisterText(props){
                         visible={modalVisible}
                         closable={true}
                         maskClosable={true}
-                        onClose={closeModal}><div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
-                        &nbsp; 선호태그
-                       </div>
-                       <div style={{marginTop:"15px",marginLeft:"22px"}}>
-                           <Button1/>
-                           <br></br>
-                       </div>
-                       <br />
-                       <br />
-                       <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
+                        onClose={closeModal}>
+                              <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
                              장르별 태그보기
                        </div>
                        <div style={{marginTop:"5px",marginLeft:"22px"}}>
@@ -376,6 +368,30 @@ function RegisterText(props){
                           <option defaulValue="로맨스">로맨스</option>    
                           </select> 
                        </div>
+                            
+                            <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
+                        &nbsp; 선호태그
+                       </div>
+                       <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                           <Button1/>
+                           <br></br>
+                       </div>
+                       <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                           <Button1/>
+                           <br></br>
+                       </div>
+                       <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                           <Button1/>
+                           <br></br>
+                       </div>
+                       <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                           <Button1/>
+                           <br></br>
+                       </div>
+                       <br />
+                       <br />
+                     
+                        <button style={{marginLeft:"250px"}}>입력완료</button>
 
                        </Modal>
                 }
