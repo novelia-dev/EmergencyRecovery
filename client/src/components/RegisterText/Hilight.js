@@ -34,7 +34,11 @@ function Hilight(){
 
     var num = 1;
     
-    
+    const [context, setContext] = useState("");
+
+    const handlecontext = (e) => {
+        setContext(e.target.value);
+    }
 
     return(
         <div>
@@ -47,8 +51,13 @@ function Hilight(){
             <div>
                 <table>
                     <tr>
-                    <td><img style={{width:"306px", height:"306px"}} src={image} id="photo"  alt="작품하이라이트" /></td>
-                    <td><label>하이라이트 &nbsp;</label><input style={{width:"863px", height:"210px"}} type="text" placeholder="30자이내" id="big"/></td>
+                    <td>
+                        <div>
+                        <h4 style={{position:"absolute"}}>{context}</h4>
+                        <img style={{position: "static" , width:"306px", height:"306px"}} src={image} id="photo"  alt="작품하이라이트" />
+                        </div>
+                    </td>
+                    <td><label>하이라이트 &nbsp;({context.length})자</label><input style={{width:"863px", height:"210px"}} type="text" onChange={handlecontext} placeholder="30자이내" id="big"/></td>
                     </tr>
                     </table>
                     <table>
