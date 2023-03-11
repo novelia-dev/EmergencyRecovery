@@ -77,6 +77,7 @@ import MobileDetaailScrapread from './components/DetailPage/mobile/MobileDetailS
 import MobileFeedbackpage from "./components/Mainpage/mobile/MobileFeedbackpage";
 import MobileDetailFeedback from "./components/DetailPage/mobile/MobileDetailFeedback";
 import DetailMyGiftCoupon from "./components/DetailPage/DetailMyGiftCoupon";
+import MobileMyPointStats from "./components/MyPage/mobile/MobileMyPointStats";
 function App() {
   return (
     <Router>
@@ -153,6 +154,7 @@ function App() {
             <Route path ="/mobilescrap/:id/:text" element={<MobileDetaailScrapread />} />
             <Route path ="/mobilefeedback" element={<MobileFeedbackpage />} /> 
             <Route path = "/mobilefeedback/:id" element={<MobileDetailFeedback />} />
+            <Route path ="/mobilemypointstats" element={<MobileMyPointStats />} />
           </Routes>
           
         </div>
