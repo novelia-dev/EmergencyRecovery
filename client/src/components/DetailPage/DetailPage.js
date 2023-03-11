@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {useParams} from "react-router-dom";
 import image from "../Image/Ellipse 1.png";
 import image1 from "../Image/illumination-5173540_1920.jpg";
@@ -7,6 +7,8 @@ import image1 from "../Image/illumination-5173540_1920.jpg";
 
 function DetailPage(props){
 
+   
+
     function moveto(){
         window.location.href=`/${id}`;
     }
@@ -14,12 +16,16 @@ function DetailPage(props){
         window.location.href="/";
     }
     
-    function movetochoose(){
-        window.location.href=`/${id}/choose`;
+    function movetochoose(e){
+        
+        localStorage.setItem("Istype",1);
+        window.location.href=`/${id}/read1`;
     }
     
-    function movetowrite(){
-        window.location.href=`/${id}/write`;
+    function movetowrite(e){
+        
+        localStorage.setItem("Istype",2);
+        window.location.href=`/${id}/read1`;
     }
 
 

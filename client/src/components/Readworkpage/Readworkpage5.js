@@ -14,14 +14,20 @@ class Readworkpage5 extends React.Component{
 }
 
 
+function Text(props){
+  
+    var types = localStorage.getItem("Istype");
 
-class Text extends React.Component{
-    constructor(props)
-    {
-        super(props);
+    function move(){
+        if(types === '1')
+        {
+            window.location.href="/:id/choose";
+        }
+        else if(types === '2')
+        {
+            window.location.href="/:id/write";
+        }
     }
-
-    render(){
 
         const style = {
             'position':'absolute',
@@ -142,14 +148,14 @@ class Text extends React.Component{
                 </tr>
             </table>
             <div>
-                <button style={style7}>
-                    다음화보기
+                <button style={style7} onClick={move}>
+                    피드백하기
                 </button>
             </div>
 
             </div>
         )
-    }
+    
 }
 
 export default Readworkpage5;
