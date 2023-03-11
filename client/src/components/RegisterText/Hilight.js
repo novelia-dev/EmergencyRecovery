@@ -5,7 +5,7 @@ import image3 from "../Image/Group 1728.png";
 import image4 from "../Image/Group 1729.png";
 
 import $ from 'jquery';
-
+//adfadfas
 function movetoFeed(){
     window.location.href = "/feed";
 }
