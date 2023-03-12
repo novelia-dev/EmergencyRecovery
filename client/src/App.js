@@ -73,7 +73,7 @@ import MobileWriteFeedback from "./components/Feedback/mobile/MoblieWriteFeedbac
 import MobileFavoritepage from "./components/Mainpage/mobile/MobileFavoritepage";
 import MobileScrappage from "./components/Mainpage/mobile/MobileScrappage";
 import MobileDetailScrap from "./components/DetailPage/mobile/MobileDetailScrap";
-import MobileDetaailScrapread from './components/DetailPage/mobile/MobileDetailScrapread';
+import MobileDetailScrapread from './components/DetailPage/mobile/MobileDetailScrapread';
 import MobileFeedbackpage from "./components/Mainpage/mobile/MobileFeedbackpage";
 import MobileDetailFeedback from "./components/DetailPage/mobile/MobileDetailFeedback";
 import DetailMyGiftCoupon from "./components/DetailPage/DetailMyGiftCoupon";
@@ -150,7 +150,7 @@ function App() {
             <Route path ="/mobilefavorite" element={<MobileFavoritepage /> } />
             <Route path ="/mobilescrap" element ={<MobileScrappage />} />
             <Route path ="/mobilescrap/:id" element={<MobileDetailScrap /> } />
-            <Route path ="/mobilescrap/:id/:text" element={<MobileDetaailScrapread />} />
+            <Route path ="/mobilescrap/:id/:text" element={<MobileDetailScrapread />} />
             <Route path ="/mobilefeedback" element={<MobileFeedbackpage />} /> 
             <Route path = "/mobilefeedback/:id" element={<MobileDetailFeedback />} />
           </Routes>

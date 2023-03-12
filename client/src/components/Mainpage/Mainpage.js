@@ -45,8 +45,7 @@ function MainSlider() {
     autoplay: false,
     autoplaySpeed: 5000,
     dots: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+   
   };
     return (
       <div >

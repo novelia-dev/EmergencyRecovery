@@ -1,10 +1,11 @@
 import React,{useState} from 'react';
 import {useParams} from "react-router-dom";
-import image from "../Image/Ellipse 1.png";
+
 import image1 from "../Image/illumination-5173540_1920.jpg";
-
-
-
+import backimage from "../Image/뒤로가기.png";
+import Navbar from "../Navbar/Navbar";
+import Checkbox from "../Image/객관식체크박스.png";
+import NewText from '../Image/pen.png';
 function DetailPage(props){
 
    
@@ -27,13 +28,55 @@ function DetailPage(props){
         localStorage.setItem("Istype",2);
         window.location.href=`/${id}/read1`;
     }
+    const buttonstyle={
+            'box-sizing':"boreder-box",
+            'display': "float",
+            'justify-content':"center",
+            'align-items': "center",
+            'gap':"10px",
+            'width':"150px",
+            'height':"45px",
+            'borderRadius': "4px",
+            'font-family': "Roboto",
+            'font-weight': 700,
+            'font-size': "16px",
+            'line-height': "18.75px",
+            'color': "#FFFFFF",
+            'background-color':"#AA0140",
+            'border-width':"0",
+            'marginTop':"15px"
+            
 
+    }
+    const buttonstyle2 ={
+        
+            'box-sizing':"boreder-box",
+            'display': "flex",
+            'justify-content':"center",
+            'align-items': "center",
+            'gap':"10px",
+            'width':"180px",
+            'height':"60px",
+            'borderRadius': "4px",
+            'font-family': "Roboto",
+            'font-weight': 700,
+            'font-size': "22px",
+            'line-height': "18.75px",
+            'color': "#FFFFFF",
+            'background-color':"#AA0140",
+            'margin-left':"870px",
+            'margin-top':"52px",
+            'border-width':"0",
+            'line-height': "26px"
+
+    };
 
     let {id} = useParams();
     return(
         <div>
-            <img src={image} alt="뒤로가기" onClick={movetomain} />
-            <table>
+            <Navbar/>
+            <img src={backimage} style={{float:"left",marginLeft:"360px",width:"78px",height:"78px"}} alt="뒤로가기" onClick={movetomain} />
+            <table style={{'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
                 <td>
                     <div className="container-fluid">
                         <div class="row">
@@ -42,12 +85,12 @@ function DetailPage(props){
                                     <div class="img-square-wrapper">
                                         <img style={{width:"306px", height:"459px"}} src={image1}alt="작품 사진" />
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body" style ={{marginLeft:"15px"}}>
                                         <h2 class="card-title">재벌집 막내아들</h2>
                                         <p class="card-text">
                                         <h4>산경</h4>
                                         <h4>현대 판타지 &nbsp; D-14</h4>
-                                        <h4>10/30 &nbsp; 10/10</h4>
+                                        <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                                         <h4>태그</h4>
                                         <table>
                                             <tr>
@@ -77,17 +120,21 @@ function DetailPage(props){
                     width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
                                             </tr>
                                         </table>
-                                        <table>
-                                            <td> 
+                                        <table style={{float:"left"}}>
+                                            <td > 
                                                 <input type="text" value="『자금이라는 것은 주인인 내가 알지 머슴이 뭘 압니까』" style={{width:"578px", height:"133px"}}/> 
                                             </td>
-                                            <td>
-                                                <tr><button onClick={movetochoose}>객관식 참여</button></tr>
-                                                <tr><button onClick={movetowrite}>주관식 참여</button></tr>    
+                                            <td style={{marginTop:"20%"}}>
+                                            
                                             </td>
                                         </table>
+                                        
+                                        <button style={buttonstyle} onClick={movetochoose}>객관식 참여</button>
+                                        <br/>
+                                        <br/>
+                                        
+                                        <button style={buttonstyle} onClick={movetowrite}>주관식 참여</button>
                                          
-                                         <button>비슷한 작품</button>
 
                                         </p>
                                     </div>
@@ -98,13 +145,13 @@ function DetailPage(props){
                     
                 </td>
             </table>
-
+            <button style={buttonstyle2}>비슷한 작품</button>
             <br />
 
             <table>
                 <tr>
                   <td>
-                  <div className="container-fluid">
+                  <div className="container-fluid" style={{marginLeft:"360px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <div class="card-horizontal">
@@ -116,7 +163,7 @@ function DetailPage(props){
                                         <p class="card-text">
                                         <h4>산경</h4>
                                         <h4>현대 판타지 &nbsp; D-14</h4>
-                                        <h4>10/30 &nbsp; 10/10</h4>
+                                        <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                                         <h4>태그</h4>
                                         <table>
                                             <tr>
@@ -162,7 +209,7 @@ function DetailPage(props){
                     </div>
                   </td>
                   <td>
-                  <div className="container-fluid">
+                  <div className="container-fluid" style={{marginLeft:"24px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <div class="card-horizontal">
@@ -174,7 +221,7 @@ function DetailPage(props){
                                         <p class="card-text">
                                         <h4>산경</h4>
                                         <h4>현대 판타지 &nbsp; D-14</h4>
-                                        <h4>10/30 &nbsp; 10/10</h4>
+                                        <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                                         <h4>태그</h4>
                                         <table>
                                             <tr>
@@ -222,7 +269,7 @@ function DetailPage(props){
                 </tr>
                 <tr>
                   <td>
-                  <div className="container-fluid">
+                  <div className="container-fluid" style={{marginLeft:"360px",marginTop:"15px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <div class="card-horizontal">
@@ -234,7 +281,7 @@ function DetailPage(props){
                                         <p class="card-text">
                                         <h4>산경</h4>
                                         <h4>현대 판타지 &nbsp; D-14</h4>
-                                        <h4>10/30 &nbsp; 10/10</h4>
+                                        <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                                         <h4>태그</h4>
                                         <table>
                                             <tr>
@@ -280,7 +327,7 @@ function DetailPage(props){
                     </div>
                   </td>
                   <td>
-                  <div className="container-fluid">
+                  <div className="container-fluid" style={{marginLeft:"24px",marginTop:"15px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <div class="card-horizontal">
@@ -292,7 +339,7 @@ function DetailPage(props){
                                         <p class="card-text">
                                         <h4>산경</h4>
                                         <h4>현대 판타지 &nbsp; D-14</h4>
-                                        <h4>10/30 &nbsp; 10/10</h4>
+                                        <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                                         <h4>태그</h4>
                                         <table>
                                             <tr>

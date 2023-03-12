@@ -1,10 +1,11 @@
-import React,{useState} from 'react';
+import React,{useState,onChange} from 'react';
 import Novelist from '../Image/Navbar_logo.png';
 import Bell from '../Image/bell.png';
 import NewText from '../Image/pen.png';
 import Mypage from '../Image/user.png';
 import useDetectClose from './useDetectClose';
 import {Drawer,Button} from 'antd';
+import Image from '../Image/돋보기.png';
 
 import './Navbar.css';
 
@@ -28,13 +29,17 @@ function Navbar(){
       const onClose = () => {
         setOpen(false)
       };
-
+      /*const [search,setSearch] = useState("");
+      const onChange=(e)=>{
+        setSearch(e.target.value)
+      }*/
         return(
         <div>
            <table>
            <tr>
            <td><img onClick={movetomain} className="Novelist" alt="Novelist" style={{width:"122.9px", height:"30px",marginTop:"30px",marginLeft:"225px"}}src={Novelist} /></td>
-           <td><input type="text" placeholder="  #해쉬태그로 검색해보세요" style={{width: "588px",height: "30px", marginTop:"30px",marginLeft:"318.1px",backgroundColor:'#FFFFFF',borderRadius:"50px",}}></input></td>
+           <td><input type="text" /*value={search} onChange={onChange}*/ placeholder="  #해쉬태그로 검색해보세요" style={{width: "588px",height: "30px", marginTop:"30px",marginLeft:"318.1px",backgroundColor:'#FFFFFF',borderRadius:"50px",}}></input></td>
+           <td><img className="Image" alt="Image" style={{width:"30.31px", height:"30px",marginLeft:"-48px",marginTop:"28px"}}src={Image} /></td>
            <td>
             <img className="Bell" alt="Bell" style={{width:"18px", height:"25px",marginTop:"30px",marginLeft:"324px"}}src={Bell} />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
