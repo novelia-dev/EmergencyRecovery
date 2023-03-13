@@ -3,7 +3,7 @@ import Novelist from '../Image/Navbar_logo.png';
 import Bell from '../Image/bell.png';
 import NewText from '../Image/pen.png';
 import Mypage from '../Dropdown/Ad';
-
+import Image from '../Image/돋보기.png';
 import './Navbar.css';
 
 function movetomain(){

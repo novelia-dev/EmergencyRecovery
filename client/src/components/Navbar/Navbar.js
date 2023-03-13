@@ -33,10 +33,8 @@ function Navbar(){
             <td><img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </td>
-            <td style={{marginTop:"-50px"}}>
-            
+            <td >
             <Mypage/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            </td>
            </tr>
            </table>
