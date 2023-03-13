@@ -77,6 +77,7 @@ import MobileDetailScrapread from './components/DetailPage/mobile/MobileDetailSc
 import MobileFeedbackpage from "./components/Mainpage/mobile/MobileFeedbackpage";
 import MobileDetailFeedback from "./components/DetailPage/mobile/MobileDetailFeedback";
 import DetailMyGiftCoupon from "./components/DetailPage/DetailMyGiftCoupon";
+import { Dropdown } from "antd";
 function App() {
   return (
     <Router>
@@ -84,7 +85,7 @@ function App() {
     
         <div>
           <Routes>
-
+            
             <Route path="/connectlogin" element= {<ConnectLogin />} />
             <Route path="/connectregister" element={<ConnectRegister />} />
 

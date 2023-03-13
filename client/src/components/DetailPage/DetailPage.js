@@ -6,6 +6,7 @@ import backimage from "../Image/뒤로가기.png";
 import Navbar from "../Navbar/Navbar";
 import Checkbox from "../Image/객관식체크박스.png";
 import NewText from '../Image/pen.png';
+import Group from '../Image/Group.png';
 function DetailPage(props){
 
    
@@ -148,7 +149,14 @@ function DetailPage(props){
             <button style={buttonstyle2}>비슷한 작품</button>
             <br />
 
-            <table>
+            <img  style={{marginLeft:"597px"}}src={Group} alt="비슷한 작품이 없습니다" />
+
+        </div>
+    )
+}
+
+//비슷한 작품이 있을 때 넣으면 될듯
+/* <table>
                 <tr>
                   <td>
                   <div className="container-fluid" style={{marginLeft:"360px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
@@ -386,10 +394,5 @@ function DetailPage(props){
                   </td>
                 </tr>
             </table>
-
-
-        </div>
-    )
-}
-
+*/
 export default DetailPage;
