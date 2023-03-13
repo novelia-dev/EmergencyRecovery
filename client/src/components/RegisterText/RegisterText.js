@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom';
 import Dropzone from "react-dropzone";
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
+import Navbar from "../Navbar/SimpleNavbar";
 import image1 from '../Image/couple-7590701_1920.jpg';
 import image2 from '../Image/fantasy-4379818_1920.jpg';
 import image3 from '../Image/illumination-5173540_1920.jpg';
@@ -22,7 +22,7 @@ function FileUpload(props)
         let formData = new FormData();
 
         const config = {
-            header: {'content-type': 'multipart/fomr-data'}
+            header: {'content-type': 'multipart/form-data'}
         }
 
         formData.append("file", files[0])
@@ -38,23 +38,42 @@ function FileUpload(props)
         props.refreshFunction(newImages)
 
     }
+    const buttonstyle={
+        'box-sizing':"boreder-box",
+            'display': "flex",
+            'justify-content':"center",
+            'align-items': "center",
+            'gap':"10px",
+            'width':"165px",
+            'height':"45px",
+            'borderRadius': "4px",
+            'font-family': "Roboto",
+            'font-weight': 700,
+            'font-size': "22px",
+            'line-height': "18.75px",
+            'color': "#FFFFFF",
+            'background-color':"#AA0140",
+            'border-width':"0",
+            'line-height': "26px"
+
+    };
     return(
         <div style={{display:'flex'}}>
             <Dropzone onDrop={dropHandler}>
                 {({getRootProps, getInputProps}) =>(
                     <div
                         style={{
-                            width: "300px", height: "240px", border: '1px solid lightgrey',
+                            width: "306px", height: "459px", border: '1px solid lightgrey',
                             display: 'flex', alignItems:'center', justifyContent: 'center'
                         }}
                         {...getRootProps()}>
                             <input {...getInputProps()} />
-                            <button>이미지 업로드</button>
+                            <button style={buttonstyle}>이미지 업로드</button>
                         </div>
                 )}
             </Dropzone>
             
-            <div style={{display:'flex', width: '350px', height:'240px', overflowX: 'scroll' }}>
+            <div style={{display:'flex', width: '350px', height:'459px', overflowX: 'scroll' }}>
                 {Images.map((image,index)=> (
                     <div onClick={() => deleteHandler(image)} key={index}>
                         <img style={{minWidth: '300px', width: '300px', height: '240px'}}
@@ -311,49 +330,79 @@ function RegisterText(props){
             console.log(error);
         }
     });
-}
+} 
+const buttonstyle={
+        'box-sizing':"boreder-box",
+        'display': "flex",
+        'justify-content':"center",
+        'align-items': "center",
+        'gap':"10px",
+        'width':"80px",
+        'height':"25px",
+        'borderRadius': "2px",
+        'font-family': "Roboto",
+        'font-weight': "700",
+        'font-size': "13px",
+        'line-height': "18.75px",
+        'color': "#FFFFFF",
+        'background-color':"#AA0140",
+        'border-width':"0",
+};
 
     return(
         <div>
-        <div>
-            <h4>작품 기본 정보 입력</h4>
-        </div>
-        <div>
+            <Navbar/>
+        <div style={{'width':"1200px",'marginLeft':"360px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
+            <h3>작품 기본 정보 입력</h3>
+            
             <h5>새롭게 피드백 받을 작품의 기본적인 정보를 입력해주세요.</h5>
         </div>
-        <div>
-            <table>
-                <td><FileUpload refreshFunction={updateImage} /></td>
-                <td>&nbsp;</td>
-                <td>
-                    <label>작품 감상 확인용 질문 &nbsp;</label><input style={{width: "557px", height: "33px"}} type="text" onChange={updateQuestion} placeholder="5화 분량을 읽고 알 수 있는 내용의 질문을 입력하세요. ex) 주인공의 이름? " />
-                    <br/>
-                    <label>정답 &nbsp;</label><input type="text" onChange={updateAnswer} />
-                    <br/>
-                    <label>오답 &nbsp;</label><input type="text" onChange={updateWrong1} />
-                    <br/>
-                    <label>오답 &nbsp;</label><input type="text" onChange={updateWrong2} />
-                </td>
-            </table>
-            
+       <div style={{marginLeft:"360px",float:"left"}}>
+           <FileUpload refreshFunction={updateImage} />
         </div>
-        <br />
         <div>
-        <label>제목* &nbsp;</label><input style={{width: "240px" , height: "30px"}} type="text" placeholder="15자이내" onChange={updateTitle} />
+        <label><b>작품 감상 확인용 질문</b> &nbsp;</label><br></br><input style={{width: "500px", height: "33px"}} type="text" onChange={updateQuestion} placeholder="5화 분량을 읽고 알 수 있는 내용의 질문을 입력하세요. ex) 주인공의 이름? " />
+        <br/>
+        <br/>
+        <label><b>정답</b> &nbsp;</label><br></br><input type="text" onChange={updateAnswer} />
+        <br/>
+        <br/>
+        <label><b>오답</b> &nbsp;</label><br></br><input type="text" onChange={updateWrong1} />
+        <br/>
+        <br/>
+        <label><b>오답</b> &nbsp;</label><br></br><input type="text" onChange={updateWrong2} />
         </div>
+        
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        
+        <br/>
+        <div style={{marginLeft:"360px",'width':"1200px",'marginLeft':"360px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
+        <div style={{marginLeft:"15px",marginTop:"15px",marginBottom:"15px"}}>
+        <label>제목* &nbsp;</label>
+        <br/>
+        <input style={{width: "240px" , height: "30px"}} type="text" placeholder="15자이내" onChange={updateTitle} />
         <br />
+        <br/>
         <div>
-            <select style={{width:"240px", height:"30px"}} name="장르선택" onChange={updateGenre}>
+        <select style={{width:"240px", height:"30px"}} name="장르선택" onChange={updateGenre}>
                 <option value="none" selected disabled hidden>장르선택</option>
                 <option value="로맨스">로맨스</option>
                 <option value="판타지">판타지</option>
                 <option value="로판">로판</option>
             </select>
-        </div>
-        <br />
-        <div>
+            <br/>
+            <br/>
+            <div>
         <table>
-           <td><button onClick={openModal}>태그등록*</button>
+           <td><button style={buttonstyle} onClick={openModal}>태그등록*</button>
                 {
                     modalVisible && <Modal  
                         visible={modalVisible}
@@ -395,27 +444,30 @@ function RegisterText(props){
 
                        </Modal>
                 }
-           </td> 
-           <td><label>&nbsp; 태그신청 &nbsp;</label><input type="text" placeholder="신규태그를 신청하세요" /></td>
+           </td>
+           <br/> 
+           <td><label>&nbsp; <b>태그신청 &nbsp;</b></label><input type="text" placeholder="신규태그를 신청하세요" /></td>
         </table>
-        
-        </div>
-        <br />
-        <br />
+        <br/>
         <div>
-            <label>작품설명 &nbsp;</label>
+            <label><b>작품설명</b> &nbsp;</label>
+            <br/>
             <input style={{width: "1170px" , height: "180px"}} type ="text" placeholder="500자 이내" onChange={updateContent} />
         </div>
-        <br />
-        <div>
-            <label>샘플 이미지</label>
+        </div>
+        </div>
+        </div>
+        
+        </div>
+        <div style={{marginLeft:"360px",'width':"1200px",'marginLeft':"360px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
+            <label style={{marginLeft:"24px"}}><b>샘플 이미지</b></label>
             <table>
-                <td><img style={{width:"164px", height:"246px"}} src={image1} alt="샘플이미지1"></img></td>
-                <td><img style={{width:"164px", height:"246px"}} src={image2} alt="샘플이미지2"></img></td>
-                <td><img style={{width:"164px", height:"246px"}} src={image3} alt="샘플이미지3"></img></td>
-                <td><img style={{width:"164px", height:"246px"}} src={image4} alt="샘플이미지4"></img></td>
-                <td><img style={{width:"164px", height:"246px"}} src={image5} alt="샘플이미지5"></img></td>
-                <td><img style={{width:"164px", height:"246px"}} src={image6} alt="샘플이미지6"></img></td>
+                <td><img style={{width:"164px", height:"246px",marginLeft:"24px"}} src={image1} alt="샘플이미지1"></img></td>
+                <td><img style={{width:"164px", height:"246px",marginLeft:"24px"}} src={image2} alt="샘플이미지2"></img></td>
+                <td><img style={{width:"164px", height:"246px",marginLeft:"24px"}} src={image3} alt="샘플이미지3"></img></td>
+                <td><img style={{width:"164px", height:"246px",marginLeft:"24px"}} src={image4} alt="샘플이미지4"></img></td>
+                <td><img style={{width:"164px", height:"246px",marginLeft:"24px"}} src={image5} alt="샘플이미지5"></img></td>
+                <td><img style={{width:"164px", height:"246px",marginLeft:"24px"}} src={image6} alt="샘플이미지6"></img></td>
             </table>
         </div>
         <br />
@@ -436,3 +488,4 @@ function RegisterText(props){
 }
 
 export default RegisterText;
+
