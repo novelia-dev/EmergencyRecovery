@@ -2,10 +2,6 @@ import React from 'react';
 import image from '../../Image/카카오톡.png';
 import image1 from '../../Image/네이버.png';
 
-function moveback(){
-    window.location.href="/mobilelogin";
-}
-
 function MobileLoginPage2(){
     return(
         <div>
@@ -16,7 +12,7 @@ function MobileLoginPage2(){
                 </table>
             </div>
             <div>
-                <button onClick={moveback}>취소</button>
+                <button>취소</button>
                 <button>다음</button>
             </div>
         </div>

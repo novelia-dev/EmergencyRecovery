@@ -436,4 +436,3 @@ function RegisterText(props){
 }
 
 export default RegisterText;
-

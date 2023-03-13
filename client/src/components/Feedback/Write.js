@@ -28,7 +28,7 @@ const Stars = styled.div`
 
 `;
 
-function Choose(){
+function Write(){
 
     const [Grade, setGrade] = useState([false,false, false, false, false])
     const [good, setGood] = useState("");
@@ -48,12 +48,14 @@ function Choose(){
 
     return(
         <div>
+           <div style={{marginLeft:"666px",width:"588px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
             <div>
                 <h5>작품 제목</h5>
             </div>
             <div>
-                <h5>주관식 피드백</h5>
+                <h5>객관식 피드백</h5>
             </div>
+            <hr style ={{'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}></hr>
             <div>
                 <h5>별점</h5>
             </div>
@@ -84,8 +86,9 @@ function Choose(){
             <div>
                 <button onClick={Click}>제출하기</button>
             </div>
+            </div>
         </div>
     )
 }
 
-export default Choose;
+export default Write;

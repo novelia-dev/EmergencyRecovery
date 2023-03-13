@@ -1,6 +1,8 @@
 import React from "react";
 import image from "../Image/illumination-5173540_1920.jpg";
 import './Posts.css';
+import Checkbox from "../Image/객관식체크박스.png";
+import NewText from '../Image/pen.png';
 
 function movetodetail(){
   window.location.href="/:id"
@@ -15,11 +17,11 @@ const Posts = ({ posts, loading }) => {
         {posts.map((post) => (
           <table>
             <td>
-            <div className="contanier-fluid" key={post.id}>
+            <div className="contanier-fluid" style={{'border-width':"3px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}} key={post.id} >
             <div class="row">
               <div class="col-12 mt-3">
                  <div class="card-horizontal" onClick={movetodetail}>
-                    <div class="img-square-wrapper" style={{marginTop:"25px"}}>
+                    <div class="img-square-wrapper" >
                       <img style={{width:"282px", height:"423px"}} src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
@@ -27,7 +29,7 @@ const Posts = ({ posts, loading }) => {
                         <p class="card-text">
                           <h4>산경</h4>
                           <h4>현대 판타지 &nbsp; D-14</h4>
-                          <h4>10/30 &nbsp; 10/10</h4>
+                          <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                           <h4>태그</h4>
                           <table>
                             <tr>
@@ -70,13 +72,13 @@ const Posts = ({ posts, loading }) => {
             </div>
           </div>
             </td>
-            <td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td>
+            <td></td>
             <td>
-            <div className="contanier-fluid" key={post.id}>
+            <div className="contanier-fluid" key={post.id} style={{marginLeft:"24px",'border-width':"3px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
             <div class="row">
               <div class="col-12 mt-3">
                  <div class="card-horizontal" onClick={movetodetail}>
-                    <div class="img-square-wrapper" style={{marginTop:"25px"}}>
+                    <div class="img-square-wrapper">
                       <img style={{width:"282px", height:"423px"}} src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
@@ -84,7 +86,7 @@ const Posts = ({ posts, loading }) => {
                         <p class="card-text">
                           <h4>산경</h4>
                           <h4>현대 판타지 &nbsp; D-14</h4>
-                          <h4>10/30 &nbsp; 10/10</h4>
+                          <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                           <h4>태그</h4>
                           <table>
                             <tr>

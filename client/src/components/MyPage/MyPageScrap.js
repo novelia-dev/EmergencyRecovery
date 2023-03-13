@@ -1,6 +1,6 @@
 import React from 'react';
 import image from '../Image/illumination-5173540_1920.jpg';
-
+import Navbar from '../Navbar/SimpleNavbar';
 function movetoDetail(){
   window.location.href="/myscrap/:id"
 }
@@ -9,7 +9,8 @@ function movetoDetail(){
 function MyPageScrap(){
     return(
         <div>
-            <div>
+          <Navbar/>
+            <div style={{marginLeft:"360px",width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
                 <h4>스크랩 작품</h4>
                 <h5>스크랩된 작품 목록입니다.</h5>
             </div>
