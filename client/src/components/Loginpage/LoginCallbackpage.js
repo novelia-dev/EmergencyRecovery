@@ -1,8 +1,8 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 
 function activeButton(){
     alert("확인완료");
-    window.location.href="/register3";
+    window.location.href="/register2";
 }
 function cancel(){
     alert("취소");
@@ -14,7 +14,14 @@ function tos(){
 function privacypolicy(){
     window.location.href="/privacy"
 }
-function Registerpage (){
+function LoginCallbackpage(){
+
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const code = urlSearchParams.get('code');
+
+    useEffect(() => {
+        localStorage.setItem("code",code);
+    },[code]);
 
     const style={
     'width':"588px",
@@ -77,6 +84,7 @@ function Registerpage (){
 
     return(
 <div>
+    {console.log(code)}
   <div style={style}>
     <h3>&nbsp; &nbsp;회원가입</h3>
     <hr style={{'border-width':"1px",
@@ -123,4 +131,4 @@ function Registerpage (){
                    <td></td>
                    </tr>
        </table>*/
-export default Registerpage;
+export default LoginCallbackpage;

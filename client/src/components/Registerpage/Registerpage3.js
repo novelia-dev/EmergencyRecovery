@@ -438,7 +438,7 @@ function Text(){
       setSecondoption(event.target.value);
     }
 
-   
+    const code = localStorage.getItem("code");
   
             
     return(
