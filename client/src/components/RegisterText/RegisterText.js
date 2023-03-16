@@ -257,7 +257,7 @@ function RegisterText(props){
 
         const formData = new FormData();
         formData.append("name",genre);
-
+//post 형식 이미지 파일 보낼때 같이보낼때
         axios({
             method: "post",
             url: "http://localhost:8000/genre",

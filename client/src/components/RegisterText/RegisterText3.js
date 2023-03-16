@@ -1,6 +1,5 @@
 import React from "react";
-
-
+import axios from "axios";
 
 function movetosecond(){
     window.location.href="/text/2";

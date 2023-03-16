@@ -7,6 +7,8 @@ import {KAKAO_AUTH_URL,REST_API_KEY,REDIRECT_URI, SECRET} from './KakaoData';
 import {useLocation, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
+
+
 class Loginpage extends React.Component{
     constructor(props){
         super(props);

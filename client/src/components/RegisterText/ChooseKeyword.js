@@ -3,7 +3,7 @@ import React,{useState, useRef} from "react";
 
 function ChooseKeyword(){
 
-
+     
     const [text, setText] = useState('');
     const [arr, setarr] = useState([]);
 
@@ -62,6 +62,7 @@ function ChooseKeyword(){
         setarr(arr => [...arr,' ']);
         setText('');
     }
+
 
     const InputText1 = (f) => {
         if(size2 <20)
@@ -130,21 +131,18 @@ function ChooseKeyword(){
 
     return(
         <div>
-            <div>
+             <div  style={{'width':"1200px",'marginLeft':"360px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
                 <h3>객관식 키워드 등록</h3>
-            </div>
-            <div>
                 <h5>독자들이 고를 수 있는 객관식 키워드를 입력하세요.</h5>
-            </div>
-            <div>
                 <h6>각 카테고리 당 키워드는 최대 10개를 입력하실 수 있습니다.</h6>
             </div>
-            <hr />
-            <div>
+            <div style={{'marginLeft':"360px"}}>
+            <div >
                 <h3>캐릭터</h3>
             </div>
             <div>
-              <label>키워드 추가</label><input type="text" onChange={InputText} value={text} placeholder="30자 이내" />
+              <label>키워드 추가</label>
+              <br></br><input type="text" onChange={InputText} value={text} placeholder="30자 이내" />
               <button onClick={handleSubmit}>추가</button>
               <button onClick={ResetText}>초기화</button>
             </div>
@@ -189,6 +187,8 @@ function ChooseKeyword(){
             <div>
                 <button onClick={inputok}>다음</button>
             </div>
+            </div>
+           
         </div>
     )
 

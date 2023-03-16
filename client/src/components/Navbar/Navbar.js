@@ -10,7 +10,9 @@ import './Navbar.css';
 function movetomain(){
   window.location.href="/";
 }
-
+function movetotext(){
+  window.location.href="/text";
+}
 function Navbar(){
 
     const Text = ()=> {
@@ -30,7 +32,7 @@ function Navbar(){
             <img className="Bell" alt="Bell" style={{width:"20px", height:"25px",marginLeft:"324px"}}src={Bell} />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </td>
-            <td><img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>
+            <td><img onClick={movetotext} className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </td>
             <td >
