@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import axios from "axios";
 import "./Tag.css";
 var state = {
@@ -78,13 +78,23 @@ class Registerpage3 extends React.Component{
 
 function Text(){
 
+    const [isLoaded, setIsLoaded] = useState(false);
     const [nickname, setnickname] = useState("");
     const [email, setemail] = useState("");
     const [selected, setSelected] = useState("");
     const [age, setAge] = useState("");
     const [route, setRoute] = useState("");
 
-    
+    useEffect(() => {
+      const code = localStorage.getItem("code");
+      if(code){
+        window.history.replaceState({},document.title,`/register3?code=${code}`)
+      }
+
+      setIsLoaded(true);
+
+    },[]);
+
 
 
     const onnicknamehandler = (nickname) => {
@@ -438,7 +448,7 @@ function Text(){
       setSecondoption(event.target.value);
     }
 
-    const code = localStorage.getItem("code");
+    
   
             
     return(

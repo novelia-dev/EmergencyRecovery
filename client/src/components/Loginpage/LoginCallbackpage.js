@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 
 function activeButton(){
     alert("확인완료");
-    window.location.href="/register2";
+    window.location.href="/register3";
 }
 function cancel(){
     alert("취소");
