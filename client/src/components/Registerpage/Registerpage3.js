@@ -78,6 +78,14 @@ class Registerpage3 extends React.Component{
 
 function Text(){
 
+    /*작가 독자 구분*/
+    const [isHidden, setIsHidden] = useState(true);
+
+    const toggleVisibility = () => {
+      setIsHidden(!isHidden);
+    };
+
+
     const [nickname, setnickname] = useState("");
     const [email, setemail] = useState("");
     const [selected, setSelected] = useState("");

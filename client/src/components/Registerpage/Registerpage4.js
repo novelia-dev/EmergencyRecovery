@@ -52,7 +52,7 @@ function Registerpage4(){
     }
 
     const Button = () => {
-        const arr = [{id: 1 }, {id: 2 }, { id: 3 }];
+        const arr = [{id: 1, name:"판타지" }, {id: 2, name:"로맨스" }, { id: 3 , name:"로맨스 판타지" }];
         const [pick, setPick] = useState(arr);
         const [select, setSelect] = useState([]);
       
@@ -73,7 +73,7 @@ function Registerpage4(){
               }
               style={{width:"76px",height:"29px"}}
             >
-              선호태그
+              {item.name}
             </button>
           </div>
         ));

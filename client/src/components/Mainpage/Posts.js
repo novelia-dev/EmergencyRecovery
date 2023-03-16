@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import image from "../Image/illumination-5173540_1920.jpg";
 import './Posts.css';
 import Checkbox from "../Image/객관식체크박스.png";
@@ -10,17 +10,23 @@ function movetodetail(){
 
 
 const Posts = ({ posts, loading }) => {
+
+  const [num, setNum] = useState(0);
+
+  const handleChange = (e) => {
+    setNum(e);
+  }
+
   return (
     <>
       {loading && <div> loading... </div>}
-      
         {posts.map((post) => (
           <table>
             <td>
             <div className="contanier-fluid" style={{'border-width':"3px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}} key={post.id} >
             <div class="row">
               <div class="col-12 mt-3">
-                 <div class="card-horizontal" onClick={movetodetail}>
+                  <div class="card-horizontal" onClick={movetodetail}>
                     <div class="img-square-wrapper" >
                       <img style={{width:"282px", height:"423px"}} src={image} alt="사진" />
                     </div>
