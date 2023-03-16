@@ -116,11 +116,15 @@ Modal.propTypes = {
                                  onClose={closeModal}>
                                     <div>
                                       <h4>경품 응모 결과</h4>
-                                       <table>
+                                      {prize && (
+                                        <table>
                                         <tr><img src={image} /></tr>
                                         <tr>{prize.name}</tr>
                                        </table>
+                                      )}
                                       <button onClick={handleClick}>확인하기</button>
+                                      {console.log(prize)}
+                                      
                                     </div>
                                  </Modal>
                       }
