@@ -6,7 +6,7 @@ const Ad = props => {
     const [dropdownVisibility, setDropdownVisibility] = React.useState(false);
 
     return (
-        <div id='app' style={{position:"absolute"}}>
+        <div id='app' style={{position:"absolute",marginTop:"-13px"}}>
              <img className="Mypage" alt="Mypage" style={{width:"24px", height:"23px"}}src={Mypage} onClick={e => setDropdownVisibility(!dropdownVisibility)}>
                 
             </img>
