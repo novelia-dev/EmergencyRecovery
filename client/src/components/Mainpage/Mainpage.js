@@ -13,6 +13,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
+
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -65,7 +66,11 @@ function Mainpage(){
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(10);
-  
+    
+
+    useEffect(() => {
+
+    })
 
   useEffect(() => {
     const fetchData = async () => {
