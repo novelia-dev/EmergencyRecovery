@@ -20,7 +20,7 @@ function ConnectRegister(){
     })
 
     function Connector(){
-        if(innerWidth <= 360)
+        if(innerWidth <= 1000)
         {
             movetomobile();
         }

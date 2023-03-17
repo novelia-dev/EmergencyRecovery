@@ -51,10 +51,16 @@ function Hilight(){
             </div>
            
             <div>
-            <div style={{marginLeft:"360px",float:"left"}}>
-                <h4 style={{position:"absolute",marginTop:"67.5px"}}>{context}</h4>
-                <img style={{position: "static" , width:"306px", height:"306px",marginTop:"67.5px"}} src={image} id="photo"  alt="작품하이라이트" />
-            </div>
+            
+            <div style={{position: "relative",marginLeft:"360px",float:"left"}}>
+  <img style={{position: "static" , width:"306px", height:"306px",marginTop:"67.5px"}} src={image} id="photo" alt="작품하이라이트" />
+  <div style={{position:"absolute", height:"50px", wordBreak:"break-all", width:"306px", top:"50%", left:"0", textAlign:"center", fontWeight:"700",color:"white"}}>
+  {context && (
+    <div style={{backgroundColor:"gray", opacity:"0.5", width:"100%", height:"100%", position:"absolute", top:"0", left:"0"}}></div>
+  )}
+  {context}
+</div>
+ </div>
             <div style={{'width':"1200px",'marginLeft':"360px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
                 <br/>
                 <br/>
@@ -68,7 +74,7 @@ function Hilight(){
                 <br/>
                 <br/>
                 &nbsp;&nbsp;&nbsp;<label >하이라이트 &nbsp;({context.length})자</label>
-                &nbsp;&nbsp;&nbsp;<input style={{width:"863px", height:"210px",marginLeft:"15px"}} type="text" onChange={handlecontext} placeholder="30자이내" id="big"/>
+                &nbsp;&nbsp;&nbsp;<input style={{width:"863px", height:"210px",marginLeft:"15px"}} type="text" onChange={handlecontext} placeholder="30자이내" maxLength="29" id="big"/>
             </div>
                     
                     

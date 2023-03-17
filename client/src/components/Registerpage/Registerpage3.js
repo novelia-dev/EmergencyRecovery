@@ -414,7 +414,8 @@ function Text(){
             <select name="이용 플랫폼" style={{width: "248px", height: "38px"}}>
                     <option defaulValue="네이버 시리즈">네이버 시리즈</option>    
                 </select> 
-            </div> <div style={{marginLeft:"15px",marginTop:"15px"}}>
+            </div> 
+            <div style={{marginLeft:"15px",marginTop:"15px"}}>
                   <button style={style3} onClick={submitactiveButton}>다음</button>
                   </div>
                   </div>

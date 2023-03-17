@@ -18,7 +18,7 @@ import DetailMyPage from "./components/DetailPage/DetailMyPage";
 import DetailPointShop from "./components/DetailPage/DetailPointShop";
 import Loginpage from"./components/Loginpage/Loginpage";
 import Registerpage from"./components/Registerpage/Registerpage";
-import Registerpage2 from "./components/Registerpage/Registerpage2";
+
 import Registerpage3 from "./components/Registerpage/Registerpage3";
 import Registerpage4 from "./components/Registerpage/Registerpage4";
 import Registerpage5 from "./components/Registerpage/Registerpage5";
@@ -94,7 +94,7 @@ function App() {
             <Route path ="/login" element={<Loginpage />} />
             <Route path ="/login/callback" element={<Registerpage/>} />
             <Route path ="/register" element={<Registerpage />} />
-            <Route path ="/register2" element={<Registerpage2 />} />
+            
             <Route path ="/register3" element={<Registerpage3 />} />
             <Route path ="/register4" element={<Registerpage4 />} />
             <Route path ="/register5" element={<Registerpage5 />} />
