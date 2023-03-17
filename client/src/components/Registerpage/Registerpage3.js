@@ -310,10 +310,38 @@ function Text(){
                        유입경로*
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
-                      <select name="유입경로" style={{width: "248px", height: "38px"}} >
-                              <option defaulValue="유입경로">이메일</option>    
-                          </select> 
-                      </div>
+                      <select id="firstoption" name="유입경로" value={firstoption} onChange={handleFirstOptionChange} style={{width: "248px", height: "38px"}} >
+                              <option defaulValue=" "hidden>선택하세요</option>
+                              <option value="커뮤니티">커뮤니티</option>
+                              <option value="SNS">SNS</option>
+                              <option value="지인소개">지인소개</option>    
+                          </select>
+                          {firstoption && (
+                            <div>
+                              <select id="secondoption" name="세부 유입경로" style={{width:"248px", height:"38px"}} value={secondoption} onChange={handleSecondOptionChange}>
+                                <option defaultvalue="" hidden>선택하세요</option>
+                                {firstoption === '커뮤니티' &&(
+                                    <>
+                                      <option value="에브리타임">에브리타임</option>
+                                      <option value="카페">카페</option>
+                                    </>
+                                )}
+                                {firstoption === 'SNS'&&(
+                                    <>
+                                      <option value="인스타">인스타</option>
+                                      <option value="페이스북">페이스북</option>
+                                      <option value="트위터">트위터</option>
+                                    </>
+                                )}
+                                {firstoption === '지인소개' && (
+                                  <>
+                                    <option value="지인소개">지인소개</option>
+                                  </>
+                                )}
+                              </select>
+                            </div>
+                          )}
+                          </div>
                       <div style={{width:"216px",height:"19px", fontSize:"16px" ,fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
                        다른 피드백 서비스 이용경험*
                       </div>

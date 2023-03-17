@@ -163,13 +163,15 @@ const style6={
     <hr style={{'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",marginTop:"120px"}}></hr>
     <table>
             <tr><h5>기본정보</h5></tr>
-            <tr>닉네임 :<input value={jsonnickname()}/></tr>
+            <tr>닉네임 : {jsonnickname()}</tr>
             <br></br>
-            <tr>성별 :&nbsp;&nbsp;<input value={jsongender()} /></tr>
+            <tr>성별 : {jsongender()}</tr>
             <br></br>
-            <tr>나이대 :&nbsp;&nbsp;<input value={jsonage()} /></tr>
+            <tr>나이대 {jsonage()}</tr>
             <br></br>
-            <tr><td>이메일 :&nbsp;&nbsp;<input value={jsonemail()} /></td><td>핸드폰 번호:</td></tr>
+            <tr>이메일 : {jsonemail()}</tr>
+            <br></br>
+            <tr>핸드폰번호 : </tr>
     </table>
     <h5 style={style5}>선호태그</h5>
     <table style={{marginLeft:"15px"}}>    
