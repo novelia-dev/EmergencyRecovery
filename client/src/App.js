@@ -64,6 +64,7 @@ import MobileLoginPage from "./components/Loginpage/mobile/MobileLoginPage";
 import MobileLoginPage2 from "./components/Loginpage/mobile/MobileLoginPage2";
 import MobileRegisterPage from "./components/Registerpage/mobile/MobileRegisterPage";
 import MobileRegisterPage2 from "./components/Registerpage/mobile/MobileRegisterPage2";
+import MobileRegisterPage3 from "./components/Registerpage/mobile/MoblieRegisterPage3";
 import MobileMyPageInfo from "./components/MyPage/mobile/MobileMyPageInfo";
 import MobileMyPointShop from "./components/MyPage/mobile/MobileMyPointShop";
 import MobileDetailPointShop from "./components/DetailPage/mobile/MobileDetailPointShop";
@@ -141,6 +142,7 @@ function App() {
             <Route path ="/mobilelogin2" element={<MobileLoginPage2 />} />
             <Route path = "/mobileregister" element={<MobileRegisterPage />} />
             <Route path = "/mobileregister2" element={<MobileRegisterPage2 />} />
+            <Route path = "/mobileregister3" element={<MobileRegisterPage3 />} />
             <Route path = "/mobilemyinfo" element={<MobileMyPageInfo />} />
             <Route path ="/mobilemypoint" element={<MobileMyPointShop />} />
             <Route path ="/mobilemypoint/:id" element={<MobileDetailPointShop />} />

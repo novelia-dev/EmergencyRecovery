@@ -189,13 +189,40 @@ function Button(){
     )
 }
 
+function jsonnickname(){
+   let json = JSON.parse(localStorage.getItem("nest"));
+   let txt = json.nickname;
+   return txt;
+}
+
+function jsonemail(){
+  let json = JSON.parse(localStorage.getItem("nest"));
+  let txt = json.email;
+  return txt;
+}
+
+function jsongender(){
+  let json = JSON.parse(localStorage.getItem("nest"));
+  let txt = json.gender;
+  return txt;
+}
+
+function jsonage(){
+  let json = JSON.parse(localStorage.getItem("nest"));
+  let txt = json.age;
+  return txt;
+}
 
 function MobileMypageInfo(){
     return(
         <div>
             <MobileNavbar />
             <div>
-                <h5>My</h5>
+                <table>
+                  <td><h5>My</h5></td>
+                  <td><button style={{marginLeft:"440px"}}>변경하기</button></td>
+                </table>
+              
             </div>
             <hr />
             <div>
@@ -207,10 +234,10 @@ function MobileMypageInfo(){
                         </tr>
                         <hr/>
                         <tr>
-                            <tr>닉네임: </tr>
-                            <tr>성별: </tr>
-                            <tr>나이대: </tr>
-                            <tr>이메일: </tr>
+                            <tr>닉네임: {jsonnickname()}</tr>
+                            <tr>성별: {jsongender()}</tr>
+                            <tr>나이대: {jsonage()}</tr>
+                            <tr>이메일: {jsonemail()}</tr>
                         </tr>
                     </td>
                 </table>
