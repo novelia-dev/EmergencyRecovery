@@ -75,6 +75,7 @@ function Button(){
         });
       };
     
+
     return(
         <div>
         <div>
@@ -240,54 +241,18 @@ function Button(){
 
 
 function MobileRegisterPage2(){
-    return(
-        <div>
-            <hr />
-            <div>
-            
-            </div>
-            <hr />
-            <div>
-              <h5>닉네임</h5><input type="text" placeholder="플레이스 홀더"/> <button>중복확인</button>
-            </div>
-            <br />
-            <div>
-                <select className="성별" style={{width:"280px"}}>
-                    <option value="none" default disabled hidden>성별(남/여)</option>
-                    <option value="남">남</option>
-                    <option value="여">여</option>
-                </select>
-            </div>
-            <br />
-            <div>
-                <select className="나이" style={{width:"280px"}}>
-                    <option value="none" default disabled hidden>나이대</option>
-                    <option value="10대">10대</option>
-                    <option value="20대">20대</option>
-                    <option value="30대">30대</option>
-                    <option value="40대">40대</option>
-                    <option value="50대 이상">50대 이상</option>
-                </select>
-            </div>
-            <br />
-            <hr />
-            <div>
-                <h5>이메일</h5><input type="email" style={{width:"280px"}} placeholder="본인인증용 이메일"/> 
-            </div>
-            <br />
-            <div>
-                <h5>핸드폰번호*</h5><input type="text" style={{width:"280px"}} placeholder="경품지급 용도로만 사용됩니다." />
-            </div>
-            <br />
-            <div>
-                <select className="회원" style={{width:"280px"}}>
-                    <option value="작가" default>작가*</option>
-                    <option value="독자">독자*</option>
-                </select>
-            </div>
-            <br />
-            <hr />
-            <div className="작가">
+
+
+  const [role, setRole] = useState(null);
+
+    const handleRoleChange = (event) => {
+      setRole(event.target.value);
+    }
+
+    const RenderForm = () => {
+      if(role === 'author'){
+        return(
+          <div>
             <div>
               <h5>작가 추가 질문</h5>
             </div>
@@ -338,16 +303,92 @@ function MobileRegisterPage2(){
                     <option value="예">예</option>
                 </select>
             </div>
+            <br />
+           
+            <button onClick={success}>입력완료</button>
+          
+            </div>
+        );
+      } else if(role === 'reader'){
+        return(
+          <div>
+            <h5>독자 추가 질문</h5>
+            <div>
+                <h5>유입경로*</h5>
+                <select className="유입경로" style={{width:"280px"}}>
+                    <option value="이메일" default>이메일</option>
+                </select>
+            </div>
+            <br />
+            <div>
+              <h5>웹소설 이용경험*</h5>
+                <select className="이용경험" style={{width:"280px"}}>
+                    <option value="자주 읽는다" default>자주 읽는다</option>
+                </select>
+            </div>
+            <br />
+            <div>
+               <h5>이용 플랫폼*</h5>
+                <select className="이용 플랫폼" style={{width:"280px"}}>
+                    <option value="네이버 시리즈" default>네이버 시리즈</option>
+                </select>
+            </div>
+            <br />
+            <button onClick={success}>입력완료</button>
+          </div>
+        );
+      } else {
+        return null;
+      }
+    }
+    
+    return(
+        <div>
+            <hr />
+            <div>
+            
+            </div>
+            <hr />
+            <div>
+              <h5>닉네임</h5><input type="text" placeholder="플레이스 홀더"/> <button>중복확인</button>
+            </div>
+            <br />
+            <div>
+                <select className="성별" style={{width:"280px"}}>
+                    <option value="none" default disabled hidden>성별(남/여)</option>
+                    <option value="남">남</option>
+                    <option value="여">여</option>
+                </select>
+            </div>
+            <br />
+            <div>
+                <select className="나이" style={{width:"280px"}}>
+                    <option value="none" default disabled hidden>나이대</option>
+                    <option value="10대">10대</option>
+                    <option value="20대">20대</option>
+                    <option value="30대">30대</option>
+                    <option value="40대">40대</option>
+                    <option value="50대 이상">50대 이상</option>
+                </select>
             </div>
             <br />
             <hr />
             <div>
-                <Button />
+                <h5>이메일</h5><input type="email" style={{width:"280px"}} placeholder="본인인증용 이메일"/> 
             </div>
-            <hr />
-
-            <button onClick={success}>입력완료</button>
-            <hr />
+            <br />
+            <div>
+                <h5>핸드폰번호*</h5><input type="text" style={{width:"280px"}} placeholder="경품지급 용도로만 사용됩니다." />
+            </div>
+            <br />
+            <div>
+                <select name="role" onChange={handleRoleChange} style={{width:"280px"}}>
+                    <option value="author">작가*</option>
+                    <option value="reader">독자*</option>
+                </select>
+                <RenderForm />
+            </div>
+            
         </div>
     )
 }
