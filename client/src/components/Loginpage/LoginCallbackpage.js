@@ -19,6 +19,14 @@ function LoginCallbackpage(){
     const urlSearchParams = new URLSearchParams(window.location.search);
     const code = urlSearchParams.get('code');
 
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize',handleResize);
+        return () => window.removeEventListener('resize',handleResize);
+    },[])
+
     useEffect(() => {
         localStorage.setItem("code",code);
     },[code]);
@@ -82,6 +90,7 @@ function LoginCallbackpage(){
     'float':"left"  
 };
 
+if(width > 1000){
     return(
 <div>
     {console.log(code)}
@@ -113,6 +122,10 @@ function LoginCallbackpage(){
     </div>
 </div>
     );
+    }
+    else {
+        window.location.href="/mobileregister";
+    }
 }
 //동욱아 그냥 싹다 갈아
 /*
