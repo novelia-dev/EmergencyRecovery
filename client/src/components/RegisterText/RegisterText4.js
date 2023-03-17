@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 
 
 
@@ -7,7 +7,11 @@ function movetosecond(){
 }
 
 function RegisterText4(){
+    const [context, setContext] = useState("");
 
+    const handlecontext = (e) => {
+        setContext(e.target.value);
+    }
 
     return(
         <div>
@@ -18,8 +22,8 @@ function RegisterText4(){
             <div style={{'width':"1200px",'marginLeft':"360px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
             <div style={{'marginLeft':"15px"}}><h5>에피소드 제목</h5></div>
             <div style={{'marginLeft':"15px"}}><input style={{width: "368px", height:"32px"}}type="text" textAlignVertical="top" placeholder="15자 이내" /></div>
-            <div style={{'marginLeft':"15px"}}><h5>본문 입력</h5></div>
-            <div style={{'marginLeft':"15px"}}><input style={{width:"1169px", height:"619px"}} type="text"  placeholder="5000자 이내  잠깐! 아직 성인 컨텐츠는 등록할 수 없습니다. 명심해주세요." /></div>
+            <div style={{'marginLeft':"15px"}}><h5>본문 입력 ({context.length})자</h5></div>
+            <div style={{'marginLeft':"15px"}}><input style={{width:"1169px", height:"619px"}} type="text" onChane={handlecontext}  placeholder="5000자 이내  잠깐! 아직 성인 컨텐츠는 등록할 수 없습니다. 명심해주세요." /></div>
             <br />
             <div><button style={{width: "102px", height:"45px", borderRadius:"4px", backgroundColor:"#FFFFFF",border:"1px solid #AA0140", marginLeft: "600px" }} onClick={movetosecond}>다음</button></div>
             </div>
