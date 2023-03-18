@@ -1,15 +1,35 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import image from "../Image/illumination-5173540_1920.jpg";
 import './Posts.css';
 import Checkbox from "../Image/객관식체크박스.png";
 import NewText from '../Image/pen.png';
-
+import axios from "axios";
 function movetodetail(){
   window.location.href="/:id"
 }
 
 
 const Posts = ({ posts, loading }) => {
+
+  const apiUrl = 'https://localhost:8000/novels';
+
+
+  const [novels, setNovels] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(apiUrl);
+        setNovels(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
   return (
     <>
       {loading && <div> loading... </div>}

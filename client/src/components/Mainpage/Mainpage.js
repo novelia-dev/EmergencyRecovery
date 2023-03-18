@@ -24,6 +24,7 @@ function SampleNextArrow(props) {
   );
 }
 
+
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -51,10 +52,10 @@ function MainSlider() {
       <div >
           <Slider {...settings} >
           <div>
-          <img alt="img1" style={{width:"1200px",height:"270px",marginLeft:"360px",position:"relative"}} src={Banner} />
+          <img alt="img1" style={{width:"1200px",height:"270px",marginLeft:"360px",position:"relative",zIndex:"100"}} src={Banner} />
           </div>
           <div>
-          <img alt="img2" style={{width:"1200px",height:"270px",marginLeft:"360px",position:"relative"}} src={sub} />
+          <img alt="img2" style={{width:"1200px",height:"270px",marginLeft:"360px",position:"relative",zIndex:"100"}} src={sub} />
           </div>
           </Slider>
       </div>

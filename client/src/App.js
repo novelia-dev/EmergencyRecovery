@@ -18,7 +18,7 @@ import DetailMyPage from "./components/DetailPage/DetailMyPage";
 import DetailPointShop from "./components/DetailPage/DetailPointShop";
 import Loginpage from"./components/Loginpage/Loginpage";
 import Registerpage from"./components/Registerpage/Registerpage";
-
+import Registerpage2 from "./components/Registerpage/Registerpage2";
 import Registerpage3 from "./components/Registerpage/Registerpage3";
 import Registerpage4 from "./components/Registerpage/Registerpage4";
 import Registerpage5 from "./components/Registerpage/Registerpage5";
@@ -78,6 +78,19 @@ import MobileFeedbackpage from "./components/Mainpage/mobile/MobileFeedbackpage"
 import MobileDetailFeedback from "./components/DetailPage/mobile/MobileDetailFeedback";
 import DetailMyGiftCoupon from "./components/DetailPage/DetailMyGiftCoupon";
 import MobileMyPointStats from "./components/MyPage/mobile/MobileMyPointStats";
+
+
+const NotFound = () => {
+  return (
+    <div>
+      <h1>Page not found</h1>
+      <p>Sorry, the page you are looking for does not exist.</p>
+    </div>
+  );
+};
+
+
+
 function App() {
   return (
     <Router>
@@ -94,7 +107,7 @@ function App() {
             <Route path ="/login" element={<Loginpage />} />
             <Route path ="/login/callback" element={<Registerpage/>} />
             <Route path ="/register" element={<Registerpage />} />
-            
+            <Route path ="/register2" element={<Registerpage2 />} />
             <Route path ="/register3" element={<Registerpage3 />} />
             <Route path ="/register4" element={<Registerpage4 />} />
             <Route path ="/register5" element={<Registerpage5 />} />
@@ -155,6 +168,10 @@ function App() {
             <Route path ="/mobilefeedback" element={<MobileFeedbackpage />} /> 
             <Route path = "/mobilefeedback/:id" element={<MobileDetailFeedback />} />
             <Route path ="/mobilemypointstats" element={<MobileMyPointStats />} />
+
+
+
+            <Route path="*" component={<NotFound/>} />
           </Routes>
           
         </div>

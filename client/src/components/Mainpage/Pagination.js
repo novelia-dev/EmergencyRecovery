@@ -16,6 +16,7 @@ const Pagination = () => {
       prevPageText={"<"}
       nextPageText={">"}
       onChange={setPage}
+
     />
   );
 
