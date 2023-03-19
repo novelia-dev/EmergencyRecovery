@@ -47,6 +47,7 @@ function Navbar(){
         return(
             <div>
                 <Text />
+                <br />
                 <Button1/>
             </div>
         )
