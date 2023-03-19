@@ -3,15 +3,15 @@ import MobileNavbar from '../../Navbar/MobileNavbar';
 import MobileFooter from '../../Footer/MobileFooter';
 import image from "../../Image/모바일 배너.png";
 import image1 from "../../Image/illumination-5173540_1920.jpg";
-
+import search from "../../Image/search .png"
 function MobileMainpage(){
     return(
         <div>
             <MobileNavbar />
             <div>
                 <table>
-                    <td><img alt="돋보기" /></td>
-                    <td><input type="text" /></td>
+                    <td><img src={search} alt="search" style={{marginLeft:"15px",marginTop:"10px"}} /></td>
+                    <td ><input style={{marginLeft:"10px",width:"290px",borderTop: 'none',borderLeft: 'none',borderRight: 'none'}} type="text" /></td>
                 </table>
             </div>
             <div>
