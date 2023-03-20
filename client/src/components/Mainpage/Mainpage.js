@@ -6,6 +6,7 @@ import axios from 'axios';
 import Navbar from "../Navbar/Navbar";
 import Footer from '../Footer/Footer';
 import ImageSlider, {Slide} from 'react-auto-image-slider';
+import './Mainpage.css';
 
 import sub from '../Image/노벨리에 사전예약 기간 배너-001.png';
 
@@ -49,13 +50,13 @@ function MainSlider() {
    
   };
     return (
-      <div >
+      <div className="image-slider">
           <Slider {...settings} >
           <div>
-          <img alt="img1" style={{width:"1200px",height:"270px",marginLeft:"360px",position:"realtive"}} src={Banner} />
+          <img alt="img1" style={{width:"1200px",height:"270px",marginLeft:"360px",position:"realtive",zindex: 1}} src={Banner} />
           </div>
           <div>
-          <img alt="img2" style={{width:"1200px",height:"270px",marginLeft:"360px",position:"realtive"}} src={sub} />
+          <img alt="img2" style={{width:"1200px",height:"270px",marginLeft:"360px",position:"realtive",zindex: 1}} src={sub} />
           </div>
           </Slider>
       </div>

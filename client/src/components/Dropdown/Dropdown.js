@@ -1,4 +1,5 @@
 import React from 'react';
+import './Bell.css';
 
 const Dropdown = props => {
     const [visibilityAnimation, setVisibilityAnimation] = React.useState(false);
