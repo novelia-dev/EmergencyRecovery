@@ -437,6 +437,10 @@ const buttonstyle={
                            <Button1/>
                            <br></br>
                        </div>
+                       <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                       <Button1/>
+                       <br></br>
+                       </div>
                        <br />
                        <br />
                      

@@ -104,9 +104,17 @@ function MobileRegisterPage3(){
                 <Button1/>
                 <br></br>
             </div>
+            <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                <Button1/>
+                <br></br>
+            </div>
             <br />
             <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
              &nbsp; 금지태그
+            </div>
+            <div style={{marginTop:"15px",marginLeft:"22px"}}>
+                <Button1/>
+                <br></br>
             </div>
             <div style={{marginTop:"15px",marginLeft:"22px"}}>
                 <Button1/>
