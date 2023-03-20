@@ -99,6 +99,8 @@ function Mainpage(){
           <Navbar/>
           <MainSlider/>
            <div style={{marginTop: "90px", marginLeft: "360px"}} >
+            <button style={{marginLeft:"1088px"}}>추천순</button>
+            <button>시간순</button>
             <Posts posts={currentPosts(posts)} loading={loading}></Posts>
       <Pagination
         postsPerPage={postsPerPage}
