@@ -25,8 +25,9 @@ class Square extends React.Component{
     }
     render(){
         const style={
-            width:"1194px",
-            height:"60px",
+            width:"100%",
+            height:"150px",
+            backgroundColor:"#f2f2f2",
             bottom:"2400px",
             left:"363px",
             'Font-family':"Roboto",
@@ -35,11 +36,17 @@ class Square extends React.Component{
             'line-height':"18.75px",
             'background-color': "#FFFFFF",
             'text-color':"#000000",
-            marginLeft:"360px",
+            marginLeft:"auto",
+            marginRight: "auto"
         };
+        const tableStyle={
+            margin: "0 auto",
+            maxWidth:"1194px",
+            backgroundColor:"#f2f2f2"
+        }
         return(
             <div style = {style}>
-              <table>
+              <table style={tableStyle}>
                 <tr>
                     <td><a href="/privacy">개인정보처리방침 &nbsp;</a></td>
                     <td><a href="/tos">이용약관 &nbsp;</a></td>
