@@ -2,6 +2,8 @@ import React,{useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {Descriptions} from 'antd'
 import Comments from './Sections/Comments';
+import image1 from "../Image/illumination-5173540_1920.jpg";
+
 
 function WriteFeedback(){
     
@@ -79,7 +81,7 @@ function WriteFeedback(){
                             <div class="col-12 mt-3">
                                 <div class="card-horizontal">
                                     <div class="img-square-wrapper">
-                                        <img alt="작품 사진" />
+                                        <img style={{width:"306px", height:"459px"}} src={image1} alt="작품 사진" />
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title">재벌집 막내아들</h4>
@@ -89,21 +91,32 @@ function WriteFeedback(){
                                         <h6>10/30 &nbsp; 10/10</h6>
                                         <h6>태그</h6>
                                         <table>
-                                            <tr>
-                                            <button>선택태그</button>
-                                            <button>선택태그</button>
-                                            <button>선택태그</button>
-                                            <button>선호태그</button>
-                                            <button>선호태그</button>
-                                            <button>선호태그</button>
-                                            <button>선호태그</button>
-                                            <button>선호태그</button>
+                                        <tr>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+                                                     <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+                             <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
+                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
+                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
+                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
+                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
                                             </tr>
                                             <tr>
-                                            <button>선호태그</button>
-                                            <button>선호태그</button>
-                                            <button>선호태그</button>
-                                            </tr>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
+                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
+                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
+                                            </tr> 
                                         </table>
                                         <table>
                                             <td> 

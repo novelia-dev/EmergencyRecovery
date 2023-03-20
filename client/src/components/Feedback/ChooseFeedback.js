@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {Descriptions} from 'antd'
+import image1 from "../Image/illumination-5173540_1920.jpg";
 
 
 function ChooseFeedback(props){
@@ -67,6 +68,115 @@ function ChooseFeedback(props){
         )
     }
 
+    const Button = () => {
+        const arr = [{id: 1 }, {id: 2 }, { id: 3 },{id : 4},{id : 5},{id : 6},{id:7},{id:8},{id:9},{id:10}];
+        const [pick, setPick] = useState(arr);
+        const [select, setSelect] = useState([]);
+      
+        return pick.map((item) => (
+          <div className="button_container">
+            
+            <button
+              key={item.id}
+              onClick={() => {
+                !select.includes(item.id)
+                  ? setSelect((select) => [...select, item.id])
+                  : setSelect(select.filter((button) => button !== item.id));
+              }}
+              className={
+                select.includes(item.id)
+                  ? "button_table_btn_ns"
+                  : "button_table_btn_s"
+              }
+              style={{marginTop:"15px",marginLeft:"30px"}}
+            >
+              주인공 능력이 매력적이예요!
+            </button>
+          </div>
+        ));
+      };
+      const Button1 = () => {
+        const arr = [{id: 1 }, {id: 2 }, { id: 3 },{id : 4},{id : 5},{id : 6},{id:7},{id:8},{id:9},{id:10}];
+        const [pick1, setPick1] = useState(arr);
+        const [select1, setSelect1] = useState([]);
+      
+        return pick1.map((item) => (
+          <div className="button_container">
+            
+            <button
+              key={item.id}
+              onClick={() => {
+                !select1.includes(item.id)
+                  ? setSelect1((select1) => [...select1, item.id])
+                  : setSelect1(select1.filter((button) => button !== item.id));
+              }}
+              className={
+                select1.includes(item.id)
+                  ? "button_table_btn_ns"
+                  : "button_table_btn_s"
+              }
+              style={{marginTop:"15px",marginLeft:"30px"}}
+            >
+              주인공 능력이 매력적이예요!
+            </button>
+          </div>
+        ));
+      };
+      const Button2 = () => {
+        const arr = [{id: 1 }, {id: 2 }, { id: 3 },{id : 4},{id : 5},{id : 6},{id:7},{id:8},{id:9},{id:10}];
+        const [pick2, setPick2] = useState(arr);
+        const [select2, setSelect2] = useState([]);
+      
+        return pick2.map((item) => (
+          <div className="button_container">
+            
+            <button
+              key={item.id}
+              onClick={() => {
+                !select2.includes(item.id)
+                  ? setSelect2((select2) => [...select2, item.id])
+                  : setSelect2(select2.filter((button) => button !== item.id));
+              }}
+              className={
+                select2.includes(item.id)
+                  ? "button_table_btn_ns"
+                  : "button_table_btn_s"
+              }
+              style={{marginTop:"15px",marginLeft:"30px"}}
+            >
+              주인공 능력이 매력적이예요!
+            </button>
+          </div>
+        ));
+      };
+      const Button3 = () => {
+        const arr = [{id: 1 }, {id: 2 }, { id: 3 },{id : 4},{id : 5},{id : 6},{id:7},{id:8},{id:9},{id:10}];
+        const [pick3, setPick3] = useState(arr);
+        const [select3, setSelect3] = useState([]);
+      
+        return pick3.map((item) => (
+          <div className="button_container">
+            
+            <button
+              key={item.id}
+              onClick={() => {
+                !select3.includes(item.id)
+                  ? setSelect3((select3) => [...select3, item.id])
+                  : setSelect3(select3.filter((button) => button !== item.id));
+              }}
+              className={
+                select3.includes(item.id)
+                  ? "button_table_btn_ns"
+                  : "button_table_btn_s"
+              }
+              style={{marginTop:"15px",marginLeft:"30px"}}
+            >
+              주인공 능력이 매력적이예요!
+            </button>
+          </div>
+        ));
+      };
+      
     return(
         <div>
             <div>
@@ -79,7 +189,7 @@ function ChooseFeedback(props){
                             <div class="col-12 mt-3">
                                 <div class="card-horizontal">
                                     <div class="img-square-wrapper">
-                                        <img alt="작품 사진" />
+                                        <img style={{width:"306px", height:"459px"}} src={image1} alt="작품 사진" />
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title">재벌집 막내아들</h4>
@@ -90,19 +200,30 @@ function ChooseFeedback(props){
                                         <h6>태그</h6>
                                         <table>
                                             <tr>
-                                            <button>선택태그</button>
-                                            <button>선택태그</button>
-                                            <button>선택태그</button>
-                                            <button>선호태그</button>
-                                            <button>선호태그</button>
-                                            <button>선호태그</button>
-                                            <button>선호태그</button>
-                                            <button>선호태그</button>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+                                                     <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+                             <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
+                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
+                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
+                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
+                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
                                             </tr>
                                             <tr>
-                                            <button>선호태그</button>
-                                            <button>선호태그</button>
-                                            <button>선호태그</button>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
+                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
+                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선호태그</button></td>
                                             </tr>
                                         </table>
                                         <table>
