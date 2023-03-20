@@ -10,10 +10,12 @@
   
   .slide-fade-in-dropdown {
     overflow: hidden;
+    left: 0;
   }
   
   .slide-fade-in-dropdown > ul {
     animation: slide-fade-in-dropdown-animation .4s ease;
+    left: 0;
   }
   
   @keyframes slide-fade-out-dropdown-animation {
@@ -36,10 +38,15 @@
   }
   
   .components-dropdown > ul {
-    position: relative;
+    position: absolute;
     top: 5px;
     margin-top: 0;
     margin-bottom: 5px;
     padding-left: 0;
     list-style: none;
+    left: 0;
+  }
+  .components-dropdown{
+    position: absolute;
+    left:0;
   }

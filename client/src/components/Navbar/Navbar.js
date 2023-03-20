@@ -11,6 +11,9 @@ import './Navbar.css';
 function movetomain(){
   window.location.href="/";
 }
+function move(){
+  window.location.href="/text";
+}
 
 function Navbar(){
 
@@ -32,7 +35,7 @@ function Navbar(){
             
             </td>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
-            <td><img className="NewText" alt="NewText" style={{width:"24px", height:"23px",marginLeft:"324px"}}src={NewText}/>
+            <td><img className="NewText" alt="NewText" style={{width:"24px", height:"23px",marginLeft:"324px"}}src={NewText} onClick={move}/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
             </td>
             <td >
