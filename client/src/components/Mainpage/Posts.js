@@ -20,7 +20,7 @@ const Posts = ({ posts, loading }) => {
   return (
     <>
       {loading && <div> loading... </div>}
-        {posts.map((post) => (
+        {posts.slice(0,4).map((post) => (
           <table>
             <td>
             <div className="contanier-fluid" style={{'border-width':"3px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}} key={post.id} >
@@ -79,6 +79,7 @@ const Posts = ({ posts, loading }) => {
           </div>
             </td>
             <td></td>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <td>
             <div className="contanier-fluid" key={post.id} style={{marginLeft:"24px",'border-width':"3px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
             <div class="row">
