@@ -9,13 +9,38 @@ import image5 from '../Image/user (2) 1.png';
 function MobileFooter(){
     return(
         <div>
-            <table>
+            <table style={{borderSpacing: '10px'}}>
                 <tr>
-                    <td><img src={image1} alt="image1" /><h6>home</h6></td>
-                    <td><img src={image2} alt="image2" /><h6>선호태그</h6></td>
-                    <td><img src={image3} alt="image3" /><h6>스크랩</h6></td>
-                    <td><img src={image4} alt="image4" /><h6>피드백</h6></td>
-                    <td><img src={image5} alt="image5" /><h6>My</h6></td>
+                    <td>
+                        <div>
+                        <img src={image1} alt="image1" style={{marginLeft:"3px"}} />
+                        <h6 style={{margin: '0'}}>home</h6>
+                        </div>
+                    </td>
+                    <td>
+                        <div style={{marginLeft:"17px"}}>
+                        <img src={image2} alt="image2" style={{marginLeft:"10px"}} />
+                        <h6 style={{margin: '0'}}>선호태그</h6>
+                        </div>
+                    </td>
+                    <td>
+                        <div style={{marginLeft:"17px"}}>
+                        <img src={image3} alt="image3" style={{marginLeft:"6px"}} />
+                        <h6 style={{margin: '0'}}>스크랩</h6>
+                        </div>
+                    </td>
+                    <td>
+                        <div style={{marginLeft:"17px"}}>
+                        <img src={image4} alt="image4" style={{marginLeft:"6px"}} />
+                        <h6 style={{margin: '0'}}>피드백</h6>
+                        </div>
+                    </td>
+                    <td>
+                        <div style={{marginLeft:"17px"}}>
+                        <img src={image5} alt="image5" />
+                        <h6 style={{margin: '0'}}> MY</h6>
+                        </div>
+                    </td>
                 </tr>
             </table>
         </div>
