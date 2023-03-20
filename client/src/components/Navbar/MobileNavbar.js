@@ -14,6 +14,8 @@ function movetopoint(){
 
 const MobileNavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [esOpen, setesOpen] = useState(false);
+    const noticeLinksRef = useRef(null);
     const navbarLinksRef = useRef(null);
     const toggleNavbar = () => {
       setIsOpen(!isOpen);
@@ -21,6 +23,14 @@ const MobileNavbar = () => {
     const closeNavbar = () => {
       setIsOpen(false);
     };
+
+    const toggleNotice = () => {
+      setesOpen(!esOpen);
+    }
+    const closeNotice = () => {
+      setesOpen(false);
+    }
+
     useEffect(() => {
       const handleClickOutside = (event) => {
         if (navbarLinksRef.current && !navbarLinksRef.current.contains(event.target)) {
@@ -32,6 +42,19 @@ const MobileNavbar = () => {
         document.removeEventListener('mousedown', handleClickOutside);
       };
     }, [navbarLinksRef]);
+
+    useEffect(() => {
+      const handleclickOutside = (event) => {
+        if (noticeLinksRef.current && !noticeLinksRef.current.contains(event.target)) {
+          setesOpen(false);
+        }
+      };
+      document.addEventListener('mousedown', handleclickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleclickOutside);
+      };
+    }, [noticeLinksRef]);
+
     const [selectedList, setSelectedList] = useState("");
     const handleListClick = (list) => {
       setSelectedList(list);
@@ -85,7 +108,47 @@ const MobileNavbar = () => {
           <div style={{marginTop:"10px"}}>
         <img src={image2} alt= "image2" style={{marginLeft:"50px"}}onClick={movetomain} />
         <img src={image3} alt= "image3" style={{marginLeft:"158px"}}onClick={movetopoint} />
-        <img src={image4} alt= "image4" style={{marginLeft:"15px"}}onClick={movetomain} />
+        <img src={image4} alt= "image4" style={{marginLeft:"15px"}}onClick={toggleNotice} />
+        <ul className={esOpen ? 'navbar-links active' : 'navbar-links'} ref={noticeLinksRef}>
+          <li style={{marginTop:"-250px",width:"330px",marginLeft:"15px"}}><hr/></li>
+          <li onClick={() => handleListClick("list1")} style={{width:"310px",height:"40px",marginLeft:"20px",paddingLeft:"10px",paddingTop:"15px",textAlign:"left",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>알림내용</li>
+          <li style={{width:"330px",marginLeft:"15px"}}><hr/></li>
+          <li onClick={() => handleListClick("list4")} style={{width:"310px",height:"40px",marginLeft:"20px",paddingLeft:"10px",paddingTop:"15px",textAlign:"left",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>알림내용</li>
+          <li style={{width:"330px",marginLeft:"15px"}}><hr/></li>
+          <li  onClick={() => handleListClick("list2")} style={{width:"310px",height:"40px",marginLeft:"20px",paddingLeft:"10px",paddingTop:"15px",textAlign:"left",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>알림내용</li>
+          <li style={{width:"330px",marginLeft:"15px"}}><hr/></li>
+          <li  onClick={() => handleListClick("list3")} style={{width:"310px",height:"40px",marginLeft:"20px",paddingLeft:"10px",paddingTop:"15px",textAlign:"left",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>알림내용</li>
+          <li style={{width:"330px",marginLeft:"15px"}}><hr/></li>
+  
+           {/* 이용약관 */}
+    {selectedList === "list1" && (
+      <div style={{ display: selectedList === "list1" ? "block" : "none" }}>
+        dkkdkdkdkd
+      </div>
+    )}
+  
+    {/* 공지사항 */}
+    {selectedList === "list2" && (
+      <div style={{ display: selectedList === "list2" ? "block" : "none" }}>
+        adasd
+      </div>
+    )}
+  
+    {/* 문의하기 */}
+    {selectedList === "list3" && (
+      <div style={{ display: selectedList === "list3" ? "block" : "none" }}>
+        111111
+      </div>
+    )}
+    {/* 개인정보처리방침 */}
+    {selectedList === "list4" && (
+      <div style={{ display: selectedList === "list4" ? "block" : "none" }}>
+        111111
+      </div>
+    )}
+
+  </ul>
+  <img src= {image5} alt="image5"  className={isOpen ? 'navbar-close active' : 'navbar-close'} onClick={closeNotice}/>
        </div>
        </nav>
   
