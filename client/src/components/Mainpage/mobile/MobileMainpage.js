@@ -21,35 +21,31 @@ function MobileMainpage(){
             <hr />
             <div>
               <h4>선호태그 작품</h4>
-              <table>
-                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                <div style={{display:"flex"}}>
+                <table>
+                <tr>
+                <td><button style={{display:"flex", flexDirection:"row", alignItems:"center",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button>
+               </td><td><button style={{display:"flex", flexDirection:"row", alignItems:"center",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button>
+              </td><td><button style={{display:"flex", flexDirection:"row", alignItems:"center",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button>
+         </td></tr><tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"center",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button>
+               </td><td><button style={{display:"flex", flexDirection:"row", alignItems:"center",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button>
+              </td><td><button style={{display:"flex", flexDirection:"row", alignItems:"center",padding:"7px 14px", gap:"10px",
                     width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button></td>
-                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button></td>
-                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button></td>
-                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button></td>
-                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button></td>
-                <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button></td>
-              </table>
+               </tr></table>
+                </div>
             </div>
             <div>
                 <table>
                     <tr>
-                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
-                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
-                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
-                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td><h5>아빠가 힘을 숨김 &nbsp;</h5></td>
-                        <td><h5>변경백 서사는 황제였다 &nbsp;</h5></td>
-                        <td><h5>결혼하지 않으면 죽습니다 &nbsp;</h5></td>
-                        <td><h5>무림세가 천대받는 손녀딸이 되었다 &nbsp;</h5></td>
-                    </tr>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;<h5>아빠가 힘을 숨김 &nbsp;</h5></td>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;<h5>변경백 서사는 황제였다 &nbsp;</h5></td></tr>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;<h5>결혼하지 않으면 죽습니다 &nbsp;</h5></td>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;<h5>무림세가 천대받는 손녀딸이 되었다 &nbsp;</h5></td>
                 </table>
             </div>
             <hr />
@@ -60,17 +56,10 @@ function MobileMainpage(){
             <div>
                 <table>
                     <tr>
-                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
-                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
-                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
-                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td><h5>아빠가 힘을 숨김 &nbsp;</h5></td>
-                        <td><h5>변경백 서사는 황제였다 &nbsp;</h5></td>
-                        <td><h5>결혼하지 않으면 죽습니다 &nbsp;</h5></td>
-                        <td><h5>무림세가 천대받는 손녀딸이 되었다 &nbsp;</h5></td>
-                    </tr>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;<h5>아빠가 힘을 숨김 &nbsp;</h5></td>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;<h5>변경백 서사는 황제였다 &nbsp;</h5></td></tr>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;<h5>결혼하지 않으면 죽습니다 &nbsp;</h5></td>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;<h5>무림세가 천대받는 손녀딸이 되었다 &nbsp;</h5></td>
                 </table>
             </div>
             <hr />
@@ -81,17 +70,10 @@ function MobileMainpage(){
             <div>
                 <table>
                     <tr>
-                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
-                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
-                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
-                    <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td><h5>아빠가 힘을 숨김 &nbsp;</h5></td>
-                        <td><h5>변경백 서사는 황제였다 &nbsp;</h5></td>
-                        <td><h5>결혼하지 않으면 죽습니다 &nbsp;</h5></td>
-                        <td><h5>무림세가 천대받는 손녀딸이 되었다 &nbsp;</h5></td>
-                    </tr>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;<h5>아빠가 힘을 숨김 &nbsp;</h5></td>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;<h5>변경백 서사는 황제였다 &nbsp;</h5></td></tr>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;<h5>결혼하지 않으면 죽습니다 &nbsp;</h5></td>
+                        <td><img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" /> &nbsp;<h5>무림세가 천대받는 손녀딸이 되었다 &nbsp;</h5></td>
                 </table>
             </div>
             <table>

@@ -45,6 +45,8 @@ const MobileNavbar = () => {
           <li style={{marginTop:"-250px",width:"330px",marginLeft:"15px"}}><hr/></li>
           <li onClick={() => handleListClick("list1")} style={{width:"310px",height:"40px",marginLeft:"20px",paddingLeft:"10px",paddingTop:"15px",textAlign:"left",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>이용약관</li>
           <li style={{width:"330px",marginLeft:"15px"}}><hr/></li>
+          <li onClick={() => handleListClick("list4")} style={{width:"310px",height:"40px",marginLeft:"20px",paddingLeft:"10px",paddingTop:"15px",textAlign:"left",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>개인정보처리방침</li>
+          <li style={{width:"330px",marginLeft:"15px"}}><hr/></li>
           <li  onClick={() => handleListClick("list2")} style={{width:"310px",height:"40px",marginLeft:"20px",paddingLeft:"10px",paddingTop:"15px",textAlign:"left",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>공지사항</li>
           <li style={{width:"330px",marginLeft:"15px"}}><hr/></li>
           <li  onClick={() => handleListClick("list3")} style={{width:"310px",height:"40px",marginLeft:"20px",paddingLeft:"10px",paddingTop:"15px",textAlign:"left",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>문의하기</li>
@@ -70,7 +72,13 @@ const MobileNavbar = () => {
         111111
       </div>
     )}
-  
+    {/* 개인정보처리방침 */}
+    {selectedList === "list4" && (
+      <div style={{ display: selectedList === "list4" ? "block" : "none" }}>
+        111111
+      </div>
+    )}
+
         </ul>
         <img src= {image5} alt="image5"  className={isOpen ? 'navbar-close active' : 'navbar-close'} onClick={closeNavbar}/>
           <i className="fa fa-times"></i>
