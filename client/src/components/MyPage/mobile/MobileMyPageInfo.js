@@ -63,10 +63,10 @@ function Button(){
                 <h5 style={{width:"59px",height:"19px"}}>선호장르</h5>
             </div>
         <table>
-        
+        <div style={{display:'flex', flexWrap:'wrap'}}>
         {data.map((item, idx) => {
         return (
-          <>
+          <div style={{width:'25.2%', boxSizing:'border-box', padding: '-100px'}}>
             <button
               value={idx}
               className={"Btn" + (idx == btnActive ? " active" : "")}
@@ -74,10 +74,10 @@ function Button(){
             >
               {item}
             </button>
-          </>
+          </div>
         );
       })}
-        
+      </div>
          </table>
             <div>
                 <hr />
@@ -86,9 +86,10 @@ function Button(){
             <div>
             <table>
     <tr>
+      <div style={{display:'flex', flexWrap:'wrap'}}>
         {data1.map((item, idx) => {
         return (
-          <>
+          <div style={{width:'25.2%', boxSizing:'border-box'}}>
             <button
               value={idx}
               className={"Btn" + (idx == tagActive ? " active" : "")}
@@ -96,13 +97,14 @@ function Button(){
             >
               {item}
             </button>
-          </>
+          </div>
         );
-      })}</tr>
+      })}</div></tr>
       <tr>
+      <div style={{display:'flex', flexWrap:'wrap'}}>
         {data2.map((item, idx) => {
         return (
-          <>
+          <div style={{width:'25.2%', boxSizing:'border-box'}}>
             <button
               value={idx}
               className={"Btn" + (idx == tag1Active ? " active" : "")}
@@ -110,14 +112,16 @@ function Button(){
             >
               {item}
             </button>
-          </>
+          </div>
         );
       })}
+      </div>
       </tr> 
       <tr>
+      <div style={{display:'flex', flexWrap:'wrap'}}>
       {data3.map((item, idx) => {
         return (
-          <>
+          <div style={{width:'25.2%', boxSizing:'border-box'}}>
             <button
               value={idx}
               className={"Btn" + (idx == tag2Active ? " active" : "")}
@@ -125,10 +129,10 @@ function Button(){
             >
               {item}
             </button>
-          </>
+          </div>
         );
       })}
-
+      </div>
       </tr>
             </table>
             </div>
@@ -139,9 +143,10 @@ function Button(){
             <div>
             <table>
         <tr>
+        <div style={{display:'flex', flexWrap:'wrap'}}>
         {data4.map((item, idx) => {
         return (
-          <>
+          <div style={{width:'25.2%', boxSizing:'border-box'}}>
             <button
               value={idx}
               className={"Btn" + (idx == forbActive ? " active" : "")}
@@ -149,14 +154,16 @@ function Button(){
             >
               {item}
             </button>
-          </>
+          </div>
         );
       })}
+      </div>
         </tr>
         <tr>
+        <div style={{display:'flex', flexWrap:'wrap'}}>
         {data5.map((item, idx) => {
         return (
-          <>
+          <div style={{width:'25.2%', boxSizing:'border-box'}}>
             <button
               value={idx}
               className={"Btn" + (idx == forb1Active ? " active" : "")}
@@ -164,14 +171,16 @@ function Button(){
             >
               {item}
             </button>
-          </>
+          </div>
         );
       })}
+      </div>
         </tr>
       <tr>
+      <div style={{display:'flex', flexWrap:'wrap'}}>
       {data6.map((item, idx) => {
         return (
-          <>
+          <div style={{width:'25.2%', boxSizing:'border-box'}}>
             <button
               value={idx}
               className={"Btn" + (idx == forb2Active ? " active" : "")}
@@ -179,9 +188,10 @@ function Button(){
             >
               {item}
             </button>
-          </>
+          </div>
         );
       })}
+      </div>
       </tr>
     </table>
             </div>
@@ -220,7 +230,7 @@ function MobileMypageInfo(){
             <div>
                 <table>
                   <td><h5>My</h5></td>
-                  <td><button style={{marginLeft:"440px"}}>변경하기</button></td>
+                  <td><button style={{marginLeft:"270px"}}>변경하기</button></td>
                 </table>
               
             </div>
