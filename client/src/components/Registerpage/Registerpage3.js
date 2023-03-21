@@ -287,22 +287,6 @@ function Text(){
               if (role === 'author') {
                 return (
                   <div>
-                    <div style={{width:"216px",height:"19px", fontSize:"16px" ,fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-                       웹소설 이용경험*
-                      </div>
-                      <div style={{marginTop:"5px",marginLeft:"15px"}}>
-                      <select name="다른 피드백 서비스 이용경험" style={{width: "248px", height: "38px"}}  >
-                              <option defaulValue="자주 읽는다">자주 읽는다</option>    
-                          </select> 
-                      </div>
-                      <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-                        이용 플랫폼*
-                      </div>
-                      <div style={{marginTop:"5px",marginLeft:"15px"}}>
-                      <select name="이용 플랫폼" style={{width: "248px", height: "38px"}}>
-                              <option defaulValue="네이버 시리즈">네이버 시리즈</option>    
-                          </select> 
-                      </div>
                       <div style={{marginTop:"15px",marginLeft:"15px"}}>
                         <h4>작가 추가 질문</h4>
                       </div>
@@ -314,7 +298,8 @@ function Text(){
                               <option defaulValue=" "hidden>선택하세요</option>
                               <option value="커뮤니티">커뮤니티</option>
                               <option value="SNS">SNS</option>
-                              <option value="지인소개">지인소개</option>    
+                              <option value="주변추천">주변추천</option>
+                              <option value="기타">기타</option>    
                           </select>
                           {firstoption && (
                             <div>
@@ -333,9 +318,14 @@ function Text(){
                                       <option value="트위터">트위터</option>
                                     </>
                                 )}
-                                {firstoption === '지인소개' && (
+                                {firstoption === '주변추천' && (
                                   <>
-                                    <option value="지인소개">지인소개</option>
+                                    <option value="주변추천">주변추천</option>
+                                  </>
+                                )}
+                                {firstoption === '기타' && (
+                                  <>
+                                    <option value="기타">기타</option>
                                   </>
                                 )}
                               </select>
@@ -346,48 +336,71 @@ function Text(){
                        다른 피드백 서비스 이용경험*
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
-                      <select name="다른 피드백 서비스 이용경험" style={{width: "248px", height: "38px"}} >
-                              <option defaulValue="경험없음">경험없음</option>    
-                          </select> 
+                          <table>
+                            <tr>
+                            <input type="checkbox"></input><label>온라인 강의</label>
+                            <input type="checkbox"></input><label>오프라인 강의</label>
+                            <input type="checkbox"></input><label>출판사 피드백</label>
+                            </tr>
+                            <tr>
+                            <input type="checkbox"></input><label>학원 피드백</label>
+                            <input type="checkbox"></input><label>1:1 피드백</label>
+                            <input type="checkbox"></input><label>없음</label>
+                            </tr>
+                          </table>
                       </div>
                       <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
                         전업 여부*
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
                       <select name="전업 여부" style={{width: "248px", height: "38px"}} >
-                              <option defaulValue="직장인(부업)">직장인(부업)</option>    
+                              <option defaulValue="전업">전업</option>
+                              <option value="학생">학생</option>
+                              <option value="직장인">직장인</option>    
                           </select> 
                       </div>
                       <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-                        웹소설 집필기간*
+                        웹소설 경력기간*
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
-                      <select name="웹소설 지필기간" style={{width: "248px", height: "38px"}} >
-                              <option defaulValue="1년 미만">1년 미만</option>    
+                      <select name="웹소설 경력기간" style={{width: "248px", height: "38px"}} >
+                              <option defaulValue="1년 미만">1년 미만</option>
+                              <option value ="1~2년">1~2년</option>
+                              <option value="2~3년">2~3년</option>
+                              <option value="3년이상">3년이상</option>    
                           </select> 
                       </div>
                       <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-                        연재작품 수*
+                        연재해본 작품 수*
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
-                      <select name="연재작품 수" style={{width: "248px", height: "38px"}} >
-                              <option defaulValue="0개">0개</option>    
-                          </select> 
+                          <input style={{width:"248px"}} type="text" placeholder = "숫자로 적어주세요. 없을시 0을 적어주세요" />
                       </div>
                       <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-                        연재 플랫폼*
+                        연재해본 플랫폼*
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
-                      <select name="연재 플랫폼" style={{width: "248px", height: "38px"}} >
-                              <option defaulValue="네이버 시리즈">네이버 시리즈</option>    
-                          </select> 
+                      <table>
+                            <tr>
+                            <input type="checkbox"></input><label>네이버시리즈</label>
+                            <input type="checkbox"></input><label>카카오페이지</label>
+                            <input type="checkbox"></input><label>네이버웹소설</label>
+                            </tr>
+                            <tr>
+                            <input type="checkbox"></input><label>카카오스테이지</label>
+                            <input type="checkbox"></input><label>문피아</label>
+                            <input type="checkbox"></input><label>조아라</label>
+                            <input type="checkbox"></input><label>기타</label>
+                            </tr>
+                          </table>        
                       </div>
                       <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
                         유료연재 경험*
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
                       <select name="유료연재 경험" style={{width: "248px", height: "38px"}} >
-                              <option defaulValue="아니오">아니오</option>    
+                              <option defaulValue="있다">있다</option>
+                              <option value="없다">없다</option>    
                           </select> 
                       </div>
                      
@@ -438,20 +451,33 @@ function Text(){
                            </div>
                            )}
                       </div><div style={{width:"216px",height:"19px", fontSize:"16px" ,fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-             웹소설 이용경험*
+             웹소설 읽는 빈도*
             </div>
             <div style={{marginTop:"5px",marginLeft:"15px"}}>
             <select name="다른 피드백 서비스 이용경험" style={{width: "248px", height: "38px"}}  >
-                    <option defaulValue="자주 읽는다">자주 읽는다</option>    
+                    <option defaulValue="자주 즐겨 읽는다">자주 즐겨 읽는다</option>
+                    <option value = "가끔 읽는다">가끔 읽는다</option>
+                    <option value = "거의 읽지 않는다">거의 읽지 않는다</option>
+                    <option value = "읽어본 적이 없다">읽어본 적이 없다</option>    
                 </select> 
             </div>
             <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-              이용 플랫폼*
+              이용해본 플랫폼*
             </div>
             <div style={{marginTop:"5px",marginLeft:"15px"}}>
-            <select name="이용 플랫폼" style={{width: "248px", height: "38px"}}>
-                    <option defaulValue="네이버 시리즈">네이버 시리즈</option>    
-                </select> 
+            <table>
+                            <tr>
+                            <input type="checkbox"></input><label>네이버시리즈</label>
+                            <input type="checkbox"></input><label>카카오페이지</label>
+                            <input type="checkbox"></input><label>네이버웹소설</label>
+                            </tr>
+                            <tr>
+                            <input type="checkbox"></input><label>카카오스테이지</label>
+                            <input type="checkbox"></input><label>문피아</label>
+                            <input type="checkbox"></input><label>조아라</label>
+                            <input type="checkbox"></input><label>기타</label>
+                            </tr>
+                          </table>  
             </div> 
             <div style={{marginLeft:"15px",marginTop:"15px"}}>
                   <button style={style3} onClick={submitactiveButton}>다음</button>
