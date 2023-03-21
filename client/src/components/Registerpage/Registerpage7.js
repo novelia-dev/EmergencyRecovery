@@ -57,7 +57,7 @@ var state = {
 //     }
 // }
 
-class Registerpage3 extends React.Component{
+class Registerpage7 extends React.Component{
     constructor(props){
         super(props);
     }
@@ -128,7 +128,7 @@ function Text(){
 
         function submitactiveButton(event){
             event.preventDefault();
-            alert("회원가입이 완료되었습니다.");
+            alert("정보변경이 완료되었습니다.");
 
             var cast = {
                 nickname: nickname,
@@ -149,7 +149,7 @@ function Text(){
             })
 
             localStorage.setItem("cast",JSON.stringify(cast));
-            window.location.href="/register4"; }
+            window.location.href="/register5"; }
         
         const style={
             'position':'absolute',
@@ -564,7 +564,19 @@ function Text(){
             </div>
             <div></div>
             <div>
-            &nbsp; &nbsp;<input type="label" style={{width:"240px",height:"30px",marginTop:"5px"}} placeholder="이메일" onChange={onemailhandler}></input>
+            &nbsp; &nbsp;<input type="label" style={{width:"240px",height:"30px",marginTop:"5px"}} placeholder="본인인증용 이메일" onChange={onemailhandler}></input>
+            </div>
+            <div>
+           <button style={{marginTop:"15px",marginLeft:"15px"}}>Check</button>
+            </div>
+            <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
+             이메일 확인*
+            </div>
+            <div style={{marginTop:"5px",marginLeft:"15px"}}>
+            <input type="label" style={{width:"240px",height:"30px"}} placeholder="이메일 확인"></input>
+            </div>
+            <div>
+           <button style={{marginTop:"15px",marginLeft:"15px"}}>Check</button>
             </div>
 
             <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
@@ -573,20 +585,6 @@ function Text(){
             <div style={{marginTop:"5px",marginLeft:"15px"}}>
             <input type="label" style={{width:"240px",height:"30px"}} placeholder="경품지급 용도로만 사용됩니다." onChange={onPhonehandler}></input>
             </div>
-            <br />
-            <div style={{marginTop:"5px",marginLeft:"15px"}}>
-        
-            <select name="role" onChange={handleRoleChange}style={{width: "248px", height: "38px"}}>
-          <option value="">선택하세요</option>
-          <option value="author">작가</option>
-          <option value="reader">독자</option>
-
-         
-                </select> 
-                <RenderForm/>
-            </div>
-           
-            
         </div>
         </div>
     )
@@ -595,4 +593,4 @@ function Text(){
 
 
 
-export default Registerpage3;
+export default Registerpage7;

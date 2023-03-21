@@ -22,6 +22,7 @@ import Registerpage from"./components/Registerpage/Registerpage";
 import Registerpage3 from "./components/Registerpage/Registerpage3";
 import Registerpage4 from "./components/Registerpage/Registerpage4";
 import Registerpage5 from "./components/Registerpage/Registerpage5";
+import Registerpage7 from "./components/Registerpage/Registerpage7";
 import Footer from "./components/Footer/Footer";
 import Readworkpage from "./components/Readworkpage/Readworkpage";
 import Readworkpage2 from "./components/Readworkpage/Readworkpage2";
@@ -98,6 +99,7 @@ function App() {
             <Route path ="/register3" element={<Registerpage3 />} />
             <Route path ="/register4" element={<Registerpage4 />} />
             <Route path ="/register5" element={<Registerpage5 />} />
+            <Route path ="/register7" element={<Registerpage7 />} />
             <Route path ="/:id/read1" element={<Readworkpage />} />
             <Route path ="/:id/read2" element={<Readworkpage2 />} />
             <Route path ="/:id/read3" element={<Readworkpage3 />} />

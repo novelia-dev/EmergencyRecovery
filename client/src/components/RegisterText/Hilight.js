@@ -74,7 +74,7 @@ function Hilight(){
                 <br/>
                 <br/>
                 &nbsp;&nbsp;&nbsp;<label >하이라이트 &nbsp;({context.length})자</label>
-                &nbsp;&nbsp;&nbsp;<input style={{width:"863px", height:"210px",marginLeft:"15px"}} type="text" onChange={handlecontext} placeholder="30자이내" maxLength="29" id="big"/>
+                &nbsp;&nbsp;&nbsp;<input style={{width:"863px", height:"210px",marginLeft:"15px"}} type="text" onChange={handlecontext} placeholder="30자이내" maxLength="100" id="big"/>
             </div>
                     
                     

@@ -26,6 +26,16 @@ function jsonage(){
     return txt;
 }
 
+function jsonphone(){
+    let json = JSON.parse(localStorage.getItem("cast"));
+    let txt = json.phone;
+    return txt;
+}
+
+function move(){
+    window.location.href="/register7";
+}
+
 class Register5 extends React.Component{
     constructor(props){
         super(props);
@@ -149,13 +159,14 @@ const style6={
 <div>
     <Navbar />
    <div style={{'border-width':"2px",'border-style':"solid",'border-color':"#E5E5E5",'width':"1200px",'height':"1100px",'alignContent':"left",'marginLeft':"360px"}}>
+            <div style={{'backgroundColor':"pink"}}>
             <div style={style}>기본정보 및 선호/금지태그</div>
             <div style={{'margin-left':"15px",'marginTop':"15px"}}>기본정보와 선호/금지태그 입니다.</div>
-              
+            </div> 
             <hr style={{'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}></hr>
             <div>
             <div><img src={main} style={{ width:"282px", height:"282px",float:"left",marginLeft:"15px"}} alt="개인정보" />
-              <button style={style6}>변경하기</button>
+              <button style={style6} onClick={move}>변경하기</button>
               </div>
             </div>
             <br></br>       
@@ -171,7 +182,7 @@ const style6={
             <br></br>
             <tr>이메일 : {jsonemail()}</tr>
             <br></br>
-            <tr>핸드폰번호 : </tr>
+            <tr>핸드폰번호 : {jsonphone()} </tr>
     </table>
     <h5 style={style5}>선호태그</h5>
     <table style={{marginLeft:"15px"}}>    

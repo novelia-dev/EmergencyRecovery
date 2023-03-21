@@ -114,7 +114,7 @@ const Login = (props) => {
 
     return(<>
         <div style={{marginTop: "300px", marginLeft: "850px"}}>
-            <img className="Kakaoimage" alt="Kakaoimage" onClick={moving} style={{width:"180px", height:"163px"}}src={Kakaoimage} />
+            <img className="Kakaoimage" alt="Kakaoimage" onClick={moving} style={{width:"78px", height:"78px"}}src={Kakaoimage} />
         </div>
     </>)
 }

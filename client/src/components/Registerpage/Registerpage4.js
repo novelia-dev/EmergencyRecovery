@@ -125,7 +125,9 @@ function Registerpage4(){
             </div>
             <div style={{marginTop:"5px",marginLeft:"22px"}}>
             <select name="장르별 태그보기" style={{width: "248px", height: "38px"}} >
-                    <option defaulValue="로맨스">로맨스</option>    
+                    <option defaulValue="로맨스">로맨스</option> 
+                    <option value="판타지">판타지</option>
+                    <option value="로맨스/판타지">로맨스/판타지</option>   
                 </select> 
             </div>
             <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>
@@ -176,6 +178,7 @@ function Registerpage4(){
                 <br></br>
             </div>
             <div style={{marginLeft:"15px",marginTop:"15px"}}>
+            <br />
         <button style={style3} onClick={submitactiveButton}>입력완료</button>
         </div>
         </div>

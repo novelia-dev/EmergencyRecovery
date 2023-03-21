@@ -1,20 +1,20 @@
 import React,{useState,onChange} from 'react';
 import Novelist from '../Image/Navbar_logo.png';
-import Bell from '../Image/bell.png';
+
 import NewText from '../Image/pen.png';
 import Image from '../Image/돋보기.png';
 import Mypage from '../Dropdown/Ad';
-import MyBell from '../Dropdown/Bell';
+import Bell from '../Dropdown/Bell';
+
 
 import './Navbar.css';
 
 function movetomain(){
   window.location.href="/";
 }
-function move(){
+function movetotext(){
   window.location.href="/text";
 }
-
 function Navbar(){
 
     const Text = ()=> {
@@ -25,33 +25,27 @@ function Navbar(){
       }*/
         return(
         <div>
-            <table>
-            <tr>
-            <td><img onClick={movetomain} className="Novelist" alt="Novelist" style={{width:"122.9px", height:"30px",marginTop:"30px",marginLeft:"225px"}}src={Novelist} /></td>
-            <td><input type="text" /*value={search} onChange={onChange}*/ placeholder="  #해쉬태그로 검색해보세요" style={{width: "588px",height: "30px", marginTop:"30px",marginLeft:"318.1px",backgroundColor:'#FFFFFF',borderRadius:"50px",}}></input></td>
-            <td><img className="Image" alt="Image" style={{width:"30.31px", height:"30px",marginLeft:"-48px",marginTop:"28px"}}src={Image} /></td>
-            <td>
-            <MyBell />
+           <div style={{ display: 'flex', alignItems: 'center' }}>
+             <img onClick={movetomain} className="Novelist" alt="Novelist" style={{ width: "122.9px", height: "30px", marginTop: "30px", marginLeft: "225px" }} src={Novelist} />
+             <input type="text" /*value={search} onChange={onChange}*/ placeholder="  #해쉬태그로 검색해보세요" style={{ width: "588px", height: "30px", marginTop: "30px", marginLeft: "318.1px", backgroundColor: '#FFFFFF', borderRadius: "50px", }}></input>
+             <img className="Image" alt="Image" style={{ width: "30.31px", height: "30px", marginLeft: "-45px", marginTop: "28px" }} src={Image} />
+             <div>
+             <Bell />
+             <Mypage />
+             <div><img onClick={movetotext} className="NewText" alt="NewText" style={{ width: "24px", height: "23px",marginLeft:"381px",marginTop:"-26px",position:"absolute"}} src={NewText} /></div>
+             
+             </div>
             
-            </td>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
-            <td><img className="NewText" alt="NewText" style={{width:"24px", height:"23px",marginLeft:"324px"}}src={NewText} onClick={move}/>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
-            </td>
-            <td >
-            <Mypage/>
-           </td>
-           </tr>
-           </table>
-                  
+        </div>
         </div>
         )}
    
         return(
             <div>
                 <Text />
-                <br />
+                <br/>
                 <Button1/>
+                <br/>
             </div>
         )
     
@@ -60,7 +54,7 @@ function Navbar(){
 
 //npm install styled-component 해야됨
  function Button1() {
-    let data=["전체작품","객관식작","주관식작","선호태그","선호태그","선호태그","선호태그","선호태그","선호태그","선호태그","선호태그","선호태그","선호태그"];
+    let data=["전체작품","객관식작","주관식작","로맨스","판타지","로판","남성향","여성향","선호태그","선호태그","선호태그","선호태그","선호태그"];
     let[btnActive, setBtnActive] = useState("");
     const toggleActive = (e) => {
         setBtnActive((prev) => {

@@ -6,11 +6,11 @@ const Ad = props => {
     const [dropdownVisibility, setDropdownVisibility] = React.useState(false);
 
     return (
-        <div id='app' style={{position:"absolute",marginTop:"-13px"}}>
-             <img className="Mypage" alt="Mypage" style={{width:"24px", height:"23px"}}src={Mypage} onClick={e => setDropdownVisibility(!dropdownVisibility)}>
-                
-            </img>
-            <Dropdown visibility={dropdownVisibility}>
+        <div id='app' style={{zIndex:"0",marginTop:"28px"}}>
+             <img className="Mypage" alt="Mypage" style={{width:"24px", height:"23px",marginLeft:"438px"}}src={Mypage} onClick={e => setDropdownVisibility(!dropdownVisibility)}/>
+
+
+            <Dropdown visibility={dropdownVisibility} >
                 <ul style={{width:"294px",'border-width':"4px",'border-style':"solid",'border-color':"#E5E5E5"}}>
                     <li><h3>@@@님</h3></li>
                     <li style={{backgroundColor:"#666666",color:"white",fontSize:"22px",fontWeight:"400"}}>@@@@ point&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;포인트샵</li>
