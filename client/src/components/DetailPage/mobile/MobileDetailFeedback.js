@@ -148,28 +148,38 @@ function MobileDetailFeedback(){
                                         <h5>선택태그</h5>
                                      <table>
                                         <tr>
-                                            <td><button>선택태그</button></td>
-                                            <td><button>선택태그</button></td>
-                                            <td><button>선택태그</button></td>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
                                         </tr>
                                         <tr>
-                                            <td><button>선호태그</button></td>
-                                            <td><button>선호태그</button></td>
-                                            <td><button>선호태그</button></td>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px",color:"#000000"}}>선호태그</button></td>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px",color:"#000000"}}>선호태그</button></td>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px",color:"#000000"}}>선호태그</button></td>
                                         </tr>
                                          <tr>
-                                             <td><button>선호태그</button></td>
-                                            <td><button>선호태그</button></td>
-                                            <td><button>선호태그</button></td>
+                                             <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px",color:"#000000"}}>선호태그</button></td>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px",color:"#000000"}}>선호태그</button></td>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px",color:"#000000"}}>선호태그</button></td>
                                         </tr>
                                         <tr>
-                                             <td><button>선호태그</button></td>
-                                            <td><button>선호태그</button></td>
-                                            <td><button>선호태그</button></td>
+                                             <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px",color:"#000000"}}>선호태그</button></td>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px",color:"#000000"}}>선호태그</button></td>
+                                            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px",color:"#000000"}}>선호태그</button></td>
                                         </tr>                                
                                  </table>
-                                       
-                                         
                                        
                                         </p>
                                     </div>
@@ -198,27 +208,26 @@ function MobileDetailFeedback(){
                 <h5>작품소개</h5>    
                 </div>
                 <hr />
-                 <input type="text" value="내용내용내용" style={{width:"330px"}} />
+                 <input type="text" value="내용내용내용내용내용" style={{width:"330px",height:"140px",border:'none'}} />
                  <div>
-                    <table>
-                        <tr>
-                        <td><img alt="작품이미지" style={{width:"41px", height:"60px"}} src={image} /></td>
-                        <td><h4>아빠가 힘을 숨김 1화</h4></td>
-                        </tr>
-                        <tr>
-                        <td><img alt="작품이미지" style={{width:"41px", height:"60px"}} src={image} /></td>
-                        <td><h4>아빠가 힘을 숨김 2화</h4></td>
-                        </tr>
-                        <tr>
-                        <td><img alt="작품이미지" style={{width:"41px", height:"60px"}} src={image} /></td>
-                        <td><h4>아빠가 힘을 숨김 3화</h4></td>
-                        </tr>
-                        <tr>
-                        <td><img alt="작품이미지" style={{width:"41px", height:"60px"}} src={image} /></td>
-                        <td><h4>아빠가 힘을 숨김 4화</h4></td>
-                        </tr>
-                    </table>
+                 <div className="container-fluid">
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <div class="card-horizontal">
+                                <div class="img-square-wrapper">
+                                    <img alt="작품이미지" src={image} style={{width:"41px",height:"60px"}} />
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">작품 내용보기</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
                  </div>
+                 <br />
+                 <button>객관식</button>
+                 <button>주관식</button>
                  <button onClick={openModal}>피드백하기</button>
                  {
                     modalVisible && <Modal
