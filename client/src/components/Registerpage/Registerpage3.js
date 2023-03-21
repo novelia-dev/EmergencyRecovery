@@ -297,7 +297,7 @@ function Text(){
                         <h4>작가 추가 질문</h4>
                       </div>
                       <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-                       유입경로*
+                       유입경로
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
                       <select id="firstoption" name="유입경로" value={firstoption} onChange={handleFirstOptionChange} style={{width: "248px", height: "38px"}} >
@@ -339,7 +339,7 @@ function Text(){
                           )}
                           </div>
                       <div style={{width:"216px",height:"19px", fontSize:"16px" ,fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-                       다른 피드백 서비스 이용경험*
+                       다른 피드백 서비스 이용경험
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
                           <table>
@@ -356,7 +356,7 @@ function Text(){
                           </table>
                       </div>
                       <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-                        전업 여부*
+                        전업 여부
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
                       <select name="전업 여부" style={{width: "248px", height: "38px"}} >
@@ -366,7 +366,7 @@ function Text(){
                           </select> 
                       </div>
                       <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-                        웹소설 경력기간*
+                        웹소설 경력기간
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
                       <select name="웹소설 경력기간" style={{width: "248px", height: "38px"}} >
@@ -377,7 +377,7 @@ function Text(){
                           </select> 
                       </div>
                       <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-                        연재해본 작품 수*
+                        연재해본 작품 수
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
                       <select name="연재해본 작품 수" style={{width: "248px", height: "38px"}} >
@@ -388,7 +388,7 @@ function Text(){
                           </select> 
                       </div>
                       <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-                        연재해본 플랫폼*
+                        연재해본 플랫폼
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
                       <table>
@@ -406,7 +406,7 @@ function Text(){
                           </table>        
                       </div>
                       <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-                        유료연재 경험*
+                        유료연재 경험
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
                       <select name="유료연재 경험" style={{width: "248px", height: "38px"}} >
@@ -427,7 +427,7 @@ function Text(){
                         <h4>독자 추가 질문</h4>
                       </div>
                       <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-                       유입경로*
+                       유입경로
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
                       <select id="firstoption" name="유입경로" style={{width: "248px", height: "38px"}} value={firstoption} onChange={handleFirstOptionChange} >
@@ -462,7 +462,7 @@ function Text(){
                            </div>
                            )}
                       </div><div style={{width:"216px",height:"19px", fontSize:"16px" ,fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-             웹소설 읽는 빈도*
+             웹소설 읽는 빈도
             </div>
             <div style={{marginTop:"5px",marginLeft:"15px"}}>
             <select name="다른 피드백 서비스 이용경험" style={{width: "248px", height: "38px"}}  >
@@ -473,7 +473,7 @@ function Text(){
                 </select> 
             </div>
             <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-              이용해본 플랫폼*
+              이용해본 플랫폼
             </div>
             <div style={{marginTop:"5px",marginLeft:"15px"}}>
             <table>
@@ -533,7 +533,7 @@ function Text(){
         
         <div style={{marginTop:"15px"}}>
         &nbsp; &nbsp;<select name="성별" style={{width:"240px",height:"30px"}} onChange={ongenderhandler}>
-                  <option defaultValue="성별(남/여)" hidden>성별(남/여)*</option>
+                  <option defaultValue="성별(남/여)" hidden>성별(남/여)</option>
                   <option value="남">
                     남
                   </option>
