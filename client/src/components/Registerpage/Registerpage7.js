@@ -564,21 +564,8 @@ function Text(){
             </div>
             <div></div>
             <div>
-            &nbsp; &nbsp;<input type="label" style={{width:"240px",height:"30px",marginTop:"5px"}} placeholder="본인인증용 이메일" onChange={onemailhandler}></input>
+            &nbsp; &nbsp;<input type="label" style={{width:"240px",height:"30px",marginTop:"5px"}} placeholder="이메일" onChange={onemailhandler}></input>
             </div>
-            <div>
-           <button style={{marginTop:"15px",marginLeft:"15px"}}>Check</button>
-            </div>
-            <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
-             이메일 확인*
-            </div>
-            <div style={{marginTop:"5px",marginLeft:"15px"}}>
-            <input type="label" style={{width:"240px",height:"30px"}} placeholder="이메일 확인"></input>
-            </div>
-            <div>
-           <button style={{marginTop:"15px",marginLeft:"15px"}}>Check</button>
-            </div>
-
             <div style={{width:"151px",height:"17px",fontFamily:"Roboto",color:"#666666",marginTop:"15px",marginLeft:"15px"}}>
              핸드폰 번호*
             </div>
