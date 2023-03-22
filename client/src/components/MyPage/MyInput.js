@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import image from '../Image/Starbucks.png';
 import image1 from '../Image/Ticket.png';
+import image2 from '../Image/Biguser.png';
 import Result from "../Prize/Prize";
 import { getRandomPrize } from "../Prize/Prize";
 import PropTypes from 'prop-types';
@@ -84,20 +85,32 @@ Modal.propTypes = {
                 <h4>포인트 샵</h4>
                 <h5>모은 포인트를 사용할 수 있습니다.</h5>
             </div>
-            <div>
-                <table>
-                    <td><img alt="사용자사진" /></td>
-                    <td>
-                        <h6>획득 포인트 : 8000</h6>
-                        <h6>사용 포인트 : 8000</h6>
-                        <h6>잔여 포인트 : 8000</h6>
-                    </td>
-                    <td>
-                        <tr><button>경품 응모하기</button></tr>
-                        <tr><button>포인트 획득/사용내역</button>
-                        </tr>
-                    </td>
-                </table>
+            <div className="container-fluid">
+               <div class = "row">
+                <div class="col-12 mt-3">
+                  <div class="card-horizontal">
+                    <div class="img-square-wrapper">
+                    <img src={image2} alt="사용자사진" />
+                    </div>
+                    <div class="card-body" style={{marginLeft:"15px"}}>
+                      <p class="card-text">
+                        <table>
+                          <tr>
+                            <td><h6>획득 포인트 : 8000 &nbsp; &nbsp;</h6></td>
+                          </tr>
+                          <tr>
+                            <td><h6>사용 포인트 : 8000</h6></td>
+                          </tr>
+                          <tr>
+                            <td><h6>잔여 포인트 : 8000</h6></td>
+                            <td><button style={{width:"180px",height:"19px",display:'flex',alignItems:"center",textAlign:"center",backgroundColor:"#FFFFFF",color:"#000000", border:"1px solid #D9D9D9"}} onClick={movetoStats}>&nbsp;&nbsp; 포인트 획득/사용내역</button></td>
+                          </tr>
+                        </table>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div> 
             </div>
             <br />
             <div>
@@ -105,9 +118,9 @@ Modal.propTypes = {
             </div>
             <div>
                 <table>
-                    <td><img src={image1} style={{width:"300px", height:"159.99px"}} alt="기프티콘 이미지" /></td>
+                    <td><img src={image1} style={{width:"300px", height:"159.99px"}} alt="기프티콘 이미지" /> &nbsp; &nbsp; &nbsp;</td>
                     <td>
-                      <button onClick={openModal}>응모하기</button>
+                      <button style={{width:"83px",height:"19px",display:'flex',alignItems:"center",textAlign:"center",backgroundColor:"#AA0140",color:"#FFFFFF", border:"1px solid #D9D9D9"}} onClick={openModal}>&nbsp; 응모하기</button>
                       {
                                modalVisible && <Modal
                                  visible={modalVisible}
