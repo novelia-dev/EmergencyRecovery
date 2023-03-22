@@ -49,6 +49,7 @@ export class ProfilesService {
       웹소설자필기간: data.novel_writed,
       연재플랫폼: data.platform,
       유료연재경험: data.money,
+      웹소설읽는빈도: data.frequency,
     };
     console.log(dataForServey);
     console.log(process.env.SPREADSHEET_URL);

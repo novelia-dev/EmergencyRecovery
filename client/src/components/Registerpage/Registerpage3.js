@@ -79,12 +79,20 @@ class Registerpage3 extends React.Component{
 function Text(){
 
     const [isLoaded, setIsLoaded] = useState(false);
-    const [nickname, setnickname] = useState("");
-    const [email, setemail] = useState("");
-    const [selected, setSelected] = useState("");
-    const [age, setAge] = useState("");
-    const [phone, setPhone] = useState("");
-    const [route, setRoute] = useState("");
+    const [nickname, setnickname] = useState(""); //닉네임
+    const [email, setemail] = useState(""); //이메일
+    const [selected, setSelected] = useState(""); //성별
+    const [age, setAge] = useState(""); //나이
+    const [phone, setPhone] = useState(""); //핸드폰번호
+    const [role, setRole] = useState(null); //작가, 독자 구분
+    const [other,setOther] = useState(""); // 다른 피드백 이용 경험 
+    const [fulltime,setFulltime] = useState("") // 전업 여부
+    const [career,setCareer] = useState("") // 경력기간
+    const [num, setNum] = useState("") //연재 작품 수
+    const [platform, setPlatform] = useState("") // 작가 : 연재해본 플랫폼 , 독자 : 이용해본 플랫폼
+    const [money,setMoney] = useState("") // 작가 : 유료 연재 경험
+
+
 
     useEffect(() => {
       const code = localStorage.getItem("code");
@@ -118,8 +126,24 @@ function Text(){
       setPhone(phone.target.value);
     }
 
-    const onRoutehandler = (route) => {
-        setRoute(route.target.value);
+    const onOtherhandler = (other) => {
+      setOther(other.target.value);
+    }
+    
+    const onFulltimehandler = (fulltime) => {
+      setFulltime(fulltime.target.value);
+    }
+
+    const onCareerhandler = (career) => {
+      setCareer(career.target.value);
+    }
+
+    const onNumhandler = (num) => {
+      setNum(num.target.value);
+    }
+    
+    const onPlatformhandler = (platform) => {
+      setPlatform(platform.target.value);
     }
 
     function activeButton(){
@@ -138,16 +162,37 @@ function Text(){
                 phone : phone
             };
 
-            axios.post('http://localhost:8000/users',cast)
-            .then(response =>{
-                if(response.data.success)
-                {
-                    console.log('회원가입 성공')
-                } else {
-                    console.log('회원가입 실패')
-                }
-            })
+            const formData = new FormData();
+            
+            formData.append('name',nickname);
+            formData.append('sex',selected);
+            formData.append('ages',age);
+            formData.append('email',email);
+            formData.append('phone',phone);
+            formData.append('main_role',role);
+            formData.append('route');
+            formData.append('other_feedback');
+            formData.append('is_fulltime_job');
+            formData.append('time_for_writer');
+            formData.append('novel_writed');
+            formData.append('platform');
+            formData.append('money');
 
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST','/profiles/new');
+            xhr.setRequestHeader('Content-Type','multipart/form-data');
+            xhr.send(formData);
+            xhr.onreadystatechange = function(){
+              if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                  console.log('서버 전송 완료');
+                }
+                else{
+                  console.log('서버 전송 실패');
+                }
+              }
+            }
             localStorage.setItem("cast",JSON.stringify(cast));
             // window.location.href="/register4"; }
           }
@@ -285,7 +330,7 @@ function Text(){
             ));
           };
           
-            const [role, setRole] = useState(null);
+           
           
             const handleRoleChange = (event) => {
               setRole(event.target.value);
@@ -360,7 +405,7 @@ function Text(){
                         전업 여부
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
-                      <select name="전업 여부" style={{width: "248px", height: "38px"}} >
+                      <select name="전업 여부" style={{width: "248px", height: "38px"}} onChange={onFulltimehandler} >
                               <option defaulValue="전업">전업</option>
                               <option value="학생">학생</option>
                               <option value="직장인">직장인</option>    
@@ -370,7 +415,7 @@ function Text(){
                         웹소설 경력기간
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
-                      <select name="웹소설 경력기간" style={{width: "248px", height: "38px"}} >
+                      <select name="웹소설 경력기간" style={{width: "248px", height: "38px"}} onChange={onCareerhandler} >
                               <option defaulValue="1년 미만">1년 미만</option>
                               <option value ="1~2년">1~2년</option>
                               <option value="2~3년">2~3년</option>
@@ -381,7 +426,7 @@ function Text(){
                         연재해본 작품 수
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
-                      <select name="연재해본 작품 수" style={{width: "248px", height: "38px"}} >
+                      <select name="연재해본 작품 수" style={{width: "248px", height: "38px"}} onChange={onNumhandler} >
                               <option defaulValue="0개">0개</option>
                               <option value ="1개">1개</option>
                               <option value="2개">2개</option>
@@ -466,7 +511,7 @@ function Text(){
              웹소설 읽는 빈도
             </div>
             <div style={{marginTop:"5px",marginLeft:"15px"}}>
-            <select name="다른 피드백 서비스 이용경험" style={{width: "248px", height: "38px"}}  >
+            <select name="웹소설 읽는 빈도" style={{width: "248px", height: "38px"}}  >
                     <option defaulValue="자주 즐겨 읽는다">자주 즐겨 읽는다</option>
                     <option value = "가끔 읽는다">가끔 읽는다</option>
                     <option value = "거의 읽지 않는다">거의 읽지 않는다</option>

@@ -57,7 +57,6 @@ export class ProfileAndServeyJoinDto {
     description: '기본적인 역할',
     required: true,
   })
-  @IsNotEmpty()
   @IsString()
   main_role: string;
 
@@ -66,7 +65,6 @@ export class ProfileAndServeyJoinDto {
     description: '유입경로',
     required: true,
   })
-  @IsNotEmpty()
   @IsString()
   route: string;
 
@@ -75,7 +73,6 @@ export class ProfileAndServeyJoinDto {
     description: '다른 피드백 사용 경험',
     required: true,
   })
-  @IsNotEmpty()
   @IsString()
   other_feedback: string;
 
@@ -84,7 +81,6 @@ export class ProfileAndServeyJoinDto {
     description: '전업여부',
     required: true,
   })
-  @IsNotEmpty()
   @IsString()
   is_fulltime_job: string;
 
@@ -93,7 +89,6 @@ export class ProfileAndServeyJoinDto {
     description: '웹소설 지필기간',
     required: true,
   })
-  @IsNotEmpty()
   @IsString()
   time_for_writer: string;
 
@@ -102,7 +97,6 @@ export class ProfileAndServeyJoinDto {
     description: '연재작품 수',
     required: true,
   })
-  @IsNotEmpty()
   @IsString()
   novel_writed: string;
 
@@ -111,7 +105,6 @@ export class ProfileAndServeyJoinDto {
     description: '연재 플랫폼',
     required: false,
   })
-  @IsNotEmpty()
   @IsString()
   platform: string;
 
@@ -120,7 +113,14 @@ export class ProfileAndServeyJoinDto {
     description: '유료연재 경험',
     required: true,
   })
-  @IsNotEmpty()
   @IsString()
   money: string;
+
+  @ApiProperty({
+    example: '자주 읽는다.',
+    description: '웹소설 읽는 빈도',
+    required: true,
+  })
+  @IsString()
+  frequency: string;
 }
