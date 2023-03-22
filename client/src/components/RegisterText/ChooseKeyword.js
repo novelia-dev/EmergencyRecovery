@@ -144,7 +144,6 @@ function ChooseKeyword(){
               <label>키워드 추가</label>
               <br></br><input type="text" onChange={InputText} value={text} placeholder="30자 이내" />
               <button onClick={handleSubmit}>추가</button>
-              <button onClick={ResetText}>초기화</button>
             </div>
             <div>
                 <b>{arr}</b>
@@ -155,7 +154,6 @@ function ChooseKeyword(){
             <div>
             <label>키워드 추가</label><input type="text" onChange={InputText1} value={text1} placeholder="30자 이내" />
             <button onClick ={handleSubmit1}>추가</button>
-            <button onClick ={ResetText1}>초기화</button>
             </div>
             <div>
                 <b>{brr}</b>
@@ -166,7 +164,6 @@ function ChooseKeyword(){
             <div>
             <label>키워드 추가</label><input type="text" onChange={InputText2} value={text2} placeholder="30자 이내" />
             <button onClick={handleSubmit2}>추가</button>
-            <button onClick={ResetText2}>초기화</button>
             </div>
             <div>
                 <b>{arr2}</b>
@@ -177,7 +174,6 @@ function ChooseKeyword(){
             <div>
             <label>키워드 추가</label><input type="text" onChange={InputText3} value={text3} placeholder="30자 이내" />
             <button onClick={handleSubmit3}>추가</button>
-            <button onClick={ResetText3}>초기화</button>
             </div>
             <div>
                 <b>{arr3}</b>
