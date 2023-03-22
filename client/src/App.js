@@ -124,8 +124,8 @@ function App() {
             <Route path ="/high" element= {<Hilight />} />
             <Route path ="/feed" element= {<FeedSelect />} />
             <Route path ="/buy" element={<Buy />} />
-            <Route path ="/myinfo" element={<MyPageInfo />} />
-            <Route path ="/myinfochange" element={<MyPageInfoChange />} />
+            <Route path ="/myinfo" element={<Registerpage5 />} />
+            <Route path ="/myinfochange" element={<Registerpage7 />} />
             <Route path ="/myfeedback" element={<MyPageFeedback/>} />
             <Route path ="/myfeedbackcomplete" element={<MyPageFeedbackComplete />} />
             <Route path ="/myscrap" element={<MyPageScrap />} />

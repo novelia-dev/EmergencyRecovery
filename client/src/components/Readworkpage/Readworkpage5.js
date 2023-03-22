@@ -127,7 +127,7 @@ function Text(props){
 
         if(one !== "" && two === "" && three === "")
         {
-            alert('맞았습니다');
+            alert('정답입니다. 피드백참여 할 수 있습니다.');
             if(types === "1")
             {
             window.location.href="/:id/choose";
