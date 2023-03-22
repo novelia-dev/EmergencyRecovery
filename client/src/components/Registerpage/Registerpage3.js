@@ -85,13 +85,13 @@ function Text(){
     const [age, setAge] = useState(""); //나이
     const [phone, setPhone] = useState(""); //핸드폰번호
     const [role, setRole] = useState(null); //작가, 독자 구분
-    const [other,setOther] = useState(""); // 다른 피드백 이용 경험 
+    const [other,setOther] = useState([]); // 다른 피드백 이용 경험 
     const [fulltime,setFulltime] = useState("") // 전업 여부
     const [career,setCareer] = useState("") // 경력기간
     const [num, setNum] = useState("") //연재 작품 수
-    const [platform, setPlatform] = useState("") // 작가 : 연재해본 플랫폼 , 독자 : 이용해본 플랫폼
+    const [platform, setPlatform] = useState([]) // 작가 : 연재해본 플랫폼 , 독자 : 이용해본 플랫폼
     const [money,setMoney] = useState("") // 작가 : 유료 연재 경험
-
+    const [frequency, setFrequncy] = useState("") // 독자 : 웹 소설 이용 경험
 
 
     useEffect(() => {
@@ -127,7 +127,14 @@ function Text(){
     }
 
     const onOtherhandler = (other) => {
-      setOther(other.target.value);
+       const {name} = other.target;
+       setOther(prevState => {
+        if(prevState.includes(name)){
+          return prevState.filter(item => item !== name);
+        } else {
+          return [...prevState,name];
+        }
+       })
     }
     
     const onFulltimehandler = (fulltime) => {
@@ -143,7 +150,22 @@ function Text(){
     }
     
     const onPlatformhandler = (platform) => {
-      setPlatform(platform.target.value);
+      const {name} = other.target;
+      setPlatform(prevState => {
+       if(prevState.includes(name)){
+         return prevState.filter(item => item !== name);
+       } else {
+         return [...prevState,name];
+       }
+      })
+    }
+
+    const onFrequencyhandler = (frequency) => {
+      setFrequncy(frequency.target.value);
+    }
+
+    const onMoneyhandler = (money) => {
+      setMoney(money.target.value);
     }
 
     function activeButton(){
@@ -163,7 +185,7 @@ function Text(){
             };
 
             const formData = new FormData();
-            
+            if(role === 'author'){
             formData.append('name',nickname);
             formData.append('sex',selected);
             formData.append('ages',age);
@@ -171,13 +193,30 @@ function Text(){
             formData.append('phone',phone);
             formData.append('main_role',role);
             formData.append('route');
-            formData.append('other_feedback');
-            formData.append('is_fulltime_job');
-            formData.append('time_for_writer');
-            formData.append('novel_writed');
-            formData.append('platform');
-            formData.append('money');
-
+            formData.append('other_feedback', other);
+            formData.append('is_fulltime_job',fulltime);
+            formData.append('time_for_writer',career);
+            formData.append('novel_writed',num);
+            formData.append('platform',platform);
+            formData.append('money',money);
+            formData.append('frequency',"");
+            }
+            else if (role === 'reader'){
+              formData.append('name',nickname);
+              formData.append('sex',selected);
+              formData.append('ages',age);
+              formData.append('email',email);
+              formData.append('phone',phone);
+              formData.append('main_role',role);
+              formData.append('route');
+              formData.append('other_feedback',"");
+              formData.append('is_fulltime_job',"");
+              formData.append('time_for_writer',"");
+              formData.append('novel_writed',"");
+              formData.append('platform',platform);
+              formData.append('moeny',"");
+              formData.append('frequency',frequency);
+            }
 
             const xhr = new XMLHttpRequest();
             xhr.open('POST','/profiles/new');
@@ -390,14 +429,14 @@ function Text(){
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
                           <table>
                             <tr>
-                            <input type="checkbox"></input><label>온라인 강의</label>
-                            <input type="checkbox"></input><label>오프라인 강의</label>
-                            <input type="checkbox"></input><label>출판사 피드백</label>
+                            <input type="checkbox" name="item1"checked={other.includes('item1')} onChange={onOtherhandler}></input><label>온라인 강의</label>
+                            <input type="checkbox" name="item2"checked={other.includes('item2')} onChange={onOtherhandler}></input><label>오프라인 강의</label>
+                            <input type="checkbox" name="item3"checked={other.includes('item3')} onChange={onOtherhandler}></input><label>출판사 피드백</label>
                             </tr>
                             <tr>
-                            <input type="checkbox"></input><label>학원 피드백</label>
-                            <input type="checkbox"></input><label>1:1 피드백</label>
-                            <input type="checkbox"></input><label>없음</label>
+                            <input type="checkbox" name="item4"checked={other.includes('item4')} onChange={onOtherhandler}></input><label>학원 피드백</label>
+                            <input type="checkbox" name="item5"checked={other.includes('item5')} onChange={onOtherhandler}></input><label>1:1 피드백</label>
+                            <input type="checkbox" name="item6"checked={other.includes('item6')} onChange={onOtherhandler}></input><label>없음</label>
                             </tr>
                           </table>
                       </div>
@@ -439,15 +478,15 @@ function Text(){
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
                       <table>
                             <tr>
-                            <input type="checkbox"></input><label>네이버시리즈</label>
-                            <input type="checkbox"></input><label>카카오페이지</label>
-                            <input type="checkbox"></input><label>네이버웹소설</label>
+                            <input type="checkbox" name="item1"checked={platform.includes('item1')} onChange={onPlatformhandler}></input><label>네이버시리즈</label>
+                            <input type="checkbox" name="item1"checked={platform.includes('item2')} onChange={onPlatformhandler}></input><label>카카오페이지</label>
+                            <input type="checkbox" name="item1"checked={platform.includes('item3')} onChange={onPlatformhandler}></input><label>네이버웹소설</label>
                             </tr>
                             <tr>
-                            <input type="checkbox"></input><label>카카오스테이지</label>
-                            <input type="checkbox"></input><label>문피아</label>
-                            <input type="checkbox"></input><label>조아라</label>
-                            <input type="checkbox"></input><label>기타</label>
+                            <input type="checkbox" name="item1"checked={platform.includes('item4')} onChange={onPlatformhandler}></input><label>카카오스테이지</label>
+                            <input type="checkbox" name="item1"checked={platform.includes('item5')} onChange={onPlatformhandler}></input><label>문피아</label>
+                            <input type="checkbox" name="item1"checked={platform.includes('item6')} onChange={onPlatformhandler}></input><label>조아라</label>
+                            <input type="checkbox" name="item1"checked={platform.includes('item7')} onChange={onPlatformhandler}></input><label>기타</label>
                             </tr>
                           </table>        
                       </div>
@@ -455,7 +494,7 @@ function Text(){
                         유료연재 경험
                       </div>
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
-                      <select name="유료연재 경험" style={{width: "248px", height: "38px"}} >
+                      <select name="유료연재 경험" style={{width: "248px", height: "38px"}} onChange={onMoneyhandler} >
                               <option defaulValue="있다">있다</option>
                               <option value="없다">없다</option>    
                           </select> 
@@ -511,7 +550,7 @@ function Text(){
              웹소설 읽는 빈도
             </div>
             <div style={{marginTop:"5px",marginLeft:"15px"}}>
-            <select name="웹소설 읽는 빈도" style={{width: "248px", height: "38px"}}  >
+            <select name="웹소설 읽는 빈도" style={{width: "248px", height: "38px"}} onChange={onFrequencyhandler} >
                     <option defaulValue="자주 즐겨 읽는다">자주 즐겨 읽는다</option>
                     <option value = "가끔 읽는다">가끔 읽는다</option>
                     <option value = "거의 읽지 않는다">거의 읽지 않는다</option>
