@@ -26,9 +26,9 @@ class Square extends React.Component{
     render(){
         const style={
             width:"100%",
-            height:"150px",
+            height:"45px",
             backgroundColor:"#f2f2f2",
-            bottom:"2400px",
+            bottom:"2500px",
             left:"363px",
             'Font-family':"Roboto",
             'Font-weight':400,
@@ -41,7 +41,7 @@ class Square extends React.Component{
         };
         const tableStyle={
             margin: "0 auto",
-            maxWidth:"1194px",
+            maxWidth:"1400px",
             backgroundColor:"#f2f2f2"
         }
         return(
@@ -53,12 +53,12 @@ class Square extends React.Component{
                     <td><a href="/notice">공지사항 &nbsp;</a></td>
                     <td><a href="/ask">문의하기 &nbsp;</a></td>
                     <td><a href="/about">서비스 설명 &nbsp;</a></td>
-                    <td>비지니스 메일 novelia@gmail.com &nbsp;</td>
+                    <td>비지니스 메일 novelia@gmail.com &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td><img src={facebook} alt="페이스북"></img> &nbsp;</td>
                     <td><img src={twitter} alt="트위터"></img> &nbsp;</td>
-                    <td><img src={instagram} alt="인스타그램"></img> &nbsp;</td>
-                    <td><img src={logo} alt="수평로고"></img> &nbsp;</td>
-                    <td><h5>All right reserved</h5></td>
+                    <td><img src={instagram} alt="인스타그램"></img> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><img src={logo} alt="수평로고"></img> </td>
+                    <td><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All right reserved</h5></td>
                 </tr>
               </table>
             </div>

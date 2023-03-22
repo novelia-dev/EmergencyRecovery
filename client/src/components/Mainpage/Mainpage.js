@@ -108,6 +108,8 @@ function Mainpage(){
         paginate={setCurrentPage}
       ></Pagination>
         </div>
+        <br />
+        <br />
         <Footer/>
         </div>
         
