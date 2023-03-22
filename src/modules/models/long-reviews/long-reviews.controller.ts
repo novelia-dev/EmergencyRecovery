@@ -6,11 +6,15 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { LongReviewsService } from './long-reviews.service';
 import { CreateLongReviewDto } from './dto/create-long-review.dto';
 import { UpdateLongReviewDto } from './dto/update-long-review.dto';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/modules/functions/auth/jwt/jwt.guard';
+import { CurrentUser } from 'src/commons/common/decorators/user.decorator';
+import { User } from '../users/entities/user.entity';
 
 @ApiTags('long-reviews')
 @Controller('long-reviews')
@@ -18,15 +22,24 @@ export class LongReviewsController {
   constructor(private readonly longReviewsService: LongReviewsService) {}
 
   @ApiOperation({
-    deprecated: true,
+    summary: '주관식 리뷰 하기',
   })
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
   @Post()
-  create(@Body() createLongReviewDto: CreateLongReviewDto) {
-    return this.longReviewsService.create(createLongReviewDto);
+  create(
+    @CurrentUser() user: User,
+    @Body() createLongReviewDto: CreateLongReviewDto,
+  ) {
+    const data = {
+      user_id: user.id,
+      ...createLongReviewDto,
+    };
+    return this.longReviewsService.create(data);
   }
 
   @ApiOperation({
-    deprecated: true,
+    summary: '주관식 리뷰 전부 가져오기',
   })
   @Get()
   findAll() {

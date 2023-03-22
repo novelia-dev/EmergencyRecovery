@@ -41,6 +41,9 @@ export class UsersController {
     return await this.authService.login(body);
   }
 
+  @ApiOperation({
+    deprecated: true,
+  })
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
     return this.authService.jwtRegister(createUserDto);

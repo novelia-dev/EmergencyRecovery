@@ -14,6 +14,7 @@ import {
 import { User } from '../../users/entities/user.entity';
 import { Tag } from '../../tags/entities/tag.entity';
 import { Genre } from '../../genres/entities/genre.entity';
+import { Coupon } from '../../coupons/entities/coupon.entity';
 
 @Entity()
 export class Profile extends BaseEntity {
@@ -46,6 +47,15 @@ export class Profile extends BaseEntity {
   @Column({ default: 0 })
   points: number;
 
+  @Column()
+  phone: string;
+
+  @Column()
+  main_role: string;
+
+  @Column({ default: 'normal' })
+  state: string;
+
   //   RELATION COLUMNS
   @OneToOne(() => User, (user) => user.profile)
   account: User;
@@ -64,4 +74,7 @@ export class Profile extends BaseEntity {
 
   @OneToMany(() => Genre, (genre) => genre.user, { eager: true })
   genres: Genre[];
+
+  @OneToMany(() => Coupon, (coupon) => coupon.profile, { eager: true })
+  coupons: Coupon[];
 }

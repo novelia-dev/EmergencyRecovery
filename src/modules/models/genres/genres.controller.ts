@@ -26,7 +26,8 @@ export class GenresController {
   }
 
   @ApiOperation({
-    deprecated: true,
+    summary: '장르 정보 가져오기',
+    description: '장르 전부 가져옴.',
   })
   @Get()
   findAll() {

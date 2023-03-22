@@ -36,4 +36,7 @@ export class LongReview extends BaseEntity {
 
   @Column()
   bad_content: string;
+
+  @Column({ default: 'normal' })
+  state: string;
 }

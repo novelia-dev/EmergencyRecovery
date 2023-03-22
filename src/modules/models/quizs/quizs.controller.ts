@@ -18,7 +18,8 @@ export class QuizsController {
   constructor(private readonly quizsService: QuizsService) {}
 
   @ApiOperation({
-    deprecated: true,
+    summary: '소설 퀴즈 등록하기',
+    description: '독자를 판별하기 위한 퀴즈를 등록합니다',
   })
   @Post()
   create(@Body() createQuizDto: CreateQuizDto) {

@@ -25,6 +25,9 @@ export class Quiz extends BaseEntity {
   deletedAt?: Date;
 
   @Column()
+  novelPk: number;
+
+  @Column()
   question: string;
 
   @Column()

@@ -12,12 +12,18 @@ import {
 import { NovelsService } from './novels.service';
 import { CreateNovelDto } from './dto/create-novel.dto';
 import { UpdateNovelDto } from './dto/update-novel.dto';
-import { ApiCreatedResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiCreatedResponse,
+  ApiOperation,
+  ApiTags,
+} from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/modules/functions/auth/jwt/jwt.guard';
 
 import { CurrentUser } from 'src/commons/common/decorators/user.decorator';
 import { TitleContentDto } from './dto/title-content.dto';
 import { User } from '../users/entities/user.entity';
+import { CreateNovelBodyDataDto } from './dto/crate-novel-body-data.dto';
 
 @ApiTags('novels')
 @Controller('novels')
@@ -25,13 +31,33 @@ export class NovelsController {
   constructor(private readonly novelsService: NovelsService) {}
 
   @ApiOperation({
+    summary: 'novel 생성(최신)',
+    description: 'novel 생성하기 api',
+  })
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  @Post('new')
+  createNewNovel(
+    @CurrentUser() user: User,
+    @Body() createNovelBodyData: CreateNovelBodyDataDto,
+  ) {
+    const data = {
+      ...createNovelBodyData,
+      author: user.profile.name,
+    };
+    return this.novelsService.newCreate(data, user.email);
+  }
+
+  @ApiOperation({
     summary: 'novel 생성',
     description: 'novel 생성하기 api',
+    deprecated: true,
   })
   @ApiCreatedResponse({
     description: 'novel 생성하기',
     type: CreateNovelDto,
   })
+  @ApiBearerAuth()
   @UseGuards(JwtAuthGuard)
   @Post()
   create(@CurrentUser() user: User, @Body() titleContentDto: TitleContentDto) {

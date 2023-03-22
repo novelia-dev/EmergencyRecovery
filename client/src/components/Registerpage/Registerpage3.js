@@ -149,7 +149,8 @@ function Text(){
             })
 
             localStorage.setItem("cast",JSON.stringify(cast));
-            window.location.href="/register4"; }
+            // window.location.href="/register4"; }
+          }
         
         const style={
             'position':'absolute',

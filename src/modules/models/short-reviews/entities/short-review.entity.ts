@@ -3,11 +3,13 @@ import {
   Column,
   CreateDateColumn,
   DeleteDateColumn,
+  Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
-export default class ShortReview extends BaseEntity {
+@Entity()
+export class ShortReview extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -40,4 +42,7 @@ export default class ShortReview extends BaseEntity {
 
   @Column()
   ans4: string;
+
+  @Column({ default: 'normal' })
+  state: string;
 }

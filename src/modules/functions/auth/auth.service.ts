@@ -89,7 +89,7 @@ export class AuthService {
       const newUser = await this.usersService.socialCreate(dataForCreateUser);
       return newUser;
     }
-    return user;
+    return userId;
   }
 
   async getUserByNaverAccessToken(token: string) {

@@ -18,15 +18,17 @@ export class TagsController {
   constructor(private readonly tagsService: TagsService) {}
 
   @ApiOperation({
-    deprecated: true,
+    summary: '태그 등록하기',
+    description: '새로운 태그를 등록하기',
   })
-  @Post()
+  @Post('new')
   create(@Body() createTagDto: CreateTagDto) {
     return this.tagsService.create(createTagDto);
   }
 
   @ApiOperation({
-    deprecated: true,
+    summary: '태그 가져오기',
+    description: '등록되어 있는 태그 전부 가져오기',
   })
   @Get()
   findAll() {
