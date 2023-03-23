@@ -301,35 +301,24 @@ function RegisterText(props){
         formData.append("tags",tag);
         formData.append("content",content);
         formData.append("quizs",quizs);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST','/quiz');
+        xhr.setRequestHeader('Content-Type','multipart/form-data');
+        xhr.send(formData);
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    console.log('서버 전송 완료');
+                }
+                else{
+                    console.log('서버 전송 실패');
+                }
+            }
+        }
         
 
-        axios({
-            method: "get",
-            url: 'http://localhost:8000/novel',
-            params:{
-                id: id
-            },
-            data: formData,
-            headers: {"Content-Type": "multipart/form-data", Authorization: localStorage.getItem("access_token")}
-        }).then(response => {
-            if(response.data.success){
-                alert('저장 성공')
-            }
-            else{
-                alert('저장 실패')
-            }
-        })
-    
-    .catch((error) => {
-        if(error.response){
-            console.log(error.response);
-            console.log("server refused");
-        } else if(error.request){
-            console.log("network error");
-        } else{
-            console.log(error);
-        }
-    });
+    }
 } 
 const buttonstyle={
         'box-sizing':"boreder-box",
