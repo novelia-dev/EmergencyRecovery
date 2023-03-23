@@ -319,7 +319,6 @@ function RegisterText(props){
         
 
     }
-} 
 const buttonstyle={
         'box-sizing':"boreder-box",
         'display': "flex",
