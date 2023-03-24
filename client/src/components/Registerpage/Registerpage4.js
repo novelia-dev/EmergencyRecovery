@@ -2,10 +2,23 @@ import React,{useState} from "react";
 
 function Registerpage4(){
 
+    function jsonrole(){
+      let json = JSON.parse(localStorage.getItem("cast"));
+      let txt = json.role;
+      return txt;
+    }
 
     function submitactiveButton(){
-      
-        window.location.href="/register5"; 
+       let core = jsonrole();
+
+       if(core === 'author')
+       {
+          window.location.href="/authorsurvey";
+       }
+       else if(core === 'reader')
+       {
+          window.location.href="/readersurvey";
+       }
     }
 
 

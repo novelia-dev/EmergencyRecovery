@@ -181,59 +181,61 @@ function Text(){
                 gender : selected,
                 email: email,
                 age : age,
-                phone : phone
+                phone : phone,
+                role : role
             };
 
-            const formData = new FormData();
-            if(role === 'author'){
-            formData.append('name',nickname);
-            formData.append('sex',selected);
-            formData.append('ages',age);
-            formData.append('email',email);
-            formData.append('phone',phone);
-            formData.append('main_role',role);
-            formData.append('route');
-            formData.append('other_feedback', other);
-            formData.append('is_fulltime_job',fulltime);
-            formData.append('time_for_writer',career);
-            formData.append('novel_writed',num);
-            formData.append('platform',platform);
-            formData.append('money',money);
-            formData.append('frequency',"");
-            }
-            else if (role === 'reader'){
-              formData.append('name',nickname);
-              formData.append('sex',selected);
-              formData.append('ages',age);
-              formData.append('email',email);
-              formData.append('phone',phone);
-              formData.append('main_role',role);
-              formData.append('route');
-              formData.append('other_feedback',"");
-              formData.append('is_fulltime_job',"");
-              formData.append('time_for_writer',"");
-              formData.append('novel_writed',"");
-              formData.append('platform',platform);
-              formData.append('moeny',"");
-              formData.append('frequency',frequency);
-            }
+            // const formData = new FormData();
+            // if(role === 'author'){
+            // formData.append('name',nickname);
+            // formData.append('sex',selected);
+            // formData.append('ages',age);
+            // formData.append('email',email);
+            // formData.append('phone',phone);
+            // formData.append('main_role',role);
+            // formData.append('route');
+            // formData.append('other_feedback', other);
+            // formData.append('is_fulltime_job',fulltime);
+            // formData.append('time_for_writer',career);
+            // formData.append('novel_writed',num);
+            // formData.append('platform',platform);
+            // formData.append('money',money);
+            // formData.append('frequency',"");
+            // }
+            // else if (role === 'reader'){
+            //   formData.append('name',nickname);
+            //   formData.append('sex',selected);
+            //   formData.append('ages',age);
+            //   formData.append('email',email);
+            //   formData.append('phone',phone);
+            //   formData.append('main_role',role);
+            //   formData.append('route');
+            //   formData.append('other_feedback',"");
+            //   formData.append('is_fulltime_job',"");
+            //   formData.append('time_for_writer',"");
+            //   formData.append('novel_writed',"");
+            //   formData.append('platform',platform);
+            //   formData.append('moeny',"");
+            //   formData.append('frequency',frequency);
+            // }
 
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST','/profiles/new');
-            xhr.setRequestHeader('Content-Type','multipart/form-data');
-            xhr.send(formData);
-            xhr.onreadystatechange = function(){
-              if(xhr.readyState === XMLHttpRequest.DONE){
-                if(xhr.status === 200){
-                  console.log('서버 전송 완료');
-                }
-                else{
-                  console.log('서버 전송 실패');
-                }
-              }
-            }
+            // const xhr = new XMLHttpRequest();
+            // xhr.open('POST','/profiles/new');
+            // xhr.setRequestHeader('Content-Type','multipart/form-data');
+            // xhr.send(formData);
+            // xhr.onreadystatechange = function(){
+            //   if(xhr.readyState === XMLHttpRequest.DONE){
+            //     if(xhr.status === 200){
+            //       console.log('서버 전송 완료');
+            //     }
+            //     else{
+            //       console.log('서버 전송 실패');
+            //     }
+            //   }
+            // }
             localStorage.setItem("cast",JSON.stringify(cast));
-            // window.location.href="/register4"; }
+            window.location.href="/register4";
+          
           }
         
         const style={

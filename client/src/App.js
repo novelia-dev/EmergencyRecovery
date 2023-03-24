@@ -59,6 +59,8 @@ import MyInput from "./components/MyPage/MyInput";
 import MyPointStats from "./components/MyPage/MyPointStats";
 import ChooseFeedback from "./components/Feedback/ChooseFeedback";
 import WriteFeedback from "./components/Feedback/WriteFeedback";
+import AuthorSurvey from "./components/Registerpage/AuthorSurvey";
+import ReaderSurvey from "./components/Registerpage/ReaderSurvey";
 
 import MobileMainPage from "./components/Mainpage/mobile/MobileMainpage";
 import MobileLoginPage from "./components/Loginpage/mobile/MobileLoginPage";
@@ -138,6 +140,8 @@ function App() {
             <Route path ="/mypointstats" element={<MyPointStats />} />
             <Route path ="/:id/chooseFeedback" element={<ChooseFeedback />} />
             <Route path ="/:id/writeFeedback" element={<WriteFeedback />} />
+            <Route path ="/authorsurvey" element={<AuthorSurvey />} />
+            <Route path ="/readersurvey" element={<ReaderSurvey />} />
 
             <Route path ="/mobile" element={<MobileMainPage />} />
             <Route path = "/mobilelogin" element={<MobileLoginPage />} />
