@@ -1,8 +1,18 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import image from "../Image/Ellipse 1.png";
+import moment from 'moment';
 
 function DetailMyPage(props){
+
+    const [remainingDays, setRemainingDays] = useState(null);
+
+    useEffect(() => {
+        const now = moment();
+        const targetDate = moment('2023-03-28');
+        const diffInDays = targetDate.diff(now,'days');
+        setRemainingDays(diffInDays);
+    },[])
 
     let {id} = useParams();
 
@@ -22,7 +32,9 @@ function DetailMyPage(props){
                                         <h4 class="card-title">재벌집 막내아들</h4>
                                         <p class="card-text">
                                         <h6>산경</h6>
-                                        <h6>현대 판타지 &nbsp; D-14</h6>
+                                        {remainingDays !== null && (
+                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
+                          )}
                                         <h6>10/30 &nbsp; 10/10</h6>
                                         <h6>태그</h6>
                                         <table>
@@ -80,7 +92,9 @@ function DetailMyPage(props){
                                         <h4 class="card-title">재벌집 막내아들</h4>
                                         <p class="card-text">
                                         <h6>산경</h6>
-                                        <h6>현대 판타지 &nbsp; D-14</h6>
+                                        {remainingDays !== null && (
+                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
+                          )}
                                         <h6>10/30 &nbsp; 10/10</h6>
                                         <h6>태그</h6>
                                         <table>
@@ -126,7 +140,9 @@ function DetailMyPage(props){
                                         <h4 class="card-title">재벌집 막내아들</h4>
                                         <p class="card-text">
                                         <h6>산경</h6>
-                                        <h6>현대 판타지 &nbsp; D-14</h6>
+                                        {remainingDays !== null && (
+                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
+                          )}
                                         <h6>10/30 &nbsp; 10/10</h6>
                                         <h6>태그</h6>
                                         <table>
@@ -174,7 +190,9 @@ function DetailMyPage(props){
                                         <h4 class="card-title">재벌집 막내아들</h4>
                                         <p class="card-text">
                                         <h6>산경</h6>
-                                        <h6>현대 판타지 &nbsp; D-14</h6>
+                                        {remainingDays !== null && (
+                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
+                          )}
                                         <h6>10/30 &nbsp; 10/10</h6>
                                         <h6>태그</h6>
                                         <table>
@@ -220,7 +238,9 @@ function DetailMyPage(props){
                                         <h4 class="card-title">재벌집 막내아들</h4>
                                         <p class="card-text">
                                         <h6>산경</h6>
-                                        <h6>현대 판타지 &nbsp; D-14</h6>
+                                        {remainingDays !== null && (
+                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
+                          )}
                                         <h6>10/30 &nbsp; 10/10</h6>
                                         <h6>태그</h6>
                                         <table>

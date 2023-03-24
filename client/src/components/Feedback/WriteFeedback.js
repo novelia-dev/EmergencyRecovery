@@ -4,7 +4,6 @@ import {Descriptions} from 'antd'
 import Comments from './Sections/Comments';
 import image1 from "../Image/illumination-5173540_1920.jpg";
 
-
 function WriteFeedback(){
     
     const [AverageStar, setAverageStar] = useState([])

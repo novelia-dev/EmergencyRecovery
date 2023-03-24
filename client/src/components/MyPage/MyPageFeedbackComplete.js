@@ -1,7 +1,18 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import image from '../Image/illumination-5173540_1920.jpg';
+import moment from 'moment';
 
 function MyPageFeedbackComplete(){
+
+  const [remainingDays , setRemainingDays] = useState(null);
+
+  useEffect(() => {
+    const now = moment();
+    const targetDate = moment('2023-03-28');
+    const diffInDays = targetDate.diff(now,'days');
+    setRemainingDays(diffInDays);
+  },[])
+
     return(
         <div>
             <div>
@@ -22,7 +33,9 @@ function MyPageFeedbackComplete(){
                         <h2 class="card-title">재벌집 막내아들</h2>
                         <p class="card-text">
                           <h4>산경</h4>
-                          <h4>현대 판타지 &nbsp; D-14</h4>
+                          {remainingDays !== null && (
+                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
+                          )}
                           <h4>10/30 &nbsp; 10/10</h4>
                           <h4>태그</h4>
                           <table>
@@ -78,7 +91,9 @@ function MyPageFeedbackComplete(){
                         <h2 class="card-title">재벌집 막내아들</h2>
                         <p class="card-text">
                           <h4>산경</h4>
-                          <h4>현대 판타지 &nbsp; D-14</h4>
+                          {remainingDays !== null && (
+                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
+                          )}
                           <h4>10/30 &nbsp; 10/10</h4>
                           <h4>태그</h4>
                           <table>
