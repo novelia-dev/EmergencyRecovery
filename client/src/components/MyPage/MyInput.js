@@ -6,7 +6,8 @@ import Result from "../Prize/Prize";
 import { getRandomPrize } from "../Prize/Prize";
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
+import Navbar from "../Navbar/SimpleNavbar";
+import Footer from "../Footer/Footer";
 function exchange(){
     if(window.confirm("정말 교환하시겠습니까?") == true)
     {
@@ -81,11 +82,14 @@ Modal.propTypes = {
 
     return(
         <div>
-            <div>
+          <Navbar/>
+            <div style={{marginLeft:"360px",width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",backgroundColor:"#D9D9D9"  }}>
+                <div style={{marginLeft:"15px"}}>
                 <h4>포인트 샵</h4>
                 <h5>모은 포인트를 사용할 수 있습니다.</h5>
+                </div>
             </div>
-            <div className="container-fluid">
+            <div className="container-fluid" style={{marginLeft:"360px",width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5" }}>
                <div class = "row">
                 <div class="col-12 mt-3">
                   <div class="card-horizontal">
@@ -94,33 +98,29 @@ Modal.propTypes = {
                     </div>
                     <div class="card-body" style={{marginLeft:"15px"}}>
                       <p class="card-text">
-                        <table>
-                          <tr>
-                            <td><h6>획득 포인트 : 8000 &nbsp; &nbsp;</h6></td>
-                          </tr>
-                          <tr>
-                            <td><h6>사용 포인트 : 8000</h6></td>
-                          </tr>
-                          <tr>
-                            <td><h6>잔여 포인트 : 8000</h6></td>
-                            <td><button style={{width:"180px",height:"19px",display:'flex',alignItems:"center",textAlign:"center",backgroundColor:"#FFFFFF",color:"#000000", border:"1px solid #D9D9D9"}} onClick={movetoStats}>&nbsp;&nbsp; 포인트 획득/사용내역</button></td>
-                          </tr>
-                        </table>
-                      </p>
+                        <div style={{float:"left"}}>
+                        <h4 style={{marginTop:"150px"}}>획득 포인트 : 8000 &nbsp; &nbsp;</h4>
+                        <h4>사용 포인트 : 8000</h4>
+                        <h4 >잔여 포인트 : 8000</h4>
+                        </div>
+                        <button style={{marginLeft:"53px",marginTop:"209px",width:"252px",height:"45px",fontSize:"16px",fontWeight:"700",alignItems:"center",textAlign:"center",backgroundColor:"#FFFFFF",color:"#000000", border:"1px solid #AA0140"}} onClick={movetoStats}>포인트 획득/사용내역</button>   
+                    </p>
                     </div>
                   </div>
                 </div>
               </div> 
             </div>
-            <br />
-            <div>
+            <div style={{marginLeft:"360px",width:"1200px",height:"120px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",backgroundColor:"#EEEEEE"  }}>
+              </div>
+   
+            <div style={{marginLeft:"360px",width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
+            <div style={{marginLeft:"15px"}}>
                 <h5>경품 응모권(매일 오전 9시 문자로 당첨경품 지급, 1회 당 1200point)</h5>
             </div>
             <div>
-                <table>
-                    <td><img src={image1} style={{width:"300px", height:"159.99px"}} alt="기프티콘 이미지" /> &nbsp; &nbsp; &nbsp;</td>
-                    <td>
-                      <button style={{width:"83px",height:"19px",display:'flex',alignItems:"center",textAlign:"center",backgroundColor:"#AA0140",color:"#FFFFFF", border:"1px solid #D9D9D9"}} onClick={openModal}>&nbsp; 응모하기</button>
+                
+                  <img src={image1} style={{width:"720px", height:"273px"}} alt="기프티콘 이미지" />
+                  <button style={{width:"131px",height:"45px",alignItems:"center",textAlign:"center",backgroundColor:"#AA0140",color:"#FFFFFF", border:"1px solid #D9D9D9",borderRadius:"4px"}} onClick={openModal}>응모하기</button>
                       {
                                modalVisible && <Modal
                                  visible={modalVisible}
@@ -141,10 +141,8 @@ Modal.propTypes = {
                                     </div>
                                  </Modal>
                       }
-                    </td>
-                </table>
             </div>
-             <div>
+            <div style={{marginLeft:"15px"}}>
                 <h5>경품(자체 포인트 제외)목록</h5>
               </div>
             <div>
@@ -154,52 +152,53 @@ Modal.propTypes = {
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img src={image} alt="사진" />
+                      <img style={{width:"282px",height:"272px"}} src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
-                        <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
+                        <h4 class="card-title" style={{marginLeft:"58px"}}>뿌링클 치킨 기프티콘</h4>
                       </div>
                  </div>
               </div>
             </div>
           </div></td>
-                    <td><div className="contanier-fluid">
+                    <td><div className="contanier-fluid" style={{marginLeft:"24px"}}>
             <div class="row">
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img src={image} alt="사진" />
+                      <img style={{width:"282px",height:"272px"}} src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
-                        <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
+                        <h4 class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;카카오페이지 5000원 기프티콘</h4>
                       </div>
                  </div>
               </div>
             </div>
           </div></td>
-                    <td><div className="contanier-fluid">
+                    <td><div className="contanier-fluid" style={{marginLeft:"24px"}}>
             <div class="row">
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img src={image} alt="사진" />
+                      <img style={{width:"282px",height:"272px"}} src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
-                        <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
+                        <h4 class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;스타벅스 아메리카노 기프티콘</h4>
                       </div>
                  </div>
               </div>
             </div>
           </div></td>
-                    <td><div className="contanier-fluid">
+                    <td>
+          <div className="contanier-fluid"style={{marginLeft:"24px"}}>
             <div class="row">
               <div class="col-12 mt-3">
                  <div class="card">
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
-                      <img src={image} alt="사진" />
+                      <img style={{width:"282px",height:"272px"}} src={image} alt="사진" />
                     </div>
                       <div class="card-body" >
-                        <h4 class="card-title">스타벅스 아메리카노 기프티콘</h4>
+                        <h4 class="card-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;편의점 3000원 기프티콘</h4>
                       </div>
                  </div>
               </div>
@@ -207,6 +206,8 @@ Modal.propTypes = {
           </div></td>
                 </table>
             </div>
+            </div>
+            <Footer/>
         </div>
     )
 }
