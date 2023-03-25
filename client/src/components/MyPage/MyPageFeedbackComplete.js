@@ -13,6 +13,11 @@ function MyPageFeedbackComplete(){
     setRemainingDays(diffInDays);
   },[])
 
+  function move(){
+    alert('피드백 열람을 위해 열람권 구매 페이지로 이동합니다.');
+    window.location.href="/buy";
+  }
+
     return(
         <div>
             <div>
@@ -29,7 +34,7 @@ function MyPageFeedbackComplete(){
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
                       <img src ={image} style={{width:"282px", height:"423px"}} alt="사진" />
                     </div>
-                      <div class="card-body" >
+                      <div class="card-body" onClick={move} >
                         <h2 class="card-title">재벌집 막내아들</h2>
                         <p class="card-text">
                           <h4>산경</h4>
@@ -87,7 +92,7 @@ function MyPageFeedbackComplete(){
                     <div class="img-square-wrapper" style={{marginTop:"25px"}}>
                       <img src={image} style={{width:"282px", height:"423px"}} alt="사진" />
                     </div>
-                      <div class="card-body" >
+                      <div class="card-body" onClick={move} >
                         <h2 class="card-title">재벌집 막내아들</h2>
                         <p class="card-text">
                           <h4>산경</h4>
