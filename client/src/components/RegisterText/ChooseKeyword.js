@@ -21,31 +21,31 @@ function ChooseKeyword(){
     var size3 = arr2.length;
     var size4 = arr3.length;
 
-    const tagInput = document.querySelector(".tag-input");
-const tagArea = document.querySelector(".tag-area");
+const tagInputRef = useRef(null);
 const ul = document.querySelector(".tag-area ul");
 const label = document.querySelector(".label");
 
-let tags = [];
+let tags = JSON.parse(localStorage.getItem("tags")) || [];
 
 function addEvent(element) {
-    tagArea.addEventListener("click", () => {
+    tagInputRef.current.addEventListener("click", () => {
         element.focus();
     });
 
     element.addEventListener("focus", () => {
-        tagArea.classList.add("active");
+        tagInputRef.current.parentElement.classList.add("active");
         label.classList.add("label-active");
     });
 
     element.addEventListener("blur", (e) => {
-        tagArea.classList.remove("active");
+        tagInputRef.current.parentElement.classList.remove("active");
         if (element.value === "" && tags.length === 0) {
             label.classList.remove("label-active");
         }
         if (!element.value.match(/^\s+$/gi) && element.value !== "") {
             tags.push(e.target.value.trim());
             element.value = "";
+            localStorage.setItem("tags",JSON.stringify(tags));
             renderTags();
         }
     });
@@ -62,15 +62,17 @@ function addEvent(element) {
         ) {
             tags.push(e.target.value.trim());
             element.value = "";
+            localStorage.setItem("tags",JSON.stringify(tags));
             renderTags();
         }
         if (e.keyCode === 8 && value === "") {
             tags.pop();
+            localStorage.setItem("tags",JSON.stringify(tags));
             renderTags();
         }
     });
 }
-addEvent(tagInput);
+addEvent(tagInputRef.current);
 
 function renderTags() {
     ul.innerHTML = "";
@@ -95,12 +97,23 @@ function createTag(tag, index) {
     span.dataset.index = index;
     span.addEventListener("click", (e) => {
         tags = tags.filter((_, index) => index != e.target.dataset.index);
+        localStorage.setItem("tags",JSON.stringify(tags));
         renderTags();
     });
     li.appendChild(text);
     li.appendChild(span);
     ul.appendChild(li);
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.className = "tags";
+    addEvent(input);
+    ul.appendChild(input);
+    input.focus();
+    setTimeout(() => (input.value = ""), 0);
 }
+
+renderTags();
 
 
     function inputok(){
