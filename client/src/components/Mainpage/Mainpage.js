@@ -94,13 +94,42 @@ function Mainpage(){
     return currentPosts;
   };
     console.log(posts);
+    const [selected, setSelected] = useState("button1");
+  const handleClick1 = () => {
+    setSelected("button1");
+  };
+
+  const handleClick2 = () => {
+    setSelected("button2");
+  };
+    const style1={
+      width:"125px",
+      height:"45px",
+      marginLeft:"1307px",
+      marginTop:"23px",
+      border:"none",
+      borderBottom: `4px solid ${selected === "button1" ? "#AA0140" : "#000"}`,
+      backgroundColor:"white",
+      fontSize:"16px",
+      fontWeight:"400"
+     };
+     const style2={
+      width:"125px",
+      height:"45px",
+      marginTop:"23px",
+      border:"none",
+      borderBottom: `4px solid ${selected === "button2" ? "#AA0140" : "#000"}`,
+      backgroundColor:"white",
+      fontSize:"16px",
+      fontWeight:"400"
+     };
     return(
         <div>
           <Navbar/>
           <MainSlider/>
-           <div style={{marginTop: "90px", marginLeft: "360px"}} >
-            <button style={{marginLeft:"1088px"}}>추천순</button>
-            <button>시간순</button>
+          <div style={{marginTop:"10px"}}><button style={style1} onClick={handleClick1}>추천순</button><button style={style2} onClick={handleClick2}>시간순</button></div>
+           <div style={{marginTop: "10px", marginLeft: "360px"}} >
+           
             <Posts posts={currentPosts(posts)} loading={loading}></Posts>
       <Pagination
         postsPerPage={postsPerPage}
