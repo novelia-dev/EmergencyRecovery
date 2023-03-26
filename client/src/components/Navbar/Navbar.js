@@ -97,7 +97,7 @@ function Navbar(){
 
 //npm install styled-component 해야됨
  function Button1() {
-    let data=["전체작품","객관식작","주관식작","로맨스","판타지","로판","남성향","여성향","선호태그","선호태그","선호태그","선호태그","선호태그"];
+    let data=["전체작품","객관식작","주관식작","로맨스","판타지","로판","남성향","여성향",/*"선호태그","선호태그","선호태그","선호태그","선호태그"*/];
     let[btnActive, setBtnActive] = useState("");
     const toggleActive = (e) => {
         setBtnActive((prev) => {
