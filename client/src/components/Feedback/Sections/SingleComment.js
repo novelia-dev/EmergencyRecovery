@@ -142,15 +142,16 @@ Modal.propTypes = {
                         }
                     </td>
                     </tr>
-                    <tr>
+                    </table>
+                    
                         <h5>좋았던 점</h5>
-                        <Input type="text" value="좋다" />
-                    </tr>
-                    <tr>
+                        <Input style={{width:"1169px" , height:"90px"}} type="text" value="좋다" />
+                    
+                  
                         <h5>아쉬웠던 점</h5>
-                        <Input type="text" value="싫다" />
-                    </tr>
-                </table>
+                        <Input style={{width:"1169px", height:"90px"}} type="text" value="싫다" />
+                    
+                
                 
             </p>}></Comment>
         </div>
