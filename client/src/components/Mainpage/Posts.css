@@ -2,3 +2,10 @@
     display: flex;
     flex: 1 1 auto;
 }
+
+.img-square-wrapper{
+    position: relative;
+}
+.img-square-wrapper:hover > div {
+    display: flex;
+  }
