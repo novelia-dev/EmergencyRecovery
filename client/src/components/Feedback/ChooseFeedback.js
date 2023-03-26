@@ -409,6 +409,7 @@ function ChooseFeedback(props){
                 <h5>서비스 평가를 남겨주세요.</h5>
                 <input type="text" placeholder="서비스 평가를 남겨주세요." style={{width:"1169px",height:"90px"}} />
             </div>
+            <button>만족도 제출</button>
             <button>주관식 보기</button>
         </div>
     )

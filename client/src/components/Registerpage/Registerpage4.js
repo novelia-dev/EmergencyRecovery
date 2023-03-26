@@ -65,7 +65,7 @@ function Registerpage4(){
     }
 
     const Button = () => {
-        const arr = [{id: 1, name:"판타지" }, {id: 2, name:"로맨스" }, { id: 3 , name:"로맨스 판타지" }];
+        const arr = [{id: 1, name:"판타지" }, {id: 2, name:"로맨스" }, { id: 3 , name:"로판" }];
         const [pick, setPick] = useState(arr);
         const [select, setSelect] = useState([]);
       
@@ -520,7 +520,7 @@ function Registerpage4(){
             <select name="장르별 태그보기" style={{width: "248px", height: "38px"}} >
                     <option defaulValue="로맨스">로맨스</option> 
                     <option value="판타지">판타지</option>
-                    <option value="로맨스/판타지">로맨스/판타지</option>   
+                    <option value="로판">로판</option>   
                 </select> 
             </div>
             <div style={{marginTop:"15px",marginLeft:"15px",fontWeight: "700"}}>

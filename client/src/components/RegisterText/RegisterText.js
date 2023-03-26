@@ -359,6 +359,9 @@ const buttonstyle={
         <br/>
         <br/>
         <label><b>오답</b> &nbsp;</label><br></br><input type="text" onChange={updateWrong2} />
+        <br />
+        <br />
+        <button>퀴즈 제출</button>
         </div>
         
         <br/>
