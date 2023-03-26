@@ -52,18 +52,18 @@ const Posts = ({ posts, loading }) => {
             <div className="contanier-fluid" style={{'border-width':"3px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}} key={post.id} >
             <div class="row">
               <div class="col-12 mt-3">
-                  <div class="card-horizontal" onClick={movetodetail}>
+                  <div class="card-horizontal">
                   <div className="img-square-wrapper"onMouseEnter={handleMouseEnter}onMouseLeave={handleMouseLeave}>
       <img style={{ width: '282px', height: '423px' }} src={image} alt="사진" />
       {isHovering && (
         <div style={{position: 'absolute',top: 0,left: 0,width: '100%',height: '100%',backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>
-          <button style={{position:"absolute",borderRadius: "50px",marginLeft:"204px",Top:"25px",width:"78px",height:"51px",backgroundColor:"#AA0140",color:"white"}}>스크랩</button>
-          <div style={{display: 'flex',justifyContent: 'center',alignItems: 'center',height: '100%'}}>
+          <button onClick={movetoscrap} style={{position:"absolute",borderRadius: "50px",marginLeft:"204px",Top:"25px",width:"78px",height:"51px",backgroundColor:"#AA0140",color:"white"}}>스크랩</button>
+          <div onClick={movetodetail} style={{display: 'flex',justifyContent: 'center',alignItems: 'center',height: '100%'}}>
             <h6 style={{ color: 'white',width:"282px",height:"289px",backgroundColor: 'rgba(0, 0, 0, 0.9)' }}>이미지 위에 표시할 텍스트</h6>
           </div>
         </div>)}
         </div>
-                      <div class="card-body" >
+                      <div class="card-body" onClick={movetodetail} >
                         <h2 class="card-title">재벌집 막내아들</h2>
                         <p class="card-text">
                           <h4>산경</h4>
@@ -119,18 +119,18 @@ const Posts = ({ posts, loading }) => {
             <div className="contanier-fluid" key={post.id} style={{marginLeft:"24px",'border-width':"3px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
             <div class="row">
               <div class="col-12 mt-3">
-                 <div class="card-horizontal" onClick={movetodetail}>
+                 <div class="card-horizontal">
                  <div className="img-square-wrapper"onMouseEnter={handleMouseEnter}onMouseLeave={handleMouseLeave}>
       <img style={{ width: '282px', height: '423px' }} src={image} alt="사진" />
       {isHovering && (
         <div style={{position: 'absolute',top: 0,left: 0,width: '100%',height: '100%',backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>
-          <button style={{position:"absolute",borderRadius: "50px",marginLeft:"204px",Top:"25px",width:"78px",height:"51px",backgroundColor:"#AA0140",color:"white"}}>스크랩</button>
-          <div style={{display: 'flex',justifyContent: 'center',alignItems: 'center',height: '100%'}}>
+          <button onClick={movetoscrap} style={{position:"absolute",borderRadius: "50px",marginLeft:"204px",Top:"25px",width:"78px",height:"51px",backgroundColor:"#AA0140",color:"white"}}>스크랩</button>
+          <div onClick={movetodetail} style={{display: 'flex',justifyContent: 'center',alignItems: 'center',height: '100%'}}>
             <h6 style={{ color: 'white',width:"282px",height:"289px",backgroundColor: 'rgba(0, 0, 0, 0.9)' }}>이미지 위에 표시할 텍스트</h6>
           </div>
         </div>)}
         </div>
-                      <div class="card-body" >
+                      <div class="card-body" onClick={movetodetail} >
                         <h2 class="card-title">재벌집 막내아들</h2>
                         <p class="card-text">
                           <h4>산경</h4>
