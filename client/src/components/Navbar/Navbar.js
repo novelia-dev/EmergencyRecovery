@@ -1,4 +1,6 @@
-import React,{useState,onChange} from 'react';
+import React,{useState,useReducer} from 'react';
+import {createStore} from 'redux';
+import {useDispatch} from 'react-redux';
 import Novelist from '../Image/Navbar_logo.png';
 
 import NewText from '../Image/pen.png';
@@ -17,17 +19,58 @@ function movetotext(){
 }
 function Navbar(){
 
+    const initialState ={
+      searchTerm: '',
+      filteredData: [],
+    };
+
+    const reducer = (state = initialState, action) => {
+      switch(action.type){
+        case 'SET_SEARCH_TERM':
+          return{
+            ...state,
+            searchTerm: action.payload,
+          };
+        case 'SET_FILTERED_DATA':
+          return{
+            ...state,
+            filteredData: action.payload,
+          };
+          default:
+            return state;
+      }
+    };
+
+    const store = createStore(reducer);
+
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    const handleChange = (event) => {
+      const searchTerm = event.target.value;
+
+      dispatch({type: 'SET_SEARCH_TERM', payload: searchTerm});
+
+      const fetchData = async() => {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const data = await response.json();
+        const filteredData = data.filter(item => item.title.includes(searchTerm));
+        dispatch({type: 'SET_FILTERED_DATA', payload: filteredData});
+      };
+
+      fetchData();
+    };
+
     const Text = ()=> {
 
-      /*const [search,setSearch] = useState("");
-      const onChange=(e)=>{
-        setSearch(e.target.value)
-      }*/
+     
         return(
         <div>
            <div style={{ display: 'flex', alignItems: 'center' }}>
              <img onClick={movetomain} className="Novelist" alt="Novelist" style={{ width: "122.9px", height: "30px", marginTop: "30px", marginLeft: "225px" }} src={Novelist} />
-             <input type="text" /*value={search} onChange={onChange}*/ placeholder="  #해쉬태그로 검색해보세요" style={{ width: "588px", height: "30px", marginTop: "30px", marginLeft: "318.1px", backgroundColor: '#FFFFFF', borderRadius: "50px", }}></input>
+             <input type="text" value={state.searchTerm} onChange={handleChange} placeholder="  #해쉬태그로 검색해보세요" style={{ width: "588px", height: "30px", marginTop: "30px", marginLeft: "318.1px", backgroundColor: '#FFFFFF', borderRadius: "50px", }}></input>
+             {/* <ul>
+               {state.filteredData.map(item => <li key={item.id}>{item.title}</li>)}
+             </ul> */}
              <img className="Image" alt="Image" style={{ width: "30.31px", height: "30px", marginLeft: "-45px", marginTop: "28px" }} src={Image} />
              <div>
              <Bell />
