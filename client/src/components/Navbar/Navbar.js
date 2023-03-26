@@ -67,7 +67,7 @@ function Navbar(){
         <div>
            <div style={{ display: 'flex', alignItems: 'center' }}>
              <img onClick={movetomain} className="Novelist" alt="Novelist" style={{ width: "122.9px", height: "30px", marginTop: "30px", marginLeft: "225px" }} src={Novelist} />
-             <input type="text" value={state.searchTerm} onChange={handleChange} placeholder="  #해쉬태그로 검색해보세요" style={{ width: "588px", height: "30px", marginTop: "30px", marginLeft: "318.1px", backgroundColor: '#FFFFFF', borderRadius: "50px", }}></input>
+             {/* <input type="text" value={state.searchTerm} onChange={handleChange} placeholder="  #해쉬태그로 검색해보세요" style={{ width: "588px", height: "30px", marginTop: "30px", marginLeft: "318.1px", backgroundColor: '#FFFFFF', borderRadius: "50px", }}></input> */}
              {/* <ul>
                {state.filteredData.map(item => <li key={item.id}>{item.title}</li>)}
              </ul> */}

@@ -112,7 +112,7 @@ class Text extends React.Component{
             <div>
             <div style={{'marginLeft':"666px",'width':"588px",'height':"120px",'left':"669px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
                 <div style={style}>작품제목</div>
-                <div style={style1}>소제목</div>
+                <div style={style1}>4화</div>
                 <div style={style2}>글자크기</div>
                 <div style={style3}>
                 <select>
