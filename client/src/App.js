@@ -48,16 +48,13 @@ import ChooseKeyword from "./components/RegisterText/ChooseKeyword";
 import Hilight from "./components/RegisterText/Hilight";
 import FeedSelect from "./components/RegisterText/FeedSelect";
 import Buy from "./components/Buy/Buy";
-import MyPageInfo from "./components/MyPage/MyPageInfo";
-import MyPageInfoChange from "./components/MyPage/MyPageInfoChange";
 import MyPageFeedback from "./components/MyPage/MyPageFeedback";
 import MyPageScrap from "./components/MyPage/MyPageScrap";
 import MyPointShop from "./components/MyPage/MyPointShop";
 import MyGiftCoupon from "./components/MyPage/MyGiftCoupon";
 import MyInput from "./components/MyPage/MyInput";
 import MyPointStats from "./components/MyPage/MyPointStats";
-import ChooseFeedback from "./components/Feedback/ChooseFeedback";
-import WriteFeedback from "./components/Feedback/WriteFeedback";
+import Feedback from "./components/Feedback/Feedback";
 import AuthorSurvey from "./components/Registerpage/AuthorSurvey";
 import ReaderSurvey from "./components/Registerpage/ReaderSurvey";
 
@@ -136,8 +133,7 @@ function App() {
             <Route path ="/mygift/:id" element={<DetailMyGiftCoupon />} />
             <Route path ="/myinput" element={<MyInput />} />
             <Route path ="/mypointstats" element={<MyPointStats />} />
-            <Route path ="/:id/chooseFeedback" element={<ChooseFeedback />} />
-            <Route path ="/:id/writeFeedback" element={<WriteFeedback />} />
+            <Route path ="/:id/feedback" element={<Feedback />} />
             <Route path ="/authorsurvey" element={<AuthorSurvey />} />
             <Route path ="/readersurvey" element={<ReaderSurvey />} />
 
