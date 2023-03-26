@@ -5,71 +5,90 @@ import image1 from '../../Image/illumination-5173540_1920.jpg';
 
 function MobileFeedbackpage(){
     return(
-        <div>
-            <MobileNavbar />
+        <div style={{position: "relative", height: "calc(100vh - 50px)",borderWidth:"1px",'border-style':"solid",'border-color':"#EEEEEE",width:"360px"}}>
+
+         <MobileNavbar  style={{position: "fixed", top: 0, left: 0, right: 0, zIndex: 1}} />
+         <div style={{ width:"33hpx",height: "calc(100% - 458px)", overflowX: 'hidden',overflowY: "scroll"}}>
             <div>
-                <h4>피드백 작품</h4>    
-                <hr />
-                <table>
-                    <tr>
-                        <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" />
-                            <h4>아빠가 힘을 숨김</h4>
-                            <h5>고은채</h5>
-                        </td>
-                        <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" />
-                            <h4>변경백 서자는 황제였다</h4>
-                            <h5>기준석</h5>
-                        </td>
-                    </tr>
-                    <tr>
-                    <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" />
-                            <h4>결혼하지 않으면 죽습니다</h4>
-                            <h5>찬연</h5>
-                    </td>    
-                    <td>
-                    <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" />
-                            <h4>무림세가 천대받는 손녀딸이 되었다</h4>
-                            <h5>마루별</h5>
-                        </td>
-                    </tr>
-                    <tr>
-                    <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" />
-                            <h4>전지적 독자시점</h4>
-                            <h5>심숭</h5>
-                        </td>
-                        <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" />
-                            <h4>진짜가 나타난 날</h4>
-                            <h5>가엔</h5>
-                        </td>
-                   
-                    </tr>
-                    <tr>
-                    <td>
-                    <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" />
-                            <h4>화산귀환</h4>
-                            <h5>비가</h5>
-                        </td>
-                        <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" />
-                            <h4>이운</h4>
-                            <h5>라희</h5>
-                        </td>
-                    </tr>
-                    <tr>
-                    <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" />
-                            <h4>아빠가 힘을 숨김</h4>
-                            <h5>고은채</h5>
-                        </td>
-                    </tr>
-                </table>
+                <h4 style={{marginLeft:"15px"}}>피드백 작품</h4>
+
+
+                <hr style={{borderWidth:"2px",'border-style':"solid",'border-color':"#848484",width:"330px"}}/>
+
+
+                <div>
+                <img style={{width:"107px", height:"158px",marginLeft:"8px"}} src={image1} alt="이미지"  ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"5px"}} src={image1} alt="이미지"  ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"4px"}} src={image1} alt="이미지"  ></img>
+                </div>
+                <div style={{marginLeft:"8px",marginTop:"5px"}} >
+                <div  style={{width:"107px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                </div>
+
+                <div style={{marginTop:"50px"}}>
+                <img style={{width:"107px", height:"158px",marginLeft:"8px"}} src={image1} alt="이미지"  ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"5px"}} src={image1} alt="이미지"  ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"4px"}} src={image1} alt="이미지"  ></img>
+                </div>
+                <div style={{marginLeft:"8px",marginTop:"5px"}} >
+                <div  style={{width:"107px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                </div>
+                <div style={{marginTop:"50px"}}>
+                <img style={{width:"107px", height:"158px",marginLeft:"8px"}} src={image1} alt="이미지"  ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"5px"}} src={image1} alt="이미지"  ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"4px"}} src={image1} alt="이미지"  ></img>
+                </div>
+                <div style={{marginLeft:"8px",marginTop:"5px"}} >
+                <div  style={{width:"107px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                </div>
+                <div style={{marginTop:"50px"}}>
+                <img style={{width:"107px", height:"158px",marginLeft:"8px"}} src={image1} alt="이미지"  ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"5px"}} src={image1} alt="이미지"  ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"4px"}} src={image1} alt="이미지"  ></img>
+                </div>
+                <div style={{marginLeft:"8px",marginTop:"5px"}} >
+                <div  style={{width:"107px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                </div>
+
+
+
+
+            </div>
             </div>
             <MobileFooter />
+
         </div>
     )
 }

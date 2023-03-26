@@ -8,7 +8,7 @@ import image5 from '../Image/user (2) 1.png';
 
 function MobileFooter(){
     return(
-        <div>
+        <div style={{backgroundColor:"#F1F1F1"}}>
             <table style={{borderSpacing: '10px'}}>
                 <tr>
                     <td>
