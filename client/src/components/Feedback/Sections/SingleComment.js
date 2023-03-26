@@ -4,6 +4,7 @@ import {Comment, Input} from 'antd';
 import axios from 'axios';
 import {useSelector} from 'react-redux';
 import PropTypes from 'prop-types';
+import warning from '../../Image/exclamation.png';
 
 const {TextArea} = Input;
 
@@ -30,6 +31,23 @@ function SingleComment(props){
 
   const closeModal = () => {
     setModalVisible(false);
+  }
+
+  function CustomButton({imageUrl,onClick}){
+    const buttonStyle={
+        background: `url(${imageUrl}) no-repeat center center`,
+        backgroundSize: "cover",
+        border: "none",
+        width:"200px",
+        height:"50px",
+        cursor:"pointer",
+    };
+
+    return(
+        <button style={buttonStyle} onClick={onClick}>
+            <img style={{width:"40px", height:"40px"}} src={warning} alt="경고" />
+        </button>
+    )
   }
 
   function Modal({className, onClose , maskClosable , closable , visible, children})
@@ -100,7 +118,7 @@ Modal.propTypes = {
                     <td><h5>20대 &nbsp;</h5></td>
                     <td>{showResult()}</td>
                     <td>
-                        <button onClick={openModal}>경고</button>
+                        <CustomButton onClick={openModal}>경고</CustomButton>
                         {
                             modalVisible && <Modal
                             visible={modalVisible}
@@ -116,7 +134,7 @@ Modal.propTypes = {
                               <h5>욕설 및 조롱</h5>
                               <input type="radio" name="관련없는 내용" style={{float:"left",width:"24px",height:"24px"}} />  
                               <h5>관련없는 내용</h5>
-                              <br />
+                              
                               <h5>* 허위 신고 시 서비스 이용에 제한이 있을 수 있습니다.</h5>
                               <button>제출하기</button>
                             </div>
