@@ -141,11 +141,11 @@ function DetailPage(props){
                                             </td>
                                         </table>
                                         
-                                        <button style={buttonstyle} onClick={movetochoose}>객관식 참여</button>
+                                        <button style={buttonstyle} onClick={movetochoose}>객관식 참여<br /> 200p</button>
                                         <br/>
                                         <br/>
                                         
-                                        <button style={buttonstyle} onClick={movetowrite}>주관식 참여</button>
+                                        <button style={buttonstyle} onClick={movetowrite}>주관식 참여<br /> 1000p</button>
                                          
 
                                         </p>
