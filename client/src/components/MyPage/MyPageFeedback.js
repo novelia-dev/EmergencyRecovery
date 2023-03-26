@@ -32,10 +32,16 @@ useEffect(() => {
         setRemainingDays(diffInDays);
 
         var num = localStorage.getItem("number"); 
+        var but = localStorage.getItem("feedbackbutton");
 
         if(num === '1')
         {
           setButtonTitle('입금 확인중');
+        }
+
+        if(but === '2')
+        {
+          setSelected("button2");
         }
     
 
@@ -52,10 +58,12 @@ function move(){
 const [selected, setSelected] = useState("button1");
   const handleClick1 = () => {
     setSelected("button1");
+    localStorage.setItem("feedbackbutton",1);
   };
 
   const handleClick2 = () => {
     setSelected("button2");
+    localStorage.setItem("feedbackbutton",2);
   };
    const style1={
     width:"125px",
