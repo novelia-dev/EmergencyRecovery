@@ -34,16 +34,16 @@ const Ad = props => {
                     <li style={{backgroundColor:"#666666",color:"white",fontSize:"22px",fontWeight:"400"}}>@@@@ point&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;포인트샵</li>
                     <br/>
                     <li><b>독자페이지</b></li>
-                    <li onClick={movetoscrap}>스크랩한 작품</li>
-                    <li onClick={movetomyfeedback}>피드백 참여 작품</li>
+                    <li style={{cursor:"pointer"}} onClick={movetoscrap}>스크랩한 작품</li>
+                    <li style={{cursor:"pointer"}} onClick={movetomyfeedback}>피드백 참여 작품</li>
                     <br/>
                     <li><b>작가페이지</b></li>
-                    <li onClick={movetotext}>새글등록</li>
-                    <li onClick={movetomyfeedback}>내 작품목록</li>
-                    <li onClick={movetocoupon}>쿠폰함</li>
+                    <li style={{cursor:"pointer"}}  onClick={movetotext}>새글등록</li>
+                    <li style={{cursor:"pointer"}}  onClick={movetomyfeedback}>내 작품목록</li>
+                    <li style={{cursor:"pointer"}}  onClick={movetocoupon}>쿠폰함</li>
                     <br/>
                     <li><b>기본정보</b></li>
-                    <li onClick={movetomyinfo}>기본정보 및 선호/금지태그 수정</li>
+                    <li style={{cursor:"pointer"}}  onClick={movetomyinfo}>기본정보 및 선호/금지태그 수정</li>
                 </ul>
             </Dropdown>
         </div>

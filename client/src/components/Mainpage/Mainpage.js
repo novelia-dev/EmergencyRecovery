@@ -50,13 +50,13 @@ function MainSlider() {
    
   };
     return (
-      <div className="image-slider">
+      <div className="image-slider" style={{width:"1200px", marginLeft:"360px"}}>
           <Slider {...settings} >
           <div>
-          <img alt="img1" style={{width:"1200px",height:"270px",marginLeft:"360px",position:"realtive",zindex: 1}} src={Banner} />
+          <img alt="img1" style={{width:"1200px",height:"270px",position:"realtive",zindex: 1}} src={Banner} />
           </div>
           <div>
-          <img alt="img2" style={{width:"1200px",height:"270px",marginLeft:"360px",position:"realtive",zindex: 1}} src={sub} />
+          <img alt="img2" style={{width:"1200px",height:"270px",position:"realtive",zindex: 1}} src={sub} />
           </div>
           </Slider>
       </div>
