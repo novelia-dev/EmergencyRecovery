@@ -51,7 +51,6 @@ import Buy from "./components/Buy/Buy";
 import MyPageInfo from "./components/MyPage/MyPageInfo";
 import MyPageInfoChange from "./components/MyPage/MyPageInfoChange";
 import MyPageFeedback from "./components/MyPage/MyPageFeedback";
-import MyPageFeedbackComplete from "./components/MyPage/MyPageFeedbackComplete";
 import MyPageScrap from "./components/MyPage/MyPageScrap";
 import MyPointShop from "./components/MyPage/MyPointShop";
 import MyGiftCoupon from "./components/MyPage/MyGiftCoupon";
@@ -129,7 +128,6 @@ function App() {
             <Route path ="/myinfo" element={<Registerpage5 />} />
             <Route path ="/myinfochange" element={<Registerpage7 />} />
             <Route path ="/myfeedback" element={<MyPageFeedback/>} />
-            <Route path ="/myfeedbackcomplete" element={<MyPageFeedbackComplete />} />
             <Route path ="/myscrap" element={<MyPageScrap />} />
             <Route path ="/myscrap/:id" element={<DetailMyPage/>} />
             <Route path ="/mypoint" element={<MyPointShop /> }/>

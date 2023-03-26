@@ -2,7 +2,7 @@ import React from "react";
 
 function Click(){
     alert('정상입금 확인 후 열람권한이 부여됩니다. 1일 안에 처리됩니다.');
-    window.location.href="/myfeedbackcomplete";
+    window.location.href="/myfeedback";
 }
 
 function Buy(){
