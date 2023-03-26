@@ -5,23 +5,19 @@ import MobileNavbar from '../../Navbar/MobileNavbar';
 import MobileFooter from '../../Footer/MobileFooter';
 import image from '../../Image/Ticket.png';
 import starbucks from '../../Image/Starbucks.png';
-
 function Modal({className, onClose , maskClosable , closable , visible, children})
 {
-
     const onMaskClick = (e) => {
         if(e.target === e.currentTarget)
         {
             onClose(e)
         }
     }
-
     const close = (e) => {
         if(onClose){
             onClose(e)
         }
     }
-
     return(
         <>
             <ModalOverlay visible = {visible} />
@@ -34,11 +30,9 @@ function Modal({className, onClose , maskClosable , closable , visible, children
         </>
     )
 }
-
 Modal.propTypes = {
     visible: PropTypes.bool,
 }
-
 const ModalWrapper = styled.div`
     box-sizing: border-box;
     display: ${(props) => (props.visible ? 'block' : 'none')};
@@ -51,7 +45,6 @@ const ModalWrapper = styled.div`
     overflow: auto;
     outline: 0;
 `;
-
 const ModalOverlay = styled.div`
     box-sizing: border-box;
     display: ${(props) => (props.visible ? 'block' : 'none')};
@@ -63,7 +56,6 @@ const ModalOverlay = styled.div`
     background-color: rgba(0,0,0,0.6);
     z-index: 999;
 `;
-
 const ModalInner = styled.div`
     box-sizing: border-box;
     position: relative;
@@ -76,27 +68,23 @@ const ModalInner = styled.div`
     margin: 0 auto;
     padding: 40px 20px;
 `;
-
-
 function MobileMyPointShop(){
-
   const [modalVisible, setModalVisible] = useState(false);
-
   const openModal = () => {
     setModalVisible(true);
   }
-
   const closeModal = () => {
     setModalVisible(false);
   }
 
 
     return(
-        <div>
-            <MobileNavbar />
-            <div>
+      <div style={{position: "relative", height: "calc(100vh - 50px)",borderWidth:"1px",'border-style':"solid",'border-color':"#EEEEEE",width:"360px"}}>
+
+      <MobileNavbar  style={{position: "fixed", top: 0, left: 0, right: 0, zIndex: 1}} />
+      <div style={{ width:"33hpx",height: "calc(100% - 458px)", overflowX: 'hidden',overflowY: "scroll",marginLeft:"10px"}}>
                <h4>포인트샵</h4>
-               <hr /> 
+               <hr style={{borderWidth:"1px",'border-style':"solid",'border-color':"#848484",width:"330px"}}/>
                  <h5>8000 point</h5>
                <table>
                 <tr>
@@ -210,5 +198,4 @@ function MobileMyPointShop(){
         </div>
     )
 }   
-
 export default MobileMyPointShop;
