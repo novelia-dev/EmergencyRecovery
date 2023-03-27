@@ -185,38 +185,16 @@ function Text(){
                 role : role
             };
 
-            const formData = new FormData();
-            if(role === 'author'){
-            formData.append('name',nickname);
-            formData.append('sex',selected);
-            formData.append('ages',age);
-            formData.append('email',email);
-            formData.append('phone',phone);
-            formData.append('main_role',role);
-            }
-            else if (role === 'reader'){
-              formData.append('name',nickname);
-              formData.append('sex',selected);
-              formData.append('ages',age);
-              formData.append('email',email);
-              formData.append('phone',phone);
-              formData.append('main_role',role);
+            const data ={
+              name: nickname,
+              sex: selected,
+              ages: age
             }
 
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST','/profiles/new');
-            xhr.setRequestHeader('Content-Type','multipart/form-data');
-            xhr.send(formData);
-            xhr.onreadystatechange = function(){
-              if(xhr.readyState === XMLHttpRequest.DONE){
-                if(xhr.status === 200){
-                  console.log('서버 전송 완료');
-                }
-                else{
-                  console.log('서버 전송 실패');
-                }
-              }
-            }
+            axios.post('http://localhost:8000/profiles',data)
+            .then(response => console.log(response))
+            .catch(error=> console.log(error))
+            
             localStorage.setItem("cast",JSON.stringify(cast));
             window.location.href="/register4";
           

@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import axios from 'axios';
 
 function AuthorSurvey(){
 
@@ -47,6 +48,37 @@ function AuthorSurvey(){
 
     function move(){
         alert('참여해주셔서 감사합니다.');
+
+        const dataset = JSON.parse(localStorage.getItem('cast'));
+        const nickname = dataset.nickname;
+        const gender = dataset.gender;
+        const email = dataset.email;
+        const age = dataset.age;
+        const phone = dataset.phone;
+        const role = dataset.role;
+
+        const data = {
+          name: nickname,
+          sex: gender,
+          ages : age,
+          email : email,
+          phone: phone,
+          main_role: role,
+          route: '인스타그램',
+          other_feedback: '??',
+          is_fulltime_job: fulltime,
+          time_for_writer: career,
+          novel_writed: num,
+          platform: platform,
+          money: money,
+          frequency: '작가입니다.'
+        };
+
+        axios.post('http://localhost:8000/profiles/new',data)
+        .then(response=>console.log(response))
+        .catch(error=>console.log(error));
+
+
         window.location.href="/register5";
     }
 
@@ -187,15 +219,15 @@ function AuthorSurvey(){
                       <div style={{marginTop:"5px",marginLeft:"15px"}}>
                       <table>
                             <tr>
-                            <input type="checkbox" name="item1"checked={platform.includes('item1')} onChange={onPlatformhandler}></input><label>네이버시리즈</label>
-                            <input type="checkbox" name="item1"checked={platform.includes('item2')} onChange={onPlatformhandler}></input><label>카카오페이지</label>
-                            <input type="checkbox" name="item1"checked={platform.includes('item3')} onChange={onPlatformhandler}></input><label>네이버웹소설</label>
+                            <input type="checkbox" name="item7"checked={platform.includes('item7')} onChange={onPlatformhandler}></input><label>네이버시리즈</label>
+                            <input type="checkbox" name="item8"checked={platform.includes('item8')} onChange={onPlatformhandler}></input><label>카카오페이지</label>
+                            <input type="checkbox" name="item9"checked={platform.includes('item9')} onChange={onPlatformhandler}></input><label>네이버웹소설</label>
                             </tr>
                             <tr>
-                            <input type="checkbox" name="item1"checked={platform.includes('item4')} onChange={onPlatformhandler}></input><label>카카오스테이지</label>
-                            <input type="checkbox" name="item1"checked={platform.includes('item5')} onChange={onPlatformhandler}></input><label>문피아</label>
-                            <input type="checkbox" name="item1"checked={platform.includes('item6')} onChange={onPlatformhandler}></input><label>조아라</label>
-                            <input type="checkbox" name="item1"checked={platform.includes('item7')} onChange={onPlatformhandler}></input><label>기타</label>
+                            <input type="checkbox" name="item10"checked={platform.includes('item10')} onChange={onPlatformhandler}></input><label>카카오스테이지</label>
+                            <input type="checkbox" name="item11"checked={platform.includes('item11')} onChange={onPlatformhandler}></input><label>문피아</label>
+                            <input type="checkbox" name="item12"checked={platform.includes('item12')} onChange={onPlatformhandler}></input><label>조아라</label>
+                            <input type="checkbox" name="item13"checked={platform.includes('item13')} onChange={onPlatformhandler}></input><label>기타</label>
                             </tr>
                           </table>        
                       </div>
