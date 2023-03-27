@@ -585,7 +585,6 @@ function Text(){
     }
 
     
-  
             
     return(
        
@@ -600,7 +599,7 @@ function Text(){
         <div style={style2}>
         &nbsp; &nbsp;<input type="label"placeholder="플레이스 홀더" onChange={onnicknamehandler}></input>
                      
-        </div><botton style={style3} onClick={activeButton}>중복확인</botton>
+        </div><button style={style3} onClick={activeButton}>중복확인</button>
         
         <div style={{marginTop:"15px"}}>
         &nbsp; &nbsp;<select name="성별" style={{width:"240px",height:"30px"}} onChange={ongenderhandler}>
@@ -655,7 +654,7 @@ function Text(){
          
                 </select> 
             </div>
-           
+            <button style={style3} onClick={submitactiveButton}>다음</button>
             
         </div>
         </div>
