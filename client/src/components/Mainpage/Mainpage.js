@@ -69,21 +69,27 @@ function Mainpage(){
     const [postsPerPage, setPostsPerPage] = useState(10);
     
 
+    
+
     useEffect(() => {
-
-    })
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/posts"
-      );
-      setPosts(response.data);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
+      if (window.confirm("로그인을 하셔야합니다. 만약 로그인을 하셨다면 취소버튼을 눌러주세요!")) {
+        window.location.href = "/login";
+      } else {
+        return;
+      }
+    }, []);
+    
+    useEffect(() => {
+      const fetchData = async () => {
+        setLoading(true);
+        const response = await axios.get(
+          "https://jsonplaceholder.typicode.com/posts"
+        );
+        setPosts(response.data);
+        setLoading(false);
+      };
+      fetchData();
+    }, [setPosts]);
 
   /* 새로 추가한 부분 */
   const indexOfLast = currentPage * postsPerPage;
