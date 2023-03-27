@@ -1,10 +1,31 @@
-import React from 'react';
+import React,{useEffect} from 'react';
+import axios from 'axios';
 
 function movetoregister(){
     window.location.href="/mobileregister2";
 }
 
 function MobileRegisterPage(){
+
+    useEffect(() => {
+        var accessToken = localStorage.getItem("code");
+        var kakao = 'kakao';
+        console.log(accessToken);
+        const data = {
+            accessToken: accessToken,
+            vendor: kakao
+        };
+
+        axios.post('http://localhost:8000/users/login',data,{
+            headers:{
+                'Content-Type':'application/json'
+            }
+        })
+        .then(response=>console.log(response))
+        .catch(error=>console.log(error));
+
+    },[])
+
     return(
         <div>
             <div>

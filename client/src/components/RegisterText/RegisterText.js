@@ -339,26 +339,20 @@ function RegisterText(props){
         }
 
         const formData = new FormData();
-        formData.append("authorProfile",Images);
+        formData.append("thumbnail",Images);
         formData.append("title",title);
         formData.append("tags",tag);
         formData.append("content",content);
 
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST','/quiz');
-        xhr.setRequestHeader('Content-Type','multipart/form-data');
-        xhr.send(formData);
-        xhr.onreadystatechange = function(){
-            if(xhr.readyState === XMLHttpRequest.DONE){
-                if(xhr.status === 200){
-                    console.log('서버 전송 완료');
-                }
-                else{
-                    console.log('서버 전송 실패');
-                }
+        const config = {
+            headers:{
+                'content-type':'application/json'
             }
-        }
+        };
         
+        axios.post('http://localhost:8000/novels/new',formData,config)
+        .then(response => console.log(response))
+        .catch(error => console.log(error));
 
     }
 const buttonstyle={
