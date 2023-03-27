@@ -4,6 +4,8 @@ import {Descriptions} from 'antd';
 import Comments from './Sections/Comments';
 import image1 from "../Image/illumination-5173540_1920.jpg";
 import Navbar from '../Navbar/SimpleNavbar';
+import Checkbox from "../Image/객관식체크박스.png";
+import NewText from '../Image/pen.png';
 
 function Feedback(props){
     const [selected, setSelected] = useState("button1");
@@ -46,9 +48,10 @@ function Feedback(props){
             </div>
           }
           {selected === "button2" && <div style={{ marginTop:"60px",marginLeft:"360px",width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5" }}>
-           <div style={{marginLeft:"15px"}}></div>
+           <div style={{marginLeft:"15px"}}>
            <h4>피드백 열람</h4>
             <h5>해당작품의 피드백 결과입니다.</h5>
+            </div>
             </div>
           }
           <div><button style={style1} onClick={handleClick1}>객관식</button><button style={style2} onClick={handleClick2}>주관식</button></div>
@@ -156,13 +159,14 @@ function ChooseFeedback(props){
         ));
       };
       const Button1 = () => {
-        const arr = [{id: 1 }, {id: 2 }, { id: 3 },{id : 4},{id : 5},{id : 6},{id:7},{id:8},{id:9},{id:10}];
+        const arr = [{id: 1 }, {id: 2 }, { id: 3 }];
         const [pick1, setPick1] = useState(arr);
         const [select1, setSelect1] = useState([]);
       
         return pick1.map((item) => (
           <div className="button_container">
-            
+            <table>
+            <td>
             <button
               key={item.id}
               onClick={() => {
@@ -175,21 +179,24 @@ function ChooseFeedback(props){
                   ? "button_table_btn_ns"
                   : "button_table_btn_s"
               }
-              style={{marginTop:"15px",marginLeft:"30px"}}
             >
               주인공 능력이 매력적이예요!
-            </button>
+            </button></td>
+            <td><h5>90%</h5></td>
+            </table>
           </div>
         ));
       };
       const Button2 = () => {
-        const arr = [{id: 1 }, {id: 2 }, { id: 3 },{id : 4},{id : 5},{id : 6},{id:7},{id:8},{id:9},{id:10}];
+        const arr = [{id: 1 }, {id: 2 }];
         const [pick2, setPick2] = useState(arr);
         const [select2, setSelect2] = useState([]);
       
         return pick2.map((item) => (
           <div className="button_container">
             
+            <table>
+            <td>
             <button
               key={item.id}
               onClick={() => {
@@ -202,10 +209,11 @@ function ChooseFeedback(props){
                   ? "button_table_btn_ns"
                   : "button_table_btn_s"
               }
-              style={{marginTop:"15px",marginLeft:"30px"}}
             >
               주인공 능력이 매력적이예요!
-            </button>
+            </button></td>
+            <td><h5>90%</h5></td>
+            </table>
           </div>
         ));
       };
@@ -239,21 +247,22 @@ function ChooseFeedback(props){
       
     return(
         <div>
-            <div>
+            <div style={{width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
             <div className="container-fluid">
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <div class="card-horizontal">
                                     <div class="img-square-wrapper">
-                                        <img style={{width:"306px", height:"459px"}} src={image1} alt="작품 사진" />
+                                        <img style={{width:"306px", height:"470px"}} src={image1} alt="작품 사진" />
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title">재벌집 막내아들</h4>
                                         <p class="card-text">
-                                        <h6>산경</h6>
-                                        <h6>현대 판타지 &nbsp; <button>열람완료</button></h6>
-                                        <h6>10/30 &nbsp; 10/10</h6>
-                                        <h6>태그</h6>
+                                        <h4>산경 &nbsp; <button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF",marginTop:"-27px" ,marginLeft:"70px"}}>열람완료</button></h4>
+                                        <h4>현대 판타지 &nbsp;</h4>
+                                        <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
+                                        <h4>태그</h4>
                                         <table>
                                             <tr>
                                             <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
@@ -308,165 +317,134 @@ function ChooseFeedback(props){
             <div>
                 <h4>독자분석</h4>
             </div>
-            <div>
-                <table>
+            <div style={{width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
+                <table style={{'border-spacing':"15px"}}>
                     <tr>
-                    <td>피드백 참여자 목록 &nbsp;</td>
-                    <td>참여자 성비 &nbsp;</td>
-                    <td>참여자 연령층 &nbsp;</td>
-                    <td>참여자가 주로 선호한 태그 &nbsp;</td>
-                    <td>참여자가 주로 금지한 태그 &nbsp;</td>
+                    <td>피드백 참여자 목록 </td>
+                    <td style={{padding:"20px"}}>참여자 성비 </td>
+                    <td style={{padding:"20px"}}>참여자 연령층 </td>
+                    <td style={{padding:"20px"}}>참여자가 주로 선호한 태그 </td>
+                    <td style={{padding:"20px"}}>참여자가 주로 금지한 태그</td>
                     </tr>
                     <tr>
-                       <td><h6>참여자 닉네임1</h6></td>
-                       <td><h6>남성 90%</h6><h6>여성 10%</h6></td>
-                       <td><h4>20대 80%</h4><h5>10대 15%</h5><h6>30대 5%</h6></td> 
+                       <td style={{padding:"20px"}}><h6>참여자 닉네임1</h6></td>
+                       <td style={{padding:"20px"}}><h6>남성 90%</h6><h6>여성 10%</h6></td>
+                       <td style={{padding:"20px"}}><h4>20대 80%</h4><h5>10대 15%</h5><h6>30대 5%</h6></td> 
                        <td>
-                        <tr><td><button>선택태그</button></td><td><button>선택태그</button></td></tr>
-                        <tr><td><button>선택태그</button></td><td><button>선택태그</button></td></tr>
-                        <tr><td><button>선택태그</button></td><td><button>선택태그</button></td></tr>
+                        <tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",color:"#FFFFFF",borderRadius:"50px"}}>선택태그</button></td><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",color:"#FFFFFF",borderRadius:"50px"}}>선택태그</button></td></tr>
+                        <tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",color:"#FFFFFF",borderRadius:"50px"}}>선택태그</button></td><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",color:"#FFFFFF",borderRadius:"50px"}}>선택태그</button></td></tr>
+                        <tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",color:"#FFFFFF",borderRadius:"50px"}}>선택태그</button></td><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",color:"#FFFFFF",borderRadius:"50px"}}>선택태그</button></td></tr>
                        </td>
                        <td>
-                        <tr><td><button>금지태그</button></td><td><button>금지태그</button></td></tr>
-                        <tr><td><button>금지태그</button></td><td><button>금지태그</button></td></tr>
-                        <tr><td><button>금지태그</button></td><td><button>금지태그</button></td></tr>
+                        <tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>금지태그</button></td><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>금지태그</button></td></tr>
+                        <tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>금지태그</button></td><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>금지태그</button></td></tr>
+                        <tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>금지태그</button></td><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>금지태그</button></td></tr>
                        </td>
                     </tr>
                     
                 </table>
             </div>
             <br />
+            <div style={{width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
             <div>
                <h4>캐릭터</h4>
             </div>
             <table>
                 <tr>
                     <td><h5>상위 키워드</h5></td>
-                    <td><h5>하위 키워드</h5></td>
+                    <td style={{'padding-left':"400px"}}><h5>하위 키워드</h5></td>
                 </tr>
                 <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
+                   <td><Button1 /></td>
+                   <td style={{'padding-left':"400px"}}><Button1 /></td>
                 </tr>
                 <tr>
                     <td><h5>그 외</h5></td>
                 </tr>
                 <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
+                    <td><Button2/></td>
+                    <td style={{'padding-left':"400px"}}><Button2/></td>
                 </tr>
                 <tr>
                     <h4>몰입도</h4>
                 </tr>
                 <tr>
                     <td><h5>상위 키워드</h5></td>
-                    <td><h5>하위 키워드</h5></td>
+                    <td style={{'padding-left':"400px"}}><h5>하위 키워드</h5></td>
                 </tr>
                 <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
+                    <td><Button1 /></td>
+                   <td style={{'padding-left':"400px"}}><Button1 /></td>
                 </tr>
                 <tr>
                     <td><h5>그 외</h5></td>
                 </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
+                <tr>  
+                <td><Button2/></td>
+                    <td style={{'padding-left':"400px"}}><Button2/></td>
                 </tr>
                 <tr>
                     <h4>상업성</h4>
                 </tr>
                 <tr>
                     <td><h5>상위 키워드</h5></td>
-                    <td><h5>하위 키워드</h5></td>
+                    <td style={{'padding-left':"400px"}}><h5>하위 키워드</h5></td>
                 </tr>
                 <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
+                    <td><Button1 /></td>
+                   <td style={{'padding-left':"400px"}}><Button1 /></td>
                 </tr>
                 <tr>
                     <td><h5>그 외</h5></td>
                 </tr>
                 <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
+                    <td><Button2/></td>
+                    <td style={{'padding-left':"400px"}}><Button2/></td>
                 </tr>
                 <tr>
                     <h4>캐릭터</h4>
                 </tr>
                 <tr>
                     <td><h5>상위 키워드</h5></td>
-                    <td><h5>하위 키워드</h5></td>
+                    <td style={{'padding-left':"400px"}}><h5>하위 키워드</h5></td>
                 </tr>
                 <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
+                    <td><Button1 /></td>
+                    <td style={{'padding-left':"400px"}}><Button1 /></td>
                 </tr>
                 <tr>
                     <td><h5>그 외</h5></td>
                 </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                </tr>
-                <tr>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
-                    <td><button>주인공의 능력이 매력적이예요.</button> &nbsp; 90%</td>
+                <tr> 
+                    <td><Button2/></td>
+                    <td style={{'padding-left':"400px"}}><Button2/></td>
                 </tr>
             </table>
             <br />
-            <div>
+            </div>
+            <div style={{width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
+                
                 <h4>객관식 피드백 만족도 별점</h4>
                 {showResult()}
                 <h5>서비스 평가를 남겨주세요.</h5>
-                <input type="text" placeholder="서비스 평가를 남겨주세요." style={{width:"1169px",height:"90px"}} />
+                <input type="text" placeholder="서비스 평가를 남겨주세요." style={{width:"1190px",height:"90px"}} />
             </div>
-            <button>만족도 제출</button>
-            <button>주관식 보기</button>
+            <div style={{marginTop:"100px", marginLeft:"450px"}}>
+            <button style={{width:"131px",height:"45px",alignItems:"center",textAlign:"center",backgroundColor:"#FFFFFF",color:"#000000", border:"1px solid #AA0140",borderRadius:"4px"}}>만족도 제출</button>
+            <button style={{ width:"131px",height:"45px",alignItems:"center",textAlign:"center",backgroundColor:"#FFFFFF",color:"#000000", border:"1px solid #AA0140",borderRadius:"4px"}}>객관식 보기</button>
+        </div>
         </div>
     )
 }
@@ -548,22 +526,23 @@ function WriteFeedback(){
     }
 
     return(
-        <div>
+        <div style={{width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
             <div>
             <div className="container-fluid">
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <div class="card-horizontal">
                                     <div class="img-square-wrapper">
-                                        <img style={{width:"306px", height:"459px"}} src={image1} alt="작품 사진" />
+                                        <img style={{width:"306px", height:"470px"}} src={image1} alt="작품 사진" />
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title">재벌집 막내아들</h4>
                                         <p class="card-text">
-                                        <h6>산경</h6>
-                                        <h6>현대 판타지 &nbsp; <button>열람완료</button></h6>
-                                        <h6>10/30 &nbsp; 10/10</h6>
-                                        <h6>태그</h6>
+                                        <h4>산경 &nbsp; <button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF",marginTop:"-27px" ,marginLeft:"70px"}}>열람완료</button></h4>
+                                        <h4>현대 판타지 &nbsp;</h4>
+                                        <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
+                                        <h4>태그</h4>
                                         <table>
                                         <tr>
                                             <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
@@ -618,28 +597,40 @@ function WriteFeedback(){
             <div>
                 <h4>독자분석</h4>
             </div>
-            <div>
-                <table>
+            <div style={{width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
+                <table style={{'border-spacing':"15px"}}>
                     <tr>
                     <td>피드백 참여자 목록 &nbsp;</td>
-                    <td>참여자 성비 &nbsp;</td>
-                    <td>참여자 연령층 &nbsp;</td>
-                    <td>참여자가 주로 선호한 태그 &nbsp;</td>
-                    <td>참여자가 주로 금지한 태그 &nbsp;</td>
+                    <td style={{padding:"20px"}}>참여자 성비 &nbsp;</td>
+                    <td style={{padding:"20px"}}>참여자 연령층 &nbsp;</td>
+                    <td style={{padding:"20px"}}>참여자가 주로 선호한 태그 &nbsp;</td>
+                    <td style={{padding:"20px"}}>참여자가 주로 금지한 태그 &nbsp;</td>
                     </tr>
                     <tr>
-                       <td><h6>참여자 닉네임1</h6></td>
-                       <td><h6>남성 90%</h6><h6>여성 10%</h6></td>
-                       <td><h4>20대 80%</h4><h5>10대 15%</h5><h6>30대 5%</h6></td> 
+                       <td style={{padding:"20px"}}><h6>참여자 닉네임1</h6></td>
+                       <td style={{padding:"20px"}}><h6>남성 90%</h6><h6>여성 10%</h6></td>
+                       <td style={{padding:"20px"}}><h4>20대 80%</h4><h5>10대 15%</h5><h6>30대 5%</h6></td> 
                        <td>
-                        <tr><td><button>선택태그</button></td><td><button>선택태그</button></td></tr>
-                        <tr><td><button>선택태그</button></td><td><button>선택태그</button></td></tr>
-                        <tr><td><button>선택태그</button></td><td><button>선택태그</button></td></tr>
+                       <tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",color:"#FFFFFF",borderRadius:"50px"}}>선택태그</button></td><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",color:"#FFFFFF",borderRadius:"50px"}}>선택태그</button></td></tr>
+                        <tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",color:"#FFFFFF",borderRadius:"50px"}}>선택태그</button></td><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",color:"#FFFFFF",borderRadius:"50px"}}>선택태그</button></td></tr>
+                        <tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",color:"#FFFFFF",borderRadius:"50px"}}>선택태그</button></td><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#AA0140",color:"#FFFFFF",borderRadius:"50px"}}>선택태그</button></td></tr>
                        </td>
                        <td>
-                        <tr><td><button>금지태그</button></td><td><button>금지태그</button></td></tr>
-                        <tr><td><button>금지태그</button></td><td><button>금지태그</button></td></tr>
-                        <tr><td><button>금지태그</button></td><td><button>금지태그</button></td></tr>
+                        <tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>금지태그</button></td><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>금지태그</button></td></tr>
+                        <tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>금지태그</button></td><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>금지태그</button></td></tr>
+                        <tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>금지태그</button></td><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>금지태그</button></td></tr>
                        </td>
                     </tr>
                     
@@ -649,14 +640,16 @@ function WriteFeedback(){
             <div>
                 <Comments />
             </div>
-            <div>
+            <div style={{width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>
                 <h4>주관식 피드백 만족도 별점</h4>
                 {showResult()}
                 <h5>서비스 평가를 남겨주세요.</h5>
                 <input type="text" placeholder="서비스 평가를 남겨주세요." style={{width:"1169px",height:"90px"}} />
             </div>
-            <button>만족도 제출</button>
-            <button>객관식 보기</button>
+            <div style={{marginTop:"100px", marginLeft:"450px"}}>
+            <button style={{width:"131px",height:"45px",alignItems:"center",textAlign:"center",backgroundColor:"#FFFFFF",color:"#000000", border:"1px solid #AA0140",borderRadius:"4px"}}>만족도 제출</button>
+            <button style={{width:"131px",height:"45px",alignItems:"center",textAlign:"center",backgroundColor:"#FFFFFF",color:"#000000", border:"1px solid #AA0140",borderRadius:"4px"}}>객관식 보기</button>
+        </div>
         </div>
     )
 }
