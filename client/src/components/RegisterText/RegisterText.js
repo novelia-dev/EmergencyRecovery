@@ -86,6 +86,7 @@ function FileUpload(props)
     )
 }
 
+
 function Modal({className, onClose , maskClosable , closable , visible, children})
 {
 
@@ -166,6 +167,7 @@ function RegisterText(props){
     const [genre,setGenre] =useState("");
     const [tag,setTag] =useState("");
     const [content,setContent] =useState("");
+    const [newtag, setNewtag] = useState("");
 
     const [question,setQuestion] = useState("");
     const [answer,setAnswer] =useState("");
@@ -211,6 +213,10 @@ function RegisterText(props){
     const closeModal = () => {
         setModalVisible(false);
     }
+    function close(){
+        setModalVisible(false);
+    }
+    
  
     const updateTitle = (title) => {
         setTitle(title.target.value);
@@ -223,6 +229,17 @@ function RegisterText(props){
     const updateTag = (tag) => {
         setTag(tag.target.value);
     }
+
+    const updateNewTag = (newTag) => {
+        if(newTag.key ==='Enter'){
+        setNewtag(newTag.target.value);
+        var name = newTag.target.value;
+        axios.post('http://localhost:8000/tags/new',{
+            name
+        })
+        .then(reponse=>console.log(reponse))
+    }
+  }
 
     const updateContent = (content) => {
         setContent(content.target.value);
@@ -285,12 +302,38 @@ function RegisterText(props){
         window.location.href="/text/1";
     }
     
+    const quiz = (e) => {
+        e.preventDefault();
+        if(!question || !answer ||!wrong1 ||!wrong2)
+        {
+            alert('모든 항목을 입력하세요.');
+        }
+        const formData = new FormData();
+        formData.append("question",question);
+        formData.append("answer",answer);
+        formData.append("wrong1",wrong1);
+        formData.append("wrong2",wrong2);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST','http://localhost:8000/quizs');
+        xhr.setRequestHeader('Content-Type','multipart/form-data');
+        xhr.send(formData);
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    console.log('서버 전송 완료');
+                }
+                else{
+                    console.log('서버 전송 실패');
+                }
+            }
+        }
+    }
    
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(!title || !genre || !tag || !content || !question || !answer || !wrong1 || !wrong2) 
+        if(!title || !genre || !tag || !content) 
         {
             alert('모든 항목을 입력하세요.');
         }
@@ -300,7 +343,6 @@ function RegisterText(props){
         formData.append("title",title);
         formData.append("tags",tag);
         formData.append("content",content);
-        formData.append("quizs",quizs);
 
         const xhr = new XMLHttpRequest();
         xhr.open('POST','/quiz');
@@ -361,7 +403,7 @@ const buttonstyle={
         <label><b>오답</b> &nbsp;</label><br></br><input type="text" onChange={updateWrong2} />
         <br />
         <br />
-        <button>퀴즈 제출</button>
+        <button onClick={quiz}>퀴즈 제출</button>
         </div>
         
         <br/>
@@ -435,13 +477,13 @@ const buttonstyle={
                        <br />
                        <br />
                      
-                        <button style={{marginLeft:"250px"}}>입력완료</button>
+                        <button style={{marginLeft:"250px"}} onClick={close}>입력완료</button>
 
                        </Modal>
                 }
            </td>
            <br/> 
-           <td><label>&nbsp; <b>태그신청 &nbsp;</b></label><input type="text" placeholder="신규태그를 신청하세요" /></td>
+           <td><label>&nbsp; <b>태그신청 &nbsp;</b></label><input type="text" onKeyDown={updateNewTag} placeholder="엔터를 누를 시 저장됩니다." /></td>
         </table>
         <br/>
         <div>

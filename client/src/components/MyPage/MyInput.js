@@ -43,6 +43,7 @@ function MyInput(){
   function handleClick(){
     const randomPrize = getRandomPrize();
     setPrize(randomPrize);
+    setModalVisible(false);
   }
 
   function Modal({className, onClose , maskClosable , closable , visible, children})
@@ -60,6 +61,8 @@ function MyInput(){
             onClose(e)
         }
     }
+
+    
 
     return(
         <>
