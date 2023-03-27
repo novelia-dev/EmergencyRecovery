@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import styled from "styled-components";
 import Posts from "../Mainpage/Posts";
 
@@ -97,7 +97,7 @@ function Registerpage4(){
       
       
 
-      const Button1 = () => {
+      const Button1 = ({onSelect}) => {
         const arr = [{id: 1, name:"여성향"}, {id: 2, name:"남성향" }, { id: 3, name: "현대로멘스" },{id: 4,name: "BL"},{id: 5,name:"GL"},{id: 6,name:"가상시대물"},
         {id: 7, name:"갑을관계"}, {id: 8, name:"계약관계" }, { id: 9, name: "궁정로맨스" },{id: 10,name: "권선징악"},{id: 11,name:"기억상실"},{id: 12,name:"나이차커플"},
         {id: 13, name:"달달물"}, {id: 14, name:"동거물" }, { id: 15, name: "동양풍" },{id: 16,name: "로맨틱코미디"},{id: 17,name:"복수물"},{id: 18,name:"빙의물"},
@@ -126,6 +126,7 @@ function Registerpage4(){
         
         return(
           <div>
+            <div>
             {pick.map((item) => (
               <div className="button_container" key={item.id}>
                 <button onClick={() => handleButtonClick(item)}
@@ -140,25 +141,38 @@ function Registerpage4(){
                         </button>
                         </div>
             ))}
+            </div>
+            <div>
+            <Posts selected={select} />
+            </div>
           </div>
         );
       
        
       };
 
-      function Posts(){
+      function Posts({selected}){
         const [posts, setPosts] = useState([]);
         const [limit, setLimit] = useState(10);
         const [page, setPage] = useState(1);
         const offset = (page-1) * limit;
 
+        const filterPosts = (selected) => {
+          const filteredPosts = setPosts(filteredPosts);
+        };
+
+
+
         return(
+          <div>
+          <Button1 onSelect = {filterPosts} />
           <Pagination
               total = {posts.length}
               limit={limit}
               page={page}
               setPage={setPage}
            />
+           </div>
         );
       }
 
@@ -254,18 +268,12 @@ const MyButton = styled.button`
                 <Button1/>
                 <br></br>
             </div>
-            <div style={{marginTop:"450px"}}>
-            <Posts />
-            </div>
-            <div style={{marginTop:"55px",marginLeft:"15px",fontWeight: "700"}}>
+            <div style={{marginTop:"515px",marginLeft:"15px",fontWeight: "700"}}>
              &nbsp; 금지태그
             </div>
             <div style={{marginTop:"15px",marginLeft:"22px"}}>
                 <Button1/>
                 <br></br>
-            </div>
-            <div style={{marginTop:"450px"}}>
-            <Posts />
             </div>
             <div style={{marginLeft:"15px",marginTop:"15px"}}>
             <br />
