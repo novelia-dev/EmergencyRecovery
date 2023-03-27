@@ -97,7 +97,7 @@ function Registerpage4(){
       
       
 
-      const Button1 = ({onSelect}) => {
+      const Button1 = () => {
         const arr = [{id: 1, name:"여성향"}, {id: 2, name:"남성향" }, { id: 3, name: "현대로멘스" },{id: 4,name: "BL"},{id: 5,name:"GL"},{id: 6,name:"가상시대물"},
         {id: 7, name:"갑을관계"}, {id: 8, name:"계약관계" }, { id: 9, name: "궁정로맨스" },{id: 10,name: "권선징악"},{id: 11,name:"기억상실"},{id: 12,name:"나이차커플"},
         {id: 13, name:"달달물"}, {id: 14, name:"동거물" }, { id: 15, name: "동양풍" },{id: 16,name: "로맨틱코미디"},{id: 17,name:"복수물"},{id: 18,name:"빙의물"},
@@ -123,7 +123,7 @@ function Registerpage4(){
           : setSelect(select.filter((button)=> button !== item.id));
 
         };
-        
+
         return(
           <div>
             <div>
@@ -143,7 +143,7 @@ function Registerpage4(){
             ))}
             </div>
             <div>
-            <Posts selected={select} />
+           
             </div>
           </div>
         );
