@@ -18,13 +18,10 @@ function move(){
 }
 
 
-class Text extends React.Component{
-    constructor(props)
-    {
-        super(props);
-    }
+function Text(){
+    
 
-    render(){
+    
 
         const style = {
             'position':'absolute',
@@ -126,7 +123,7 @@ class Text extends React.Component{
                 </div>  
             
             </div>
-            <input type="text" placeholder="본문" style= {{position:'absolute','width':"582px",height:"840px",top:"120px",left:"666px"}}></input>
+            <textarea placeholder="본문" style= {{position:'absolute','width':"582px",height:"840px",top:"120px",left:"666px"}}></textarea>
             <div>
                 <button style={style6} onClick={move}>
                     다음화
@@ -135,7 +132,7 @@ class Text extends React.Component{
 
             </div>
         )
-    }
+    
 }
 
 export default Readworkpage3;

@@ -253,7 +253,7 @@ function Text(props){
                 </div>  
             
             </div>
-            <input type="text" placeholder="본문" style= {{position:'absolute','width':"582px",height:"840px",top:"120px",left:"666px"}}></input>
+            <textarea placeholder="본문" style= {{position:'absolute','width':"582px",height:"840px",top:"120px",left:"666px"}}></textarea>
             <div>
                 <button style={style6} onClick={openModal}>
                     퀴즈풀기
