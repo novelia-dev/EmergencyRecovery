@@ -16,11 +16,31 @@ import { JwtAuthGuard } from 'src/modules/functions/auth/jwt/jwt.guard';
 import { CurrentUser } from 'src/commons/common/decorators/user.decorator';
 import { User } from '../users/entities/user.entity';
 import { ProfileAndServeyDto } from './dto/profile-and-servey.dto';
+import { isNicknameUniqueDto } from './dto/is-nickname-unique.dto';
 
 @ApiTags('profiles')
 @Controller('profiles')
 export class ProfilesController {
   constructor(private readonly profilesService: ProfilesService) {}
+
+  @ApiOperation({
+    summary: '닉네임 중복검사',
+  })
+  @Get('isNicknameUnique')
+  isNicknameUnique(@Body() d: isNicknameUniqueDto) {
+    const { name } = d;
+    return this.profilesService.isNick(name);
+  }
+
+  @ApiOperation({
+    summary: '포인트 올리기',
+  })
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  @Post('points/:num')
+  pointsUp(@CurrentUser() user: User, @Param('num') num: string) {
+    return this.profilesService.pointsUp(user.email, +num);
+  }
 
   @ApiOperation({
     summary: '정보와 관련된 프로필 만들기&설문조사정보',

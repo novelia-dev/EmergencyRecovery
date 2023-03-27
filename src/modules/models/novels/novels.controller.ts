@@ -8,6 +8,7 @@ import {
   Delete,
   UseGuards,
   Req,
+  Query,
 } from '@nestjs/common';
 import { NovelsService } from './novels.service';
 import { CreateNovelDto } from './dto/create-novel.dto';
@@ -76,7 +77,7 @@ export class NovelsController {
   @ApiCreatedResponse({
     description: 'novel 가져오기',
   })
-  @Get()
+  @Get('all')
   findAll() {
     return this.novelsService.findAll();
   }

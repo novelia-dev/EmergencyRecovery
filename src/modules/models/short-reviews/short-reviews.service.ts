@@ -25,6 +25,10 @@ export class ShortReviewsService {
     return newReview;
   }
 
+  async findUserReviews(id: number) {
+    return await this.shortReviewsReposiroty.find({ where: { user_id: id } });
+  }
+
   async findAll() {
     return await this.shortReviewsReposiroty.find();
   }

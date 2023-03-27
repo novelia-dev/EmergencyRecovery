@@ -17,8 +17,8 @@ export class Tag extends BaseEntity {
   @Column()
   name: string;
 
-  @ManyToOne(() => Novel, (novel) => novel.tags)
-  novel: Novel;
+  @ManyToMany(() => Novel, (novel) => novel.tags)
+  novel: Novel[];
 
   @ManyToOne(() => Profile, (profile) => profile.preferTags)
   preferUsers: Profile[];

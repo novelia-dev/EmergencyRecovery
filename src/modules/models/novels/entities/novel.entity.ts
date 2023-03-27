@@ -38,6 +38,9 @@ export class Novel extends BaseEntity {
   @Column()
   start_date: Date;
 
+  @Column({ default: false })
+  isBought: boolean;
+
   @Column({ default: 0 })
   short_done: number;
 
@@ -62,7 +65,7 @@ export class Novel extends BaseEntity {
   @OneToMany(() => Quiz, (quiz) => quiz.novel, { eager: true })
   quizs: Quiz[];
 
-  @OneToMany(() => Tag, (tag) => tag.novel, { eager: true })
+  @ManyToMany(() => Tag, (tag) => tag.novel, { eager: true })
   tags: Tag[];
 
   @ManyToOne(() => Profile, (profile) => profile.myNovels)

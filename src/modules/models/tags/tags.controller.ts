@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { TagsService } from './tags.service';
 import { CreateTagDto } from './dto/create-tag.dto';
@@ -16,6 +17,15 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger';
 @Controller('tags')
 export class TagsController {
   constructor(private readonly tagsService: TagsService) {}
+
+  @ApiOperation({
+    summary: '쿼리값으로 소설목록 가져오기',
+    description: '소설가져오기',
+  })
+  @Get()
+  getNovels(@Query('tag') tag: string) {
+    return this.tagsService.getNovelsByTag(tag);
+  }
 
   @ApiOperation({
     summary: '태그 등록하기',

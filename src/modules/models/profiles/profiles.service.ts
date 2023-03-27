@@ -1,4 +1,9 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import {
+  HttpException,
+  HttpStatus,
+  Injectable,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { CreateProfileDto } from './dto/create-profile.dto';
 import { UpdateProfileDto } from './dto/update-profile.dto';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -9,6 +14,7 @@ import { User } from '../users/entities/user.entity';
 import { UsersService } from '../users/users.service';
 import { ProfileAndServeyJoinDto } from './dto/profile-and-servey-join.dto';
 import axios from 'axios';
+import { isNicknameUniqueDto } from './dto/is-nickname-unique.dto';
 
 @Injectable()
 export class ProfilesService {
@@ -19,6 +25,26 @@ export class ProfilesService {
     private usersRepository: Repository<User>,
     private usersService: UsersService,
   ) {}
+
+  async pointsUp(email: string, points: number) {
+    const user = await this.profilesRepository.findOne({
+      where: { email: email },
+    });
+    if (!user) {
+      throw new UnauthorizedException('Something wrong...');
+    }
+    user.points += points;
+    await this.profilesRepository.save(user);
+    return user;
+  }
+
+  async isNick(name: string) {
+    const user = await this.profilesRepository.findOne({
+      where: { name: name },
+    });
+    if (user) return true;
+    return true;
+  }
 
   async getByEmail(email: string) {
     const profile = await this.profilesRepository.findOne({

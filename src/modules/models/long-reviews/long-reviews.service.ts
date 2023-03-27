@@ -17,6 +17,9 @@ export class LongReviewsService {
     private novelsRepository: Repository<Novel>,
     private novelsService: NovelsService,
   ) {}
+  async findUserReviews(id: number) {
+    return await this.longReviewsReposiroty.find({ where: { user_id: id } });
+  }
 
   async create(data: CreateInServiceDto) {
     const newReview = await this.longReviewsReposiroty.save(data);

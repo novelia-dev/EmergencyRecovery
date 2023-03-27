@@ -22,6 +22,16 @@ export class LongReviewsController {
   constructor(private readonly longReviewsService: LongReviewsService) {}
 
   @ApiOperation({
+    summary: '유저가 한 리뷰 찾기',
+  })
+  @ApiBearerAuth()
+  @UseGuards(JwtAuthGuard)
+  @Get('user')
+  getReviews(@CurrentUser() user: User) {
+    return this.longReviewsService.findUserReviews(user.id);
+  }
+
+  @ApiOperation({
     summary: '주관식 리뷰 하기',
   })
   @ApiBearerAuth()

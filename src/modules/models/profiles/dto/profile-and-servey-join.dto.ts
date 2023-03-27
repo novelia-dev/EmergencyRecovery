@@ -118,7 +118,7 @@ export class ProfileAndServeyJoinDto {
 
   @ApiProperty({
     example: '자주 읽는다.',
-    description: '웹소설 읽는 빈도',
+    description: '웹소설 읽는 빈ㅗ',
     required: true,
   })
   @IsString()
