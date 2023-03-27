@@ -1,4 +1,6 @@
 import React,{useState} from "react";
+import styled from "styled-components";
+import Posts from "../Mainpage/Posts";
 
 function Registerpage4(){
 
@@ -114,34 +116,113 @@ function Registerpage4(){
       ];
         const [pick, setPick] = useState(arr);
         const [select, setSelect] = useState([]);
-      
-        return pick.map((item) => (
-          <div className="button_container">
-            
-            <button
-              key={item.id}
-              onClick={() => {
-                !select.includes(item.id)
-                  ? setSelect((select) => [...select, item.id])
-                  : setSelect(select.filter((button) => button !== item.id));
-              }}
-              className={
-                select.includes(item.id)
-                  ? "button_table_btn_ns"
-                  : "button_table_btn_s"
-              }
-              style={{width:"76px",height:"29px"}}
-            >
-              {item.name}
-            </button>
-          </div>
-        ));
-      };
-     
-      
-      //pagination
 
-    
+        const handleButtonClick = (item) => {
+          !select.includes(item.id)
+          ? setSelect((select) => [...select, item.id])
+          : setSelect(select.filter((button)=> button !== item.id));
+
+        };
+        
+        return(
+          <div>
+            {pick.map((item) => (
+              <div className="button_container" key={item.id}>
+                <button onClick={() => handleButtonClick(item)}
+                        className={
+                          select.includes(item.id)
+                          ? "button_table_btn_ns"
+                          : "button_table_btn_s"
+                        }
+                        style={{width:"76px",height:"29px"}}
+                        >
+                        {item.name}
+                        </button>
+                        </div>
+            ))}
+          </div>
+        );
+      
+       
+      };
+
+      function Posts(){
+        const [posts, setPosts] = useState([]);
+        const [limit, setLimit] = useState(10);
+        const [page, setPage] = useState(1);
+        const offset = (page-1) * limit;
+
+        return(
+          <Pagination
+              total = {posts.length}
+              limit={limit}
+              page={page}
+              setPage={setPage}
+           />
+        );
+      }
+
+     
+      function Pagination({total, limit, page, setPage}){
+        const numPages = Math.ceil(total / limit);
+
+        return(
+          <>
+            <Nav>
+              <MyButton onClick={() => setPage(page-1)} disabled={page === 1}>
+                &lt;
+              </MyButton>
+              {Array(numPages).fill().map((_, i) => (
+                <MyButton key={i+1} onClick={() => setPage(i+1)}
+                  aria-current={page === i+1 ? "page" : null}
+                  >
+                    {i+1}
+                  </MyButton>
+              ))}
+              <MyButton onClick={() => setPage(page+1)} disabled={page === numPages}>
+                &gt;
+              </MyButton>
+            </Nav>
+          </>
+        )
+      }
+  const Nav = styled.nav`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin: 16px;
+`;
+
+const MyButton = styled.button`
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 0;
+  background: black;
+  color: white;
+  font-size: 1rem;
+
+  &:hover {
+    background: tomato;
+    cursor: pointer;
+    transform: translateY(-2px);
+  }
+
+  &[disabled] {
+    background: grey;
+    cursor: revert;
+    transform: revert;
+  }
+
+  &[aria-current] {
+    background: deeppink;
+    font-weight: bold;
+    cursor: revert;
+    transform: revert;
+  }
+`;
+      
     return(
     <div style={{'position':"static"}}>
         <div style={style}>
@@ -173,14 +254,19 @@ function Registerpage4(){
                 <Button1/>
                 <br></br>
             </div>
-            <div style={{marginTop:"515px",marginLeft:"15px",fontWeight: "700"}}>
+            <div style={{marginTop:"450px"}}>
+            <Posts />
+            </div>
+            <div style={{marginTop:"55px",marginLeft:"15px",fontWeight: "700"}}>
              &nbsp; 금지태그
             </div>
             <div style={{marginTop:"15px",marginLeft:"22px"}}>
                 <Button1/>
                 <br></br>
             </div>
-            
+            <div style={{marginTop:"450px"}}>
+            <Posts />
+            </div>
             <div style={{marginLeft:"15px",marginTop:"15px"}}>
             <br />
         <button style={style3} onClick={submitactiveButton}>입력완료</button>
