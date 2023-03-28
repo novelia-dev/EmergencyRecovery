@@ -1,10 +1,10 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import image from '../Image/illumination-5173540_1920.jpg';
 import Navbar from '../Navbar/SimpleNavbar';
 import Pagination from "../Mainpage/Pagination";
 import Checkbox from "../Image/객관식체크박스.png";
 import NewText from '../Image/pen.png';
-import moment from 'moment';
+
 
 import Footer from '../Footer/Footer';
 
@@ -17,14 +17,7 @@ function movetodetail(){
  
 function MyPageScrap(){
  
-const [remainingDays, setRemainingDays] = useState(null);
 
-useEffect(() => {
-   const now = moment();
-   const targetDate = moment('2023-03-28');
-   const diffInDays = targetDate.diff(now,'days');
-   setRemainingDays(diffInDays);
-},[])
 
 //버튼 누를떄 마다 스크랩 피드백완료된작품 변함
 
@@ -63,13 +56,13 @@ const [selected, setSelected] = useState("button1");
           <Navbar/>
           {selected === "button1" && <div style={{ marginTop:"60px",marginLeft:"360px",width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",backgroundColor:"#D9D9D9" }}>
           <div style={{marginLeft:"15px"}}> 
-            <h4>스크랩 작품</h4>
+            <h4 style={{fontSize:"19px"}}>스크랩 작품</h4>
             <h5>스크랩된 작품 목록입니다.</h5></div>
             </div>
             }
              {selected === "button2"  && <div style={{ marginTop:"60px",marginLeft:"360px",width:"1200px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",backgroundColor:"#D9D9D9" }}>
              <div style={{marginLeft:"15px"}}> 
-            <h4>피드백참여 작품</h4>
+            <h4 style={{fontSize:"19px"}}>피드백참여 작품</h4>
             <h5>피드백에 참여한 작품 목록입니다.</h5></div>
             </div>
             }
@@ -89,9 +82,7 @@ const [selected, setSelected] = useState("button1");
                         <h2 class="card-title">재벌집 막내아들</h2>
                         <p class="card-text">
                           <h4>산경</h4>
-                          {remainingDays !== null && (
-                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
-                          )}
+                          <h4>현대 판타지 &nbsp; D-14</h4>
                           <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                           <h4>태그</h4>
                           <table>
@@ -149,9 +140,7 @@ const [selected, setSelected] = useState("button1");
                         <h2 class="card-title">재벌집 막내아들</h2>
                         <p class="card-text">
                           <h4>산경</h4>
-                          {remainingDays !== null && (
-                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
-                          )}
+                          <h4>현대 판타지 &nbsp; D-14</h4>
                           <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                           <h4>태그</h4>
                           <table>
@@ -213,9 +202,7 @@ const [selected, setSelected] = useState("button1");
                         <h2 class="card-title">전지적 작가 시점</h2>
                         <p class="card-text">
                           <h4>산경</h4>
-                          {remainingDays !== null && (
-                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
-                          )}
+                          <h4>현대 판타지 &nbsp; D-14</h4>
                           <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                           <h4>태그</h4>
                           <table>
@@ -273,9 +260,7 @@ const [selected, setSelected] = useState("button1");
                         <h2 class="card-title">전지적 작가 시점</h2>
                         <p class="card-text">
                           <h4>산경</h4>
-                          {remainingDays !== null && (
-                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
-                          )}
+                          <h4>현대 판타지 &nbsp; D-14</h4>
                           <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                           <h4>태그</h4>
                           <table>

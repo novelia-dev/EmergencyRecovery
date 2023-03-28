@@ -1,24 +1,15 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import {useParams} from "react-router-dom";
 
 import image1 from "../Image/illumination-5173540_1920.jpg";
 import backimage from "../Image/뒤로가기.png";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar/SimpleNavbar";
 import Checkbox from "../Image/객관식체크박스.png";
 import NewText from '../Image/pen.png';
 import Group from '../Image/Group.png';
-import moment from 'moment';
-
 function DetailPage(props){
 
-    const [remainingDays,setRemainingDays] = useState(null);
-
-    useEffect(() => {
-        const now = moment();
-        const targetDate = moment('2023-03-28');
-        const diffInDays = targetDate.diff(now,'days');
-        setRemainingDays(diffInDays);
-    },[])
+   
 
     function moveto(){
         window.location.href=`/${id}`;
@@ -45,16 +36,16 @@ function DetailPage(props){
             'align-items': "center",
             'gap':"10px",
             'width':"150px",
-            'height':"45px",
+            'height':"64px",
             'borderRadius': "4px",
             'font-family': "Roboto",
-            'font-weight': 700,
+            'font-weight': "700",
             'font-size': "16px",
             'line-height': "18.75px",
             'color': "#FFFFFF",
             'background-color':"#AA0140",
             'border-width':"0",
-            'marginTop':"15px"
+            'marginTop':"1px"
             
 
     }
@@ -66,7 +57,7 @@ function DetailPage(props){
             'align-items': "center",
             'gap':"10px",
             'width':"180px",
-            'height':"60px",
+            'height':"64px",
             'borderRadius': "4px",
             'font-family': "Roboto",
             'font-weight': 700,
@@ -75,7 +66,7 @@ function DetailPage(props){
             'color': "#FFFFFF",
             'background-color':"#AA0140",
             'margin-left':"870px",
-            'margin-top':"52px",
+            'margin-top':"50px",
             'border-width':"0",
             'line-height': "26px"
 
@@ -85,8 +76,9 @@ function DetailPage(props){
     return(
         <div>
             <Navbar/>
+            <div style={{marginTop:"60px"}}>
             <img src={backimage} style={{float:"left",marginLeft:"360px",width:"78px",height:"78px"}} alt="뒤로가기" onClick={movetomain} />
-            <table style={{'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
+            <table style={{'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse',width:"1122px"}}>
                 <td>
                     <div className="container-fluid">
                         <div class="row">
@@ -99,19 +91,17 @@ function DetailPage(props){
                                         <h2 class="card-title">재벌집 막내아들</h2>
                                         <p class="card-text">
                                         <h4>산경</h4>
-                                        {remainingDays !== null && (
-                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
-                          )}
+                                        <h4>현대 판타지 &nbsp; D-14</h4>
                                         <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                                         <h4>태그</h4>
                                         <table>
                                             <tr>
                                             <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+                    width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
                                              <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+                    width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
                      <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+                    width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
                      <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
                     width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>선택태그</button></td>
                      <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
@@ -141,11 +131,16 @@ function DetailPage(props){
                                             </td>
                                         </table>
                                         
-                                        <button style={buttonstyle} onClick={movetochoose}>객관식 참여<br /> 200p</button>
-                                        <br/>
-                                        <br/>
+                                        <button style={buttonstyle} onClick={movetochoose}>
+                                             <div><span>객관식 참여</span><br /><span>200p</span></div></button>
                                         
-                                        <button style={buttonstyle} onClick={movetowrite}>주관식 참여<br /> 1000p</button>
+                                        
+                                        <div style={{marginTop:"10px"}}>
+                                        <button style={buttonstyle} onClick={movetowrite}>
+                                        <div><span>주관식 참여</span><br /><span>200p</span></div>
+                                        </button>
+                                        </div>
+                                        
                                          
 
                                         </p>
@@ -161,7 +156,7 @@ function DetailPage(props){
             <br />
 
             <img  style={{marginLeft:"597px"}}src={Group} alt="비슷한 작품이 없습니다" />
-
+            </div>
         </div>
     )
 }

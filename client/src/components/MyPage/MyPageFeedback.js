@@ -1,10 +1,10 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import image from '../Image/illumination-5173540_1920.jpg';
 import Navbar from '../Navbar/SimpleNavbar';
 import Pagination from "../Mainpage/Pagination";
 import Checkbox from "../Image/객관식체크박스.png";
 import NewText from '../Image/pen.png';
-import moment from 'moment';
+
 
 import Footer from '../Footer/Footer';
 
@@ -17,53 +17,18 @@ function movetodetail(){
  
 function MyPageFeedback(){
  
-const [remainingDays, setRemainingDays] = useState(null);
-const [buttonTitle, setButtonTitle] = useState('게시종료');
 
-
-window.addEventListener("beforeunload", function(){
-  localStorage.removeItem("number");
-});
-
-useEffect(() => {
-        const now = moment();
-        const targetDate = moment('2023-03-28');
-        const diffInDays = targetDate.diff(now,'days');
-        setRemainingDays(diffInDays);
-
-        var num = localStorage.getItem("number"); 
-        var but = localStorage.getItem("feedbackbutton");
-
-        if(num === '1')
-        {
-          setButtonTitle('입금 확인중');
-        }
-
-        if(but === '2')
-        {
-          setSelected("button2");
-        }
-    
-
-},[])
-
-function move(){
-  alert('피드백 열람을 위해 열람권 구매 페이지로 이동합니다.');
-  window.location.href="/buy";
-  localStorage.setItem("number",1);
-} 
 
 //버튼 누를떄 마다 스크랩 피드백완료된작품 변함
+
 
 const [selected, setSelected] = useState("button1");
   const handleClick1 = () => {
     setSelected("button1");
-    localStorage.setItem("feedbackbutton",1);
   };
 
   const handleClick2 = () => {
     setSelected("button2");
-    localStorage.setItem("feedbackbutton",2);
   };
    const style1={
     width:"125px",
@@ -119,9 +84,7 @@ const [selected, setSelected] = useState("button1");
                         <h2 class="card-title">재벌집 막내아들</h2>
                         <p class="card-text">
                           <h4>산경</h4>
-                          {remainingDays !== null && (
-                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
-                          )}
+                          <h4>현대 판타지 &nbsp; D-14</h4>
                           <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                           <h4>태그</h4>
                           <table>
@@ -179,9 +142,7 @@ const [selected, setSelected] = useState("button1");
                         <h2 class="card-title">재벌집 막내아들</h2>
                         <p class="card-text">
                           <h4>산경</h4>
-                          {remainingDays !== null && (
-                            <p><b>현대 판타지 &nbsp; D-{remainingDays}</b></p>
-                          )}
+                          <h4>현대 판타지 &nbsp; D-14</h4>
                           <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                           <h4>태그</h4>
                           <table>
@@ -235,7 +196,7 @@ const [selected, setSelected] = useState("button1");
             <div className="contanier-fluid" style={{'border-width':"3px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}  >
             <div class="row">
               <div class="col-12 mt-3">
-                  <div class="card-horizontal" onClick={move}>
+                  <div class="card-horizontal" onClick={movetodetail}>
                     <div class="img-square-wrapper" >
                       <img style={{width:"282px", height:"423px"}} src={image} alt="사진" />
                     </div>
@@ -243,9 +204,7 @@ const [selected, setSelected] = useState("button1");
                         <h2 class="card-title">전지적 작가 시점</h2>
                         <p class="card-text">
                           <h4>산경</h4>
-                          <h4>현대 판타지</h4>
-                          <button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px",color:"#000000",marginTop:"-50px" ,marginLeft:"100px"}}>{buttonTitle}</button>
+                          <h4>현대 판타지 &nbsp; D-14</h4>
                           <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                           <h4>태그</h4>
                           <table>
@@ -295,7 +254,7 @@ const [selected, setSelected] = useState("button1");
             <div className="contanier-fluid" style={{marginLeft:"24px",'border-width':"3px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
             <div class="row">
               <div class="col-12 mt-3">
-                 <div class="card-horizontal" onClick={move}>
+                 <div class="card-horizontal" onClick={movetodetail}>
                     <div class="img-square-wrapper">
                       <img style={{width:"282px", height:"423px"}} src={image} alt="사진" />
                     </div>
@@ -303,9 +262,7 @@ const [selected, setSelected] = useState("button1");
                         <h2 class="card-title">전지적 작가 시점</h2>
                         <p class="card-text">
                           <h4>산경</h4>
-                          <h4>현대 판타지</h4>
-                          <button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px",color:"#000000",marginTop:"-50px" ,marginLeft:"100px"}}>{buttonTitle}</button>
+                          <h4>현대 판타지 &nbsp; D-14</h4>
                           <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                           <h4>태그</h4>
                           <table>

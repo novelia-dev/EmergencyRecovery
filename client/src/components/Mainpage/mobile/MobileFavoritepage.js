@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import MobileNavbar from '../../Navbar/MobileNavbar';
 import MobileFooter from '../../Footer/MobileFooter';
 import image1 from '../../Image/illumination-5173540_1920.jpg';
-
+import Tag from './MobileFavoriteButton';
 function Modal({className, onClose , maskClosable , closable , visible, children})
 {
 
@@ -27,7 +27,7 @@ function Modal({className, onClose , maskClosable , closable , visible, children
             <ModalOverlay visible = {visible} />
             <ModalWrapper className ={className} onClick={maskClosable ? onMaskClick : null} tabIndex="-1" visible={visible}>
                 <ModalInner tabIndex ="0" className = "modal-inner">
-                    {closable && <button style={{backgroundColor:"#FFFFFF",width:"30px", height:"30px", marginLeft:"500px"}} className="modal-close" onClick={close} >X</button>}
+                    {closable && <button style={{backgroundColor:"#FFFFFF",borderRadius:"50px",position:"absolute",width:"20px",height:"20px",marginLeft:"4px",marginTop:"4px"}} className="modal-close" onClick={close}>×</button>}
                     {children}
                 </ModalInner>
             </ModalWrapper>
@@ -50,6 +50,8 @@ const ModalWrapper = styled.div`
     z-index: 1000;
     overflow: auto;
     outline: 0;
+   
+
 `;
 
 const ModalOverlay = styled.div`
@@ -62,19 +64,22 @@ const ModalOverlay = styled.div`
     right: 0;
     background-color: rgba(0,0,0,0.6);
     z-index: 999;
+    width:360px;
+    height:545px;
 `;
 
 const ModalInner = styled.div`
     box-sizing: border-box;
     position: relative;
-    box-shadow: 0 0 6px 0 rgba(0,0,0,0.5);
-    background-color: #fff;
+    box-shadow: 0 0  0 rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
-    max-width: 600px;
-    top: 50%;
+    margin-left:59px;
+    margin-top:270px;
+    width:230px;
+    height:434px;
     transform: translateY(-50%);
-    margin: 0 auto;
-    padding: 40px 20px;
+   
 `;
 
 
@@ -89,481 +94,142 @@ function MobileFavoritepage(){
     const closeModal = () => {
         setModalVisible(false);
     }
+    const [buttonStyles, setButtonStyles] = useState([
+        { backgroundColor: 'white', color: '' ,border: "0.5px solid black",borderRadius: "50px",fontSize: "10px"},
+        { backgroundColor: 'white', color: '' ,border: "0.5px solid black",borderRadius: "50px",fontSize: "10px"},
+        { backgroundColor: 'white', color: '' ,border: "0.5px solid black",borderRadius: "50px",fontSize: "10px"},
+        
+      ]);
+    
+      const handleClick = (index, backgroundColor) => {
+        const newStyles = [...buttonStyles];
+        const isSameColor = newStyles[index].backgroundColor === backgroundColor;
+        newStyles[index] = {
+          backgroundColor: isSameColor ? '' : backgroundColor,
+          color: isSameColor ? '' : 'white',
+          border: "0.5px solid #424242",borderRadius: "50px",fontSize: "10px",
+        };
+        setButtonStyles(newStyles);
+      };
 
     return(
-        <div>
-            <MobileNavbar />
+    <div style={{position: "relative", height: "calc(100vh - 50px)",borderWidth:"1px",'border-style':"solid",'border-color':"#EEEEEE",width:"360px"}}>
+          
+         <MobileNavbar  style={{position: "fixed", top: 0, left: 0, right: 0, zIndex: 1}} />
+         <div style={{ width:"33hpx",height: "calc(100% - 275px)", overflowX: 'hidden',overflowY: "scroll"}}>
             <div>
-                <h4>선호태그 작품</h4>
-                <table>
-                    <tr>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>주관식작</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>판타지작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>로맨스작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>로판작품</button></td></tr>
-                   <tr><td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>남성향작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>여성향작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선호태그</button></td>
-                    </tr>
-                </table>
-                <table>
-                    <tr>
-                        <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" onClick={openModal} >
-                            </img>
-                            {
-                                 modalVisible && <Modal 
-                                 visible={modalVisible}
-                                 closable={true}
-                                 maskClosable={true}
-                                 onClose={closeModal}>
+                <h4 style={{marginLeft:"15px"}}>선호태그 작품</h4>
+                <div style={{marginLeft:"15px"}}>
+                <button style={buttonStyles[0]}onClick={() => handleClick(0, '#424242')}>홈</button>
+                &nbsp;
+                &nbsp;
+                <button style={buttonStyles[1]}onClick={() => handleClick(1, '#424242')}>객관식작</button>
+                &nbsp;
+                &nbsp;
+                <button style={buttonStyles[2]}onClick={() => handleClick(2, '#424242')}>주관식작</button>
+                </div>
+                <div style={{marginLeft:"15px",marginTop:"10px"}}>
+                    <Tag/>
+                </div>
+                <hr style={{borderWidth:"2px",'border-style':"solid",'border-color':"#848484",width:"330px"}}/>
+                
+                
+                <div>
+                <img style={{width:"107px", height:"158px",marginLeft:"8px"}} src={image1} alt="이미지" onClick={openModal} ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"5px"}} src={image1} alt="이미지" onClick={openModal} ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"4px"}} src={image1} alt="이미지" onClick={openModal} ></img>
+                </div>
+                <div style={{marginLeft:"8px",marginTop:"5px"}} >
+                <div  style={{width:"107px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                </div>
+                
+                <div style={{marginTop:"50px"}}>
+                <img style={{width:"107px", height:"158px",marginLeft:"8px"}} src={image1} alt="이미지" onClick={openModal} ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"5px"}} src={image1} alt="이미지" onClick={openModal} ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"4px"}} src={image1} alt="이미지" onClick={openModal} ></img>
+                </div>
+                <div style={{marginLeft:"8px",marginTop:"5px"}} >
+                <div  style={{width:"107px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                </div>
+                <div style={{marginTop:"50px"}}>
+                <img style={{width:"107px", height:"158px",marginLeft:"8px"}} src={image1} alt="이미지" onClick={openModal} ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"5px"}} src={image1} alt="이미지" onClick={openModal} ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"4px"}} src={image1} alt="이미지" onClick={openModal} ></img>
+                </div>
+                <div style={{marginLeft:"8px",marginTop:"5px"}} >
+                <div  style={{width:"107px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                </div>
+                <div style={{marginTop:"50px"}}>
+                <img style={{width:"107px", height:"158px",marginLeft:"8px"}} src={image1} alt="이미지" onClick={openModal} ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"5px"}} src={image1} alt="이미지" onClick={openModal} ></img>
+                <img style={{width:"107px", height:"158px",marginLeft:"4px"}} src={image1} alt="이미지" onClick={openModal} ></img>
+                </div>
+                <div style={{marginLeft:"8px",marginTop:"5px"}} >
+                <div  style={{width:"107px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                <div  style={{width:"107px",marginLeft:"5px" , height:"33px",backgroundColor:"#A4A4A4",float:"left"}}>
+                   <h6 style={{ marginLeft: '5px', marginTop: '5px',fontWeight:"600" }}>제목제목</h6>
+                   <h6 style={{ marginLeft: '5px', marginTop: '-25px',fontWeight:"400" }}>작가명</h6></div>
+                </div>
+               
+                
+                { modalVisible && <Modal visible={modalVisible} closable={true} maskClosable={true}onClose={closeModal}>
                                      <div>
-                                     <table>
-                    <tr>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                </table> 
-                <table>
-                    <td><h4>아빠가 힘을 숨김</h4></td>
-                    <td><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고은채</h5></td>
-                </table>
-                <img src={image1} alt="작품이미지" style={{width:"222px", height:"327px"}} />
-                <h5>그는 쇳덩이처럼 어깨를 짓누르는 피로감을 이기</h5>
-                <h5>지 못하고 털썩 주저앉았다. 흩날리는 눈송이가 그</h5>
-                <h5>의 얼굴에 차갑게 들러붙었다.</h5>
-                <br />
-                <h6>상수리나무 아래 외전 44화 </h6>
+                                    
+               
+                <img src={image1} alt="작품이미지" style={{position:"relative",marginLeft:"4px",width:"222px", height:"327px"}} />
+                
+                <h6 style={{ marginLeft: '15px', marginTop: '5px',fontWeight:"600",color:"white",float:"left"}}>제목제목</h6><h6 style={{ marginLeft: '165px', marginTop: '5px',fontWeight:"600",color:"white" }}>작가명</h6>
+                                     <div style={{display:"flex",position:"absolute",marginLeft:"22px",marginTop:"-10px"}}>
+                                        <button style={{borderRadius: "50px",fontSize: "10px"}}>전체작품</button>&nbsp;&nbsp;
+                                        <button style={{borderRadius: "50px",fontSize: "10px"}}>주관식작</button>&nbsp;&nbsp;
+                                        <button style={{borderRadius: "50px",fontSize: "10px"}}>객관식작</button>
+                                        </div>
+                                        <div style={{display:"flex",position:"absolute",marginLeft:"22px",marginTop:"20px"}}>
+                                        <button style={{borderRadius: "50px",fontSize: "10px"}}>전체작품</button>&nbsp;&nbsp;
+                                        <button style={{borderRadius: "50px",fontSize: "10px"}}>주관식작</button>&nbsp;&nbsp;
+                                        <button style={{borderRadius: "50px",fontSize: "10px"}}>객관식작</button>
+                                        </div>
+                                        
                                      </div>
+                                     
                                  </Modal>
                             }
-                            <h4>아빠가 힘을 숨김</h4>
-                            <h5>고은채</h5>
                             
-                        </td>
-                        <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" onClick={openModal}/>
-                        {
-                                 modalVisible && <Modal 
-                                 visible={modalVisible}
-                                 closable={true}
-                                 maskClosable={true}
-                                 onClose={closeModal}>
-                                     <div>
-                                     <table>
-                    <tr>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                </table> 
-                <table>
-                    <td><h4>변경백 서자는 황제였다</h4></td>
-                    <td><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;기준석</h5></td>
-                </table>
-                <img src={image1} alt="작품이미지" style={{width:"222px", height:"327px"}} />
-                <h5>그는 쇳덩이처럼 어깨를 짓누르는 피로감을 이기</h5>
-                <h5>지 못하고 털썩 주저앉았다. 흩날리는 눈송이가 그</h5>
-                <h5>의 얼굴에 차갑게 들러붙었다.</h5>
-                <br />
-                <h6>상수리나무 아래 외전 44화 </h6>
-                                     </div>
-                                 </Modal>
-                            }
-                            <h4>변경백 서자는 황제였다</h4>
-                            <h5>기준석</h5>
-                            
-                        </td>
-                        <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" onClick={openModal} />
-                        {
-                                 modalVisible && <Modal 
-                                 visible={modalVisible}
-                                 closable={true}
-                                 maskClosable={true}
-                                 onClose={closeModal}>
-                                     <div>
-                                     <table>
-                    <tr>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                </table> 
-                <table>
-                    <td><h4>아빠가 힘을 숨김</h4></td>
-                    <td><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고은채</h5></td>
-                </table>
-                <img src={image1} alt="작품이미지" style={{width:"222px", height:"327px"}} />
-                <h5>그는 쇳덩이처럼 어깨를 짓누르는 피로감을 이기</h5>
-                <h5>지 못하고 털썩 주저앉았다. 흩날리는 눈송이가 그</h5>
-                <h5>의 얼굴에 차갑게 들러붙었다.</h5>
-                <br />
-                <h6>상수리나무 아래 외전 44화 </h6>
-                                     </div>
-                                 </Modal>
-                            }
-                            <h4>결혼하지 않으면 죽습니다</h4>
-                            <h5>찬연</h5>
-                            
-                        </td>
-                    </tr>
-                    <tr>    
-                    <td>
-                    <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" onClick={openModal} />
-                    {
-                                 modalVisible && <Modal 
-                                 visible={modalVisible}
-                                 closable={true}
-                                 maskClosable={true}
-                                 onClose={closeModal}>
-                                     <div>
-                                     <table>
-                    <tr>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                </table> 
-                <table>
-                    <td><h4>아빠가 힘을 숨김</h4></td>
-                    <td><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고은채</h5></td>
-                </table>
-                <img src={image1} alt="작품이미지" style={{width:"222px", height:"327px"}} />
-                <h5>그는 쇳덩이처럼 어깨를 짓누르는 피로감을 이기</h5>
-                <h5>지 못하고 털썩 주저앉았다. 흩날리는 눈송이가 그</h5>
-                <h5>의 얼굴에 차갑게 들러붙었다.</h5>
-                <br />
-                <h6>상수리나무 아래 외전 44화 </h6>
-                                     </div>
-                                 </Modal>
-                            }
-                            <h4>무림세가 천대받는 손녀딸이 되었다</h4>
-                            <h5>마루별</h5>
-                           
-                        </td>
-                        <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" onClick={openModal} />
-                        {
-                                 modalVisible && <Modal 
-                                 visible={modalVisible}
-                                 closable={true}
-                                 maskClosable={true}
-                                 onClose={closeModal}>
-                                     <div>
-                                     <table>
-                    <tr>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                </table> 
-                <table>
-                    <td><h4>아빠가 힘을 숨김</h4></td>
-                    <td><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고은채</h5></td>
-                </table>
-                <img src={image1} alt="작품이미지" style={{width:"222px", height:"327px"}} />
-                <h5>그는 쇳덩이처럼 어깨를 짓누르는 피로감을 이기</h5>
-                <h5>지 못하고 털썩 주저앉았다. 흩날리는 눈송이가 그</h5>
-                <h5>의 얼굴에 차갑게 들러붙었다.</h5>
-                <br />
-                <h6>상수리나무 아래 외전 44화 </h6>
-                                     </div>
-                                 </Modal>
-                            }
-                            <h4>전지적 독자시점</h4>
-                            <h5>심숭</h5>
-                           
-                        </td>
-                        <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" onClick={openModal} />
-                        {
-                                 modalVisible && <Modal 
-                                 visible={modalVisible}
-                                 closable={true}
-                                 maskClosable={true}
-                                 onClose={closeModal}>
-                                     <div>
-                                     <table>
-                    <tr>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                </table> 
-                <table>
-                    <td><h4>아빠가 힘을 숨김</h4></td>
-                    <td><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고은채</h5></td>
-                </table>
-                <img src={image1} alt="작품이미지" style={{width:"222px", height:"327px"}} />
-                <h5>그는 쇳덩이처럼 어깨를 짓누르는 피로감을 이기</h5>
-                <h5>지 못하고 털썩 주저앉았다. 흩날리는 눈송이가 그</h5>
-                <h5>의 얼굴에 차갑게 들러붙었다.</h5>
-                <br />
-                <h6>상수리나무 아래 외전 44화 </h6>
-                                     </div>
-                                 </Modal>
-                            }
-                            <h4>진짜가 나타난 날</h4>
-                            <h5>가엔</h5>
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                    <td>
-                    <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" onClick={openModal} />
-                    {
-                                 modalVisible && <Modal 
-                                 visible={modalVisible}
-                                 closable={true}
-                                 maskClosable={true}
-                                 onClose={closeModal}>
-                                     <div>
-                                     <table>
-                    <tr>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                </table> 
-                <table>
-                    <td><h4>아빠가 힘을 숨김</h4></td>
-                    <td><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고은채</h5></td>
-                </table>
-                <img src={image1} alt="작품이미지" style={{width:"222px", height:"327px"}} />
-                <h5>그는 쇳덩이처럼 어깨를 짓누르는 피로감을 이기</h5>
-                <h5>지 못하고 털썩 주저앉았다. 흩날리는 눈송이가 그</h5>
-                <h5>의 얼굴에 차갑게 들러붙었다.</h5>
-                <br />
-                <h6>상수리나무 아래 외전 44화 </h6>
-                                     </div>
-                                 </Modal>
-                            }
-                            <h4>화산귀환</h4>
-                            <h5>비가</h5>
-                            
-                        </td>
-                        <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" onClick={openModal} />
-                        {
-                                 modalVisible && <Modal 
-                                 visible={modalVisible}
-                                 closable={true}
-                                 maskClosable={true}
-                                 onClose={closeModal}>
-                                     <div>
-                                     <table>
-                    <tr>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                </table> 
-                <table>
-                    <td><h4>아빠가 힘을 숨김</h4></td>
-                    <td><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고은채</h5></td>
-                </table>
-                <img src={image1} alt="작품이미지" style={{width:"222px", height:"327px"}} />
-                <h5>그는 쇳덩이처럼 어깨를 짓누르는 피로감을 이기</h5>
-                <h5>지 못하고 털썩 주저앉았다. 흩날리는 눈송이가 그</h5>
-                <h5>의 얼굴에 차갑게 들러붙었다.</h5>
-                <br />
-                <h6>상수리나무 아래 외전 44화 </h6>
-                                     </div>
-                                 </Modal>
-                            }
-                            <h4>이운</h4>
-                            <h5>라희</h5>
-                            
-                        </td>
-                        <td>
-                        <img style={{width:"87px", height:"130px"}} src={image1} alt="이미지" onClick={openModal} />
-                        {
-                                 modalVisible && <Modal 
-                                 visible={modalVisible}
-                                 closable={true}
-                                 maskClosable={true}
-                                 onClose={closeModal}>
-                                     <div>
-                                     <table>
-                    <tr>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                    <tr>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>전체작품</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>객관식작</button></td>
-                        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#FFFFFF",borderRadius:"50px"}}>주관식작</button></td>
-                    </tr>
-                </table> 
-                <table>
-                    <td><h4>아빠가 힘을 숨김</h4></td>
-                    <td><h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;고은채</h5></td>
-                </table>
-                <img src={image1} alt="작품이미지" style={{width:"222px", height:"327px"}} />
-                <h5>그는 쇳덩이처럼 어깨를 짓누르는 피로감을 이기</h5>
-                <h5>지 못하고 털썩 주저앉았다. 흩날리는 눈송이가 그</h5>
-                <h5>의 얼굴에 차갑게 들러붙었다.</h5>
-                <br />
-                <h6>상수리나무 아래 외전 44화 </h6>
-                                     </div>
-                                 </Modal>
-                            }
-                            <h4>아빠가 힘을 숨김</h4>
-                            <h5>고은채</h5>
-                            
-                        </td>
-                    </tr>
-                </table>
+                      
+            </div>
             </div>
             <MobileFooter />
+       
         </div>
     )
 }
-
 export default MobileFavoritepage;

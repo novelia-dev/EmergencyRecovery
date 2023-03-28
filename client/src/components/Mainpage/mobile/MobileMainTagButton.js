@@ -50,7 +50,7 @@ function Tag() {
     onMouseDown={handleMouseDown}
     onMouseMove={handleMouseMove}
     onMouseUp={handleMouseUp}>
-
+      
       <button
         style={buttonStyles[0]}
         onClick={() => handleClick(0, '#AA0140')}
@@ -58,14 +58,14 @@ function Tag() {
         선호태그
       </button>
       &nbsp;
-
+      
       <button
         style={buttonStyles[1]}
         onClick={() => handleClick(1, '#AA0140')}
       >
         선호태그
       </button>
-
+      
       &nbsp;
       <button
         style={buttonStyles[2]}
@@ -73,7 +73,7 @@ function Tag() {
       >
         선호태그
       </button>
-
+      
       &nbsp;
       <button
         style={buttonStyles[3]}
@@ -81,7 +81,7 @@ function Tag() {
       >
         선호태그
       </button>
-
+      
       &nbsp;
       <button
         style={buttonStyles[4]}
@@ -90,7 +90,7 @@ function Tag() {
         선호태그
       </button>
       &nbsp;
-
+      
       <button
         style={buttonStyles[5]}
         onClick={() => handleClick(5, '#AA0140')}
@@ -98,14 +98,14 @@ function Tag() {
         선호태그
       </button>
       &nbsp;
-
+      
       <button
         style={buttonStyles[6]}
         onClick={() => handleClick(6, '#AA0140')}
       >
         선호태그
       </button>
-
+      
       &nbsp;
       <button
         style={buttonStyles[7]}
@@ -113,8 +113,8 @@ function Tag() {
       >
         선호태그
       </button>
-
-
+     
+     
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 
 class Readworkpage extends React.Component{
     constructor(props){
@@ -17,11 +17,14 @@ function move(){
     window.location.href="/:id/read2";
 }
 
-function Text(){
-    
-    
+class Text extends React.Component{
+    constructor(props)
+    {
+        super(props);
+    }
 
-    
+    render(){
+
         const style = {
             'position':'absolute',
             'left':"669px",
@@ -106,7 +109,7 @@ function Text(){
         }
         return(
             <div>
-            <div style={{'marginLeft':"666px",'width':"588px",'height':"120px",'left':"669px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
+            <div style={{'marginLeft':"666px",backgroundColor:"#EEEEEE",'width':"588px",'height':"120px",'left':"669px",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5",'border-spacing': "0",'border-collapse' : 'collapse'}}>
                 <div style={style}>작품제목</div>
                 <div style={style1}>1화</div>
                 <div style={style2}>글자크기</div>
@@ -122,7 +125,7 @@ function Text(){
                 </div>  
             
             </div>
-            <textarea placeholder="본문" style= {{position:'absolute','width':"582px",height:"840px",top:"120px",left:"666px"}}></textarea>
+            <input type="text" placeholder="본문" style= {{position:'absolute','width':"582px",height:"840px",top:"120px",left:"666px"}}></input>
             <div>
                 <button style={style6} onClick={move}>
                     다음화
@@ -131,7 +134,7 @@ function Text(){
 
             </div>
         )
-   
+    }
 }
 
 export default Readworkpage;

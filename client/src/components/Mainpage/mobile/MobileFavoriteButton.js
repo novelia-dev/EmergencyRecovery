@@ -5,11 +5,7 @@ function Tag() {
     { backgroundColor: '#FFFFFF', color: '' ,border: "0.5px solid #AA0140",borderRadius: "50px",fontSize: "10px"},
     { backgroundColor: '#FFFFFF', color: '' ,border: "0.5px solid #AA0140",borderRadius: "50px",fontSize: "10px"},
     { backgroundColor: '#FFFFFF', color: '' ,border: "0.5px solid #AA0140",borderRadius: "50px",fontSize: "10px"},
-    { backgroundColor: '#FFFFFF', color: '' ,border: "0.5px solid #AA0140",borderRadius: "50px",fontSize: "10px"},
-    { backgroundColor: '#FFFFFF', color: '' ,border: "0.5px solid #AA0140",borderRadius: "50px",fontSize: "10px"},
-    { backgroundColor: '#FFFFFF', color: '' ,border: "0.5px solid #AA0140",borderRadius: "50px",fontSize: "10px"},
-    { backgroundColor: '#FFFFFF', color: '' ,border: "0.5px solid #AA0140",borderRadius: "50px",fontSize: "10px"},
-    { backgroundColor: '#FFFFFF', color: '' ,border: "0.5px solid #AA0140",borderRadius: "50px",fontSize: "10px"},
+
   ]);
 
   const handleClick = (index, backgroundColor) => {
@@ -47,11 +43,11 @@ function Tag() {
 
   return (
     <div 
-    style={{cursor: 'grab', display: 'flex',userSelect: 'none',width: '100%',overflowX: 'hidden',whiteSpace: 'nowrap',}}
+    style={{cursor: 'grab', display: 'flex',userSelect: 'none',overflowX: 'hidden',whiteSpace: 'nowrap',}}
     onMouseDown={handleMouseDown}
     onMouseMove={handleMouseMove}
     onMouseUp={handleMouseUp}>
-
+      
       <button
         style={buttonStyles[0]}
         onClick={() => handleClick(0, '#AA0140')}
@@ -59,14 +55,14 @@ function Tag() {
         판타지작
       </button>
       &nbsp;
-
+      
       <button
         style={buttonStyles[1]}
         onClick={() => handleClick(1, '#AA0140')}
       >
         로맨스작
       </button>
-
+      
       &nbsp;
       <button
         style={buttonStyles[2]}
@@ -74,48 +70,10 @@ function Tag() {
       >
         로판작품
       </button>
-
-      &nbsp;
-      <button
-        style={buttonStyles[3]}
-        onClick={() => handleClick(3, '#AA0140')}
-      >
-        남성향작
-      </button>
-
-      &nbsp;
-      <button
-        style={buttonStyles[4]}
-        onClick={() => handleClick(4, '#AA0140')}
-      >
-        여성향작
-      </button>
-      &nbsp;
-
-      <button
-        style={buttonStyles[5]}
-        onClick={() => handleClick(5, '#AA0140')}
-      >
-        선호태그
-      </button>
-      &nbsp;
-
-      <button
-        style={buttonStyles[6]}
-        onClick={() => handleClick(6, '#AA0140')}
-      >
-        선호태그
-      </button>
-
-      &nbsp;
-      <button
-        style={buttonStyles[7]}
-        onClick={() => handleClick(7, '#AA0140')}
-      >
-        선호태그
-      </button>
-
-
+      
+     
+     
+     
     </div>
   );
 }
