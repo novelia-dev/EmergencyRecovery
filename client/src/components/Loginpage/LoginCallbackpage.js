@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import axios from 'axios'
 
 function activeButton(){
     alert("확인완료");
@@ -30,6 +31,26 @@ function LoginCallbackpage(){
     useEffect(() => {
         localStorage.setItem("code",code);
     },[code]);
+
+    useEffect(() => {
+        var accessToken = localStorage.getItem("code");
+        var kakao = 'kakao';
+        console.log(accessToken);
+        const data = {
+            accessToken: accessToken,
+            vendor: kakao
+        };
+
+        axios.post('http://localhost:8000/users/login',data,{
+            headers:{
+                'Content-Type':'application/json'
+            }
+        })
+        .then(response=>console.log(response))
+        .catch(error=>console.log(error));
+
+    },[])
+
 
     const style={
     'width':"588px",
