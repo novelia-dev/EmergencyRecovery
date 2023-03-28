@@ -5,6 +5,7 @@ import {
   DeleteDateColumn,
   Entity,
   JoinColumn,
+  JoinTable,
   ManyToOne,
   OneToMany,
   OneToOne,
@@ -37,6 +38,17 @@ export class User extends BaseEntity {
     eager: true,
     nullable: true,
   })
+  // @JoinTable({
+  //   name: 'profile_id',
+  //   joinColumn: {
+  //     name: 'profile',
+  //     referencedColumnName: 'id',
+  //   },
+  //   inverseJoinColumn: {
+  //     name: 'user',
+  //     referencedColumnName: 'id',
+  //   },
+  // })
   @JoinColumn()
   profile: Profile;
 }

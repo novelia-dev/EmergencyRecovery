@@ -65,7 +65,7 @@ export class Novel extends BaseEntity {
   @OneToMany(() => Quiz, (quiz) => quiz.novel, { eager: true })
   quizs: Quiz[];
 
-  @ManyToMany(() => Tag, (tag) => tag.novel, { eager: true })
+  @OneToMany(() => Tag, (tag) => tag.novel, { eager: true })
   tags: Tag[];
 
   @ManyToOne(() => Profile, (profile) => profile.myNovels)

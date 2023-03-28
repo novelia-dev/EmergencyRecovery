@@ -77,9 +77,9 @@ export class ProfilesService {
       유료연재경험: data.money,
       웹소설읽는빈도: data.frequency,
     };
-    console.log(dataForServey);
-    console.log(process.env.SPREADSHEET_URL);
-    console.log('data', { ...dataForServey });
+    // console.log(dataForServey);
+    // console.log(process.env.SPREADSHEET_URL);
+    // console.log('data', { ...dataForServey });
     await axios({
       method: 'get',
       url: process.env.SPREADSHEET_URL,
@@ -87,7 +87,7 @@ export class ProfilesService {
         ...dataForServey,
       },
     });
-    console.log('done?');
+    // console.log('done?');
     const newProfile = await this.profilesRepository.create(dataForProfile);
     const userForThisProfile = await this.usersService.findOneByEmail(
       data.email,

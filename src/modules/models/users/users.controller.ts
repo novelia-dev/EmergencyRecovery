@@ -38,6 +38,7 @@ export class UsersController {
   })
   @Post('login')
   async logIn(@Body() body: SocialLoginRequestDto) {
+    // console.log('data', body);
     return await this.authService.login(body);
   }
 

@@ -60,7 +60,7 @@ export class AuthService {
         throw new UnauthorizedException('invalid vendor'); //소셜로그인 선택 실패 예외처리
       }
     }
-
+    // console.log('userData', userData);
     const payload = {
       email: userData.email,
       name: userData.name,

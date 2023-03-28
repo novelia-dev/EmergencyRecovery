@@ -53,7 +53,7 @@ export class ProfilesController {
     @CurrentUser() user: User,
     @Body() profileAndServeyDto: ProfileAndServeyDto,
   ) {
-    console.log(profileAndServeyDto);
+    // console.log(profileAndServeyDto);
     const data = {
       oldEmail: user.email,
       ...profileAndServeyDto,

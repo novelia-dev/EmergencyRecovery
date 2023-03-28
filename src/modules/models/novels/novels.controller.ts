@@ -62,7 +62,7 @@ export class NovelsController {
   @UseGuards(JwtAuthGuard)
   @Post()
   create(@CurrentUser() user: User, @Body() titleContentDto: TitleContentDto) {
-    console.log('here is user', user);
+    // console.log('here is user', user);
     const data = {
       ...titleContentDto,
       author: user.profile.name,
