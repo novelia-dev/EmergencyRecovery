@@ -26,12 +26,13 @@ function Registerpage4(){
 
     const style ={
         'position':'absolute',
-        'font-weight': 700,
+        'font-weight': "700",
         'border-width':"1px",
         'border-style':"solid",
         'border-color':"#E5E5E5",
         'margin-left': "669px",
-        'width':"588px"
+        'width':"588px",
+        'margin-top':"37px"
     }
 
     const style1 ={
@@ -239,8 +240,9 @@ const MyButton = styled.button`
       
     return(
     <div style={{'position':"static"}}>
+      
         <div style={style}>
-                &nbsp; &nbsp; 회원가입
+                <div style={{marginTop:"15px",marginLeft:"15px"}}>회원가입</div> 
             
         <hr style={{'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}></hr>
             <div style={style1}> 

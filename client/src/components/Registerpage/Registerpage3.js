@@ -199,15 +199,21 @@ function Text(){
             window.location.href="/register4";
           
           }
-        
-        const style={
-            'position':'absolute',
-            'font-weight': 400,
+        const bodystyle={
             'border-width':"1px",
             'border-style':"solid",
             'border-color':"#E5E5E5",
             'margin-left': "669px",
-            'width':"588px"
+            'width':"588px",
+            'margin-top':"37px"
+
+        }
+        const style={
+            
+            'font-weight':"400",
+            'margin-top':"15px",
+            'margin-left':"15px"
+            
         }
         const style1={
             'width':"151px",
@@ -568,8 +574,8 @@ function Text(){
        
     <div style={{'position':"static"}}>
          
-        <div style={style}>
-         &nbsp; &nbsp;회원가입
+        <div style={bodystyle}>
+         <div style={style}>회원가입</div>
          <hr style={{'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}></hr>
         <div style={style1}>
         &nbsp; &nbsp;닉네임*
