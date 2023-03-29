@@ -415,7 +415,7 @@ const buttonstyle={
         <div style={{marginLeft:"15px",marginTop:"15px",marginBottom:"15px"}}>
         <label>제목* &nbsp;</label>
         <br/>
-        <input style={{width: "240px" , height: "30px"}} type="text" placeholder="15자이내" onChange={updateTitle} />
+        <input style={{width: "240px" , height: "30px"}} type="text" placeholder="30자이내" onChange={updateTitle} />
         <br />
         <br/>
         <div>
@@ -483,7 +483,7 @@ const buttonstyle={
         <div>
             <label><b>작품설명</b> &nbsp;</label>
             <br/>
-            <input style={{width: "1170px" , height: "180px"}} type ="text" placeholder="500자 이내" onChange={updateContent} />
+            <textarea style={{width: "1170px" , height: "180px"}} type ="text" placeholder="500자 이내" onChange={updateContent} />
         </div>
         </div>
         </div>

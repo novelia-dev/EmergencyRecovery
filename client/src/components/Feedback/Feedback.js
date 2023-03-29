@@ -259,7 +259,7 @@ function ChooseFeedback(props){
                                         <h4 class="card-title">재벌집 막내아들</h4>
                                         <p class="card-text">
                                         <h4>산경 &nbsp; <button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF",marginTop:"-27px" ,marginLeft:"70px"}}>열람완료</button></h4>
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF",marginTop:"-27px" ,marginLeft:"70px"}}>열람가능</button></h4>
                                         <h4>현대 판타지 &nbsp;</h4>
                                         <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                                         <h4>태그</h4>
@@ -539,7 +539,7 @@ function WriteFeedback(){
                                         <h4 class="card-title">재벌집 막내아들</h4>
                                         <p class="card-text">
                                         <h4>산경 &nbsp; <button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF",marginTop:"-27px" ,marginLeft:"70px"}}>열람완료</button></h4>
+                    width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF",marginTop:"-27px" ,marginLeft:"70px"}}>열람가능</button></h4>
                                         <h4>현대 판타지 &nbsp;</h4>
                                         <img src={Checkbox} style ={{width:"30px",height:"30px",float:"left"}} alt="객관식체크박스"/> <h4>&nbsp;10/30 &nbsp;<img className="NewText" alt="NewText" style={{width:"24px", height:"23px"}}src={NewText}/>&nbsp; 10/10</h4>
                                         <h4>태그</h4>

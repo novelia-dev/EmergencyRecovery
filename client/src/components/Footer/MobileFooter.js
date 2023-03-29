@@ -79,7 +79,7 @@ function MobileFooter(){
                     <td>
                         <div style={{marginLeft:"27px"}}>
                         <img src={image5} onClick={movetomyinfo} alt="image5" />
-                        <MyLink to="//mobilemyinfo" >M Y</MyLink>
+                        <MyLink to="/mobilemyinfo" >M Y</MyLink>
                         </div>
                     </td>
                 </tr>

@@ -18,6 +18,9 @@ function FeedSelect(){
         {
             window.location.href = "/choosekeyword";
         }
+        else{
+            window.location.href="/";
+        }
     }
 
     return(

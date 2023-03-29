@@ -159,7 +159,7 @@ const style6={
 <div>
     <Navbar />
    <div style={{'border-width':"2px",'border-style':"solid",'border-color':"#E5E5E5",'width':"1200px",'height':"1100px",'alignContent':"left",'marginLeft':"360px"}}>
-            <div style={{'backgroundColor':"pink"}}>
+            <div style={{'backgroundColor':"#EEEEEE",height:"84px"}}>
             <div style={style}>기본정보 및 선호/금지태그</div>
             <div style={{'margin-left':"15px",'marginTop':"15px"}}>기본정보와 선호/금지태그 입니다.</div>
             </div> 

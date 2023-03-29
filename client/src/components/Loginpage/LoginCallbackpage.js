@@ -29,27 +29,31 @@ function LoginCallbackpage(){
     },[])
 
     useEffect(() => {
-        localStorage.setItem("code",code);
-    },[code]);
+        console.log(code);
+    })
 
-    useEffect(() => {
-        var accessToken = localStorage.getItem("code");
-        var kakao = 'kakao';
-        console.log(accessToken);
-        const data = {
-            accessToken: accessToken,
-            vendor: kakao
-        };
+    // useEffect(() => {
+    //     localStorage.setItem("code",code);
+    // },[code]);
 
-        axios.post('http://localhost:8000/users/login',data,{
-            headers:{
-                'Content-Type':'application/json'
-            }
-        })
-        .then(response=>console.log(response))
-        .catch(error=>console.log(error));
+    // useEffect(() => {
+    //     var accessToken = localStorage.getItem("code");
+    //     var kakao = 'kakao';
+    //     console.log(accessToken);
+    //     const data = {
+    //         accessToken: accessToken,
+    //         vendor: kakao
+    //     };
 
-    },[])
+    //     axios.post('http://localhost:8000/users/login',data,{
+    //         headers:{
+    //             'Content-Type':'application/json'
+    //         }
+    //     })
+    //     .then(response=>console.log(response))
+    //     .catch(error=>console.log(error));
+
+    // },[])
 
 
     const style={

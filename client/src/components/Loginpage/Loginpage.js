@@ -86,7 +86,7 @@ const Login = (props) => {
 
         const queryString = Object.keys(data).map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
         .join('&');
-        axios.post('https://kauth.kakao.com/oauth/token', queryString, {
+        axios.post(`https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`, queryString, {
             headers:{
                 'Content-type': 'application/x-www-form-urlencoded;charset=utf-8'
             }
@@ -95,13 +95,10 @@ const Login = (props) => {
         });
     }
     const sendKakaoTokenToServer = (token) => {
-        axios.post('http://localhost:8000/users/login',{access_token: token})
+        axios.post('https://kauth.kakao.com/oauth/token',{access_token: token})
         .then(res => {
-            if(res.status == 201 || res.status == 200){
+            if(res.status === 201 || res.status === 200){
                 const user = res.data.user;
-                window.localStorage.setItem("token", JSON.stringify({
-                    access_token: res.data.jwt
-                }));
             } else{
                 window.alert("로그인에 실패하였습니다.");
             }
