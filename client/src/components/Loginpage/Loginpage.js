@@ -7,24 +7,46 @@ import {KAKAO_AUTH_URL,REST_API_KEY,REDIRECT_URI, SECRET} from './KakaoData';
 import {useLocation, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
-class Loginpage extends React.Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
+function Loginpage (){
+    const style={
+        'marginLeft':"100px",
+        'width': "378px",
+        'height' : "121px",
+        'font-family': "Roboto",
+        'font-style': "Regular",
+        'font-weight': 400,
+        'font-size': "(mixed)",
+        'line-height': "100%",
+        'align-item': "center",
+        'Vertical-align': "center",
+        'text-align': "center",
+        'color':"#000000",
+        
+    };
         return(
            
-            <div>
-                
-                <Text />
-                <Login />
+            <div><div>
+           
+            <div style ={{marginLeft:"666px",marginTop:"115px",backgroundColor:"#EEEEEE",width:"558px",height:"850px"}}>
+            <img className="Novelist" alt="Novelist" style={{marginLeft:"204px",marginTop:"214px",width:"180px", height:"163px"}}src={Novelist} />
+            <div style={style}>
+            <h1>Login</h1>
+            
+            <h3>소셜 로그인으로 빠르게 시작하세요!</h3>
+            
+        </div>
+            <Login/>
+            </div>
+       
+            </div>
+       
+
             </div>
             
             
         )
-    }
-}
-
+  
+        }
 // function KakaoLogin()
 // {
 //     const location = useLocation();
@@ -95,14 +117,32 @@ const Login = (props) => {
         });
     }
     const sendKakaoTokenToServer = (token) => {
-        axios.post('https://kauth.kakao.com/oauth/token',{access_token: token})
+        axios.post('https://kauth.kakao.com/oauth/token',null,
+        {   
+            params:{
+                grant_type:'authorization_code',
+                client_id: REST_API_KEY,
+                redirect_uri: REDIRECT_URI,
+                code: token,
+                client_secret:SECRET
+            },
+            headers:{
+                'Content-type':'application/x-www-form-urlencoded;charset=utf-8'
+            }
+        })
         .then(res => {
             if(res.status === 201 || res.status === 200){
-                const user = res.data.user;
+                const accessToken = res.data.access_token;
+                const vendor = 'kakao';
+                const serverResponse = axios.post('http://localhost:8000/users/login',{
+                    accessToken,
+                    vendor
+                })
+                const user = serverResponse.data.user;
             } else{
                 window.alert("로그인에 실패하였습니다.");
             }
-        })
+        });
     }
 
     const moving = () => {
@@ -110,72 +150,15 @@ const Login = (props) => {
     }
 
     return(<>
-        <div style={{marginTop: "300px", marginLeft: "850px"}}>
-            <img className="Kakaoimage" alt="Kakaoimage" onClick={moving} style={{width:"78px", height:"78px"}}src={Kakaoimage} />
+        <div>
+            <img className="Kakaoimage" alt="Kakaoimage" onClick={moving} style={{marginTop: "65.8px", marginLeft: "255px",width:"62.4px", height:"62.4px"}}src={Kakaoimage} />
         </div>
     </>)
 }
 
 
 
-class Text extends React.Component{
-    constructor(props)
-    {
-        super(props);
-    }
 
-    render(){
-        const style={
-            "position": "absolute",
-            'width': "378px",
-            'height' : "121px",
-            'left': "781px",
-            'top': "492px",
-            
-            'font-family': "Roboto",
-            'font-style': "Regular",
-            'font-weight': 400,
-            'font-size': "(mixed)",
-            'line-height': "100%",
-            'align-item': "center",
-            'Vertical-align': "center",
-            'text-align': "center",
-            'color':"#000000",
-            
-        };
-    
-        const style3 = {
-            "position":"absolute",
-            'width':"72px",
-            'height':"72px",
-            'left':"870px",
-            'top':"673px",
-        }
-        const style4 = {
-            "position":"absolute",
-            'width':"57.6px",
-            'height':"57.6px",
-            'left':"972px",
-            'top':"673px",
-
-        }
-
-        return(
-            <div>
-            <div style={{marginTop:"250px",marginLeft:"870px"}}>
-                <img className="Novelist" alt="Novelist" style={{width:"180px", height:"163px"}}src={Novelist} />
-            </div>
-            <div style={style}>
-                <h1>Login</h1>
-                
-                <h3>소셜 로그인으로 빠르게 시작하세요!</h3>
-                
-            </div>
-            </div>
-        )
-    }
-    
-}
 
 
 export default Loginpage;

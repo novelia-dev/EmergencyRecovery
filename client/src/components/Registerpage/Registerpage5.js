@@ -1,5 +1,5 @@
 import React from 'react';
-import main from '../Image/image 1.png';
+import biguser from '../Image/Biguser.png';
 import Navbar from '../Navbar/SimpleNavbar';
 
 function jsonnickname(){
@@ -59,10 +59,10 @@ class Text extends React.Component{
     render(){
         const style={
            
-            'margin-top':'15px',
+            
             'margin-left':'15px',
             'font-family':'Roboto',
-            'font-weight':700,
+            'font-weight':"700",
             'font-size':'19px',
             'color':'#000000',
             'display':'flex',
@@ -159,13 +159,18 @@ const style6={
 <div>
     <Navbar />
    <div style={{'border-width':"2px",'border-style':"solid",'border-color':"#E5E5E5",'width':"1200px",'height':"1100px",'alignContent':"left",'marginLeft':"360px"}}>
+<<<<<<< HEAD
             <div style={{'backgroundColor':"#EEEEEE",height:"84px"}}>
+=======
+            <div style={{'backgroundColor':"#EEEEEE"}}>
+>>>>>>> 9a50db0b2a8d15bdb756f504aa89b2a4a1e642ea
             <div style={style}>기본정보 및 선호/금지태그</div>
             <div style={{'margin-left':"15px",'marginTop':"15px"}}>기본정보와 선호/금지태그 입니다.</div>
-            </div> 
             <hr style={{'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}></hr>
+            </div> 
+           
             <div>
-            <div><img src={main} style={{ width:"282px", height:"282px",float:"left",marginLeft:"15px"}} alt="개인정보" />
+            <div><img src={biguser} style={{ width:"282px", height:"282px",float:"left",marginLeft:"15px"}} alt="개인정보" />
               <button style={style6} onClick={move}>변경하기</button>
               </div>
             </div>
@@ -189,110 +194,110 @@ const style6={
 
         <tr>
             <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
             <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         </tr>
         <tr>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         </tr>
     </table>
     <h5 style={style5}>금지태그</h5>
     <table style={{marginLeft:"15px"}}> 
-        <tr>
+    <tr>
+            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+            <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
-        <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         </tr>
         <tr>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         <td><button style={{display:"flex", flexDirection:"row", alignItems:"flex-start",padding:"7px 14px", gap:"10px",
-        width:"Hug", height:"Hug",background:"#AA0140",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
+        width:"Hug", height:"Hug",background:"#AA0140",border:"none",borderRadius:"50px",color:"#FFFFFF"}}>선택태그</button></td>
         </tr>
     </table>
     </div>
