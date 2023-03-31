@@ -159,11 +159,9 @@ const style6={
 <div>
     <Navbar />
    <div style={{'border-width':"2px",'border-style':"solid",'border-color':"#E5E5E5",'width':"1200px",'height':"1100px",'alignContent':"left",'marginLeft':"360px"}}>
-<<<<<<< HEAD
+
             <div style={{'backgroundColor':"#EEEEEE",height:"84px"}}>
-=======
             <div style={{'backgroundColor':"#EEEEEE"}}>
->>>>>>> 9a50db0b2a8d15bdb756f504aa89b2a4a1e642ea
             <div style={style}>기본정보 및 선호/금지태그</div>
             <div style={{'margin-left':"15px",'marginTop':"15px"}}>기본정보와 선호/금지태그 입니다.</div>
             <hr style={{'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}></hr>
@@ -301,6 +299,7 @@ const style6={
         </tr>
     </table>
     </div>
+</div>
 </div>
         )
     

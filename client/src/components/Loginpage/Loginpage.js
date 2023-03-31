@@ -109,40 +109,26 @@ const Login = (props) => {
         const queryString = Object.keys(data).map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
         .join('&');
         axios.post(`https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`, queryString, {
+            withCredentials:true,
             headers:{
                 'Content-type': 'application/x-www-form-urlencoded;charset=utf-8'
             }
         }).then((res) => {
+            console.log(res);
             sendKakaoTokenToServer(res.data.access_token)
         });
     }
     const sendKakaoTokenToServer = (token) => {
-        axios.post('https://kauth.kakao.com/oauth/token',null,
-        {   
-            params:{
-                grant_type:'authorization_code',
-                client_id: REST_API_KEY,
-                redirect_uri: REDIRECT_URI,
-                code: token,
-                client_secret:SECRET
-            },
-            headers:{
-                'Content-type':'application/x-www-form-urlencoded;charset=utf-8'
-            }
+        axios.post('http://localhost:8000/users/login',{
+            accessToken: token,
+            vendor: 'kakao',
         })
-        .then(res => {
-            if(res.status === 201 || res.status === 200){
-                const accessToken = res.data.access_token;
-                const vendor = 'kakao';
-                const serverResponse = axios.post('http://localhost:8000/users/login',{
-                    accessToken,
-                    vendor
-                })
-                const user = serverResponse.data.user;
-            } else{
-                window.alert("로그인에 실패하였습니다.");
-            }
-        });
+        .then((res) => {
+            const user = res.data.user;
+        })
+        .catch((error) => {
+            console.log(error);
+        })
     }
 
     const moving = () => {
