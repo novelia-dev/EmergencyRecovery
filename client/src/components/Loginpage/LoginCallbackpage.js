@@ -68,7 +68,7 @@ function LoginCallbackpage(){
 
         getKakaoTokenHandler(accessToken);
 
-        axios.post('http://localhost:8000/users/login',data,{
+        axios.post('api.novelier.co.kr/users/login',data,{
             headers:{
                 'Content-Type':'application/json'
             }

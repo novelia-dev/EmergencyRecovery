@@ -119,7 +119,7 @@ const Login = (props) => {
         });
     }
     const sendKakaoTokenToServer = (token) => {
-        axios.post('http://localhost:8000/users/login',{
+        axios.post('api.novelier.co.kr/users/login',{
             accessToken: token,
             vendor: 'kakao',
         })
