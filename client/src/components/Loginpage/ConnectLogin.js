@@ -20,7 +20,7 @@ function ConnectLogin(){
     })
 
     function Connector(){
-        if(innerWidth <= 360)
+        if(innerWidth <= 600)
         {
             movetomobilelogin();
         }
