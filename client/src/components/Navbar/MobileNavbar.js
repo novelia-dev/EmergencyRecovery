@@ -110,7 +110,8 @@ const MobileNavbar = () => {
         <img src={image3} alt= "image3" style={{marginLeft:"158px"}}onClick={movetopoint} />
         <img src={image4} alt= "image4" style={{marginLeft:"15px"}}onClick={toggleNotice} />
         <ul className={esOpen ? 'navbar-links active' : 'navbar-links'} ref={noticeLinksRef}>
-          <li style={{marginTop:"-250px",width:"330px",marginLeft:"15px"}}><hr/></li>
+          
+          <li style={{marignTop:"3300px",width:"330px",marginLeft:"15px"}}><hr/></li>
           <li onClick={() => handleListClick("list1")} style={{width:"310px",height:"40px",marginLeft:"20px",paddingLeft:"10px",paddingTop:"15px",textAlign:"left",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>알림내용</li>
           <li style={{width:"330px",marginLeft:"15px"}}><hr/></li>
           <li onClick={() => handleListClick("list4")} style={{width:"310px",height:"40px",marginLeft:"20px",paddingLeft:"10px",paddingTop:"15px",textAlign:"left",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>알림내용</li>
@@ -119,31 +120,33 @@ const MobileNavbar = () => {
           <li style={{width:"330px",marginLeft:"15px"}}><hr/></li>
           <li  onClick={() => handleListClick("list3")} style={{width:"310px",height:"40px",marginLeft:"20px",paddingLeft:"10px",paddingTop:"15px",textAlign:"left",'border-width':"1px",'border-style':"solid",'border-color':"#E5E5E5"}}>알림내용</li>
           <li style={{width:"330px",marginLeft:"15px"}}><hr/></li>
+          
+         
   
            {/* 이용약관 */}
     {selectedList === "list1" && (
       <div style={{ display: selectedList === "list1" ? "block" : "none" }}>
-        dkkdkdkdkd
+        * 이용약관 *
       </div>
     )}
   
     {/* 공지사항 */}
     {selectedList === "list2" && (
       <div style={{ display: selectedList === "list2" ? "block" : "none" }}>
-        adasd
+        * 공지사항 *
       </div>
     )}
   
     {/* 문의하기 */}
     {selectedList === "list3" && (
       <div style={{ display: selectedList === "list3" ? "block" : "none" }}>
-        111111
+        * 문의하기 *
       </div>
     )}
     {/* 개인정보처리방침 */}
     {selectedList === "list4" && (
       <div style={{ display: selectedList === "list4" ? "block" : "none" }}>
-        111111
+       * 개인정보처리방침 *
       </div>
     )}
 
