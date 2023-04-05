@@ -73,7 +73,7 @@ function Mainpage(){
 
     useEffect(() => {
       if (window.confirm("로그인을 하셔야합니다. 만약 로그인을 하셨다면 취소버튼을 눌러주세요!")) {
-        window.location.href = "/login";
+        window.location.href = "/connectlogin";
       } else {
         return;
       }
