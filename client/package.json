@@ -54,7 +54,8 @@
     ]
   },
   "devDependencies": {
+    "postcss-pxtorem": "^6.0.0",
     "sass": "^1.58.3"
   },
-  "homepage":"http://novelier.co.kr"
+  "homepage": "http://novelier.co.kr"
 }
