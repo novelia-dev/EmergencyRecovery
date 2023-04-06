@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.1743bf1c.css",
-    "main.js": "/static/js/main.e156ecf7.js",
+    "main.js": "/static/js/main.e564800e.js",
     "static/js/787.7b5a6b24.chunk.js": "/static/js/787.7b5a6b24.chunk.js",
     "static/media/Group 1727.png": "/static/media/Group 1727.5860b5113c5165e8bcfc.png",
     "static/media/Group 1728.png": "/static/media/Group 1728.4e1b9f05d70addeae05e.png",
@@ -15,35 +15,36 @@
     "static/media/couple-7590701_1920.jpg": "/static/media/couple-7590701_1920.b72c817209b8d0309770.jpg",
     "static/media/fantasy-4379818_1920.jpg": "/static/media/fantasy-4379818_1920.0fba525423f63aed1f09.jpg",
     "static/media/Group 1726.png": "/static/media/Group 1726.9b34c8841d663aaa5d12.png",
+    "static/media/노벨리에 설명 2.png": "/static/media/노벨리에 설명 2.192b36a2f82861fc5abe.png",
     "static/media/Group 1729.png": "/static/media/Group 1729.afbf1b32db3730678054.png",
+    "static/media/노벨리에 설명 4.png": "/static/media/노벨리에 설명 4.4c2de2bb731728caaff3.png",
+    "static/media/노벨리에 설명 3.png": "/static/media/노벨리에 설명 3.adfaa15df5d1b8e43763.png",
     "static/media/노벨리에 사전예약 기간 배너-001.png": "/static/media/노벨리에 사전예약 기간 배너-001.b6f4987136b54a9cc4be.png",
     "static/media/Navbar_logo.png": "/static/media/Navbar_logo.d88ee0cca03c1fe6dde3.png",
     "static/media/poster-2690541_1280.png": "/static/media/poster-2690541_1280.8ce8a24576423d54daec.png",
     "static/media/뒤로가기.png": "/static/media/뒤로가기.a0a3ad699b3552fded15.png",
-    "static/media/about_logo5.png": "/static/media/about_logo5.a9a96f6793717523425e.png",
+    "static/media/노벨리에 설명 1.png": "/static/media/노벨리에 설명 1.62052fb5c50e7bf09e3f.png",
+    "static/media/노벨리에 설명 0.png": "/static/media/노벨리에 설명 0.932cc08de5a00df516a6.png",
     "static/media/모바일 배너.png": "/static/media/모바일 배너.4337f0632fa399368891.png",
-    "static/media/about_logo3.png": "/static/media/about_logo3.e554a5e0ab169114dda6.png",
     "static/media/카카오톡.png": "/static/media/카카오톡.34b21065c13ac684c1fe.png",
     "static/media/Ticket.png": "/static/media/Ticket.a57096c587fd416b422a.png",
-    "static/media/about_logo4.png": "/static/media/about_logo4.f1a9e5904ce50b125766.png",
-    "static/media/about_logo.png": "/static/media/about_logo.8860d0cdd53a40afb9e0.png",
     "static/media/Group 1723.png": "/static/media/Group 1723.35bce1a093705e08b736.png",
     "static/media/Group.png": "/static/media/Group.828110cd2eba51be9109.png",
     "static/media/Group 1722.png": "/static/media/Group 1722.21efc7590f06ead2c72d.png",
-    "static/media/about_logo2.png": "/static/media/about_logo2.fa0904b6f4e830710156.png",
     "static/media/Starbucks.png": "/static/media/Starbucks.37129d8fae80c75d9632.png",
     "static/media/객관식체크박스.png": "/static/media/객관식체크박스.4a523840ce7618efbd06.png",
+    "static/media/노벨리에 설명 버튼.png": "/static/media/노벨리에 설명 버튼.aade032010fcd083aa5f.png",
     "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.1743bf1c.css.map": "/static/css/main.1743bf1c.css.map",
-    "main.e156ecf7.js.map": "/static/js/main.e156ecf7.js.map",
+    "main.e564800e.js.map": "/static/js/main.e564800e.js.map",
     "787.7b5a6b24.chunk.js.map": "/static/js/787.7b5a6b24.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1743bf1c.css",
-    "static/js/main.e156ecf7.js"
+    "static/js/main.e564800e.js"
   ]
 }

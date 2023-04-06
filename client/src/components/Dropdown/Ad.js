@@ -31,7 +31,7 @@ const Ad = props => {
             <Dropdown visibility={dropdownVisibility} >
                 <ul style={{width:"294px",'border-width':"4px",'border-style':"solid",'border-color':"#E5E5E5"}}>
                     <li><h3>@@@님</h3></li>
-                    <li style={{backgroundColor:"#666666",color:"white",fontSize:"22px",fontWeight:"400"}}>@@@@ point&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;포인트샵</li>
+                    <li style={{cursor:"pointer",backgroundColor:"#666666",color:"white",fontSize:"22px",fontWeight:"400"}} onClick={movetocoupon}>@@@@ point&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;포인트샵</li>
                     <br/>
                     <li><b>독자페이지</b></li>
                     <li style={{cursor:"pointer"}} onClick={movetoscrap}>스크랩한 작품</li>
@@ -40,7 +40,6 @@ const Ad = props => {
                     <li><b>작가페이지</b></li>
                     <li style={{cursor:"pointer"}}  onClick={movetotext}>새글등록</li>
                     <li style={{cursor:"pointer"}}  onClick={movetomyfeedback}>내 작품목록</li>
-                    <li style={{cursor:"pointer"}}  onClick={movetocoupon}>쿠폰함</li>
                     <br/>
                     <li><b>기본정보</b></li>
                     <li style={{cursor:"pointer"}}  onClick={movetomyinfo}>기본정보 및 선호/금지태그 수정</li>
