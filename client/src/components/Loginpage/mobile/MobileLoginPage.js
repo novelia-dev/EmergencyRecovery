@@ -17,6 +17,7 @@ function MobileLoginPage(){
             <div>
                 <img src={logo} alt="logo" />
             </div>
+            <br />
             <div>
             <button style={{width:"280px",height:"40px",backgroundColor:"#AA0140",color:"#FFFFFF"}} onClick={movetologin}>로그인</button>  
             </div>
