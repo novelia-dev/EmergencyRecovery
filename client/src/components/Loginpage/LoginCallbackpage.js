@@ -1,6 +1,10 @@
 import React,{useState,useEffect} from 'react';
 import {KAKAO_AUTH_URL,REST_API_KEY,REDIRECT_URI, SECRET} from './KakaoData';
 import axios from 'axios'
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+
 
 function activeButton(){
     alert("확인완료");
@@ -22,6 +26,49 @@ function LoginCallbackpage(){
     const code = urlSearchParams.get('code');
 
     const [width, setWidth] = useState(window.innerWidth);
+    const [modalVisible, setModalVisible] = useState(false);
+
+    const openModal = () => {
+        setModalVisible(true);
+    }
+
+    const closeModal = () => {
+        setModalVisible(false);
+    }
+
+    function Modal({className, onClose, maskClosable, closable, visible, children})
+    {
+        const onMaskClick = (e) => {
+            if(e.target === e.currentTarget)
+            {
+                onClose(e)
+            }
+        }
+
+        const close = (e) => {
+            if(onClose){
+                onClose(e)
+            }
+        }
+
+        return(
+            <>
+            <ModalOverlay visible = {visible} />
+                <ModalWrapper className = {className} onClick={maskClosable ? onMaskClick : null} tableIndex = "-1" visible={visible}>
+                  <ModalInner tabIndex ="0" className = "modal-inner">
+                    {closable && <button style={{backgroundColor:"#FFFFFF",width:"30px", height:"30px", marginLeft:"500px"}} className="modal-close" onClick={close} >X</button>}
+                    {children}
+                  </ModalInner>
+             </ModalWrapper>
+            
+            </>
+        )
+    }
+
+    Modal.propTypes = {
+        visible: PropTypes.bool,
+    }
+
 
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
@@ -155,10 +202,37 @@ if(width > 1000){
   <div>
    
   <div style={{position: "absolute",'top':"478px"}}> &nbsp; &nbsp;<input type="checkbox" /><label >이용약관 동의</label></div>
-  <div><button style={{position: "absolute",width: "78px",height: "30px",left: "1161px",top: "478px",backgroundColor: "#666666",borderRadius: "4px",'color': "#FFFFFF"}} onClick={tos}>내용보기</button></div>
+  <div>
+    <button style={{position: "absolute",width: "78px",height: "30px",left: "1161px",top: "478px",backgroundColor: "#666666",borderRadius: "4px",'color': "#FFFFFF"}} onClick={openModal}>내용보기</button>
+    {
+                            modalVisible && <Modal
+                            visible={modalVisible}
+                            closable={true}
+                            maskClosable={true}
+                            onClose={closeModal}
+                            >
+                            <div>
+                                <h4>이용약관</h4>
+                            </div>
+                            </Modal>
+   }   
+ </div>
                   
   <div style={{position: "absolute",'top':"523px"}}>&nbsp; &nbsp;<input type="checkbox"/><label >개인정보 수집 및 이용동의</label></div>
-  <div><button style={{position: "absolute",width: "78px",height: "30px",left: "1161px",top: "523px",backgroundColor: "#666666",borderRadius: "4px",'color': "#FFFFFF"}} onClick={privacypolicy}>내용보기</button></div>
+  <div>
+    <button style={{position: "absolute",width: "78px",height: "30px",left: "1161px",top: "523px",backgroundColor: "#666666",borderRadius: "4px",'color': "#FFFFFF"}} onClick={openModal}>내용보기</button></div>
+    {
+                            modalVisible && <Modal
+                            visible={modalVisible}
+                            closable={true}
+                            maskClosable={true}
+                            onClose={closeModal}
+                            >
+                            <div>
+                                <h4>개인정보 수집 및 동의</h4>
+                            </div>
+                            </Modal>
+    } 
   </div>
   <div >
     <botton style={style1} onClick={cancel}> 취소</botton>
@@ -175,21 +249,45 @@ if(width > 1000){
         window.location.href="/mobileregister";
     }
 }
-//동욱아 그냥 싹다 갈아
-/*
-<table style={style}>
-                   style={{marginTop:"210px",marginLeft:"180px"}}
-                  <div><botton style={style6} onClick={cancel}> 취소</botton></div>
-                   <div><botton style={style7} onClick={activeButton}> 다음</botton></div>
-                   <tr>
-                   <td><input type="checkbox"/><label>이용약관 동의</label></td><td><button>내용보기</button></td>
-                   </tr>
-                   <tr>
-                   <td><input type="checkbox"/><label>개인정보 수집 및 이용동의</label></td><td><button>내용보기</button></td>
-                   </tr>
-                   <tr>
-                   <td></td>
-                   <td></td>
-                   </tr>
-       </table>*/
+
+
+const ModalWrapper = styled.div`
+box-sizing: border-box;
+display: ${(props) => (props.visible ? 'block' : 'none')};
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: 1000;
+overflow: auto;
+outline: 0;
+`;
+
+const ModalOverlay = styled.div`
+box-sizing: border-box;
+display: ${(props) => (props.visible ? 'block' : 'none')};
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+background-color: rgba(0,0,0,0.6);
+z-index: 999;
+`;
+
+
+const ModalInner = styled.div`
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,0.5);
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 600px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    padding: 40px 20px;
+`;
+
 export default LoginCallbackpage;
