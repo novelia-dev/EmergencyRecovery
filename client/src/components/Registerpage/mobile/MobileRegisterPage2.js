@@ -252,7 +252,7 @@ function MobileRegisterPage2(){
             <br />
             <hr />
             <div>
-                <h5>이메일</h5><input type="email" onChange={onemailhandler} style={{width:"280px"}} placeholder="본인인증용 이메일"/> 
+                <h5>이메일</h5><input type="email" onChange={onemailhandler} style={{width:"280px"}} placeholder= "이메일"/> 
             </div>
             <br />
             <div>

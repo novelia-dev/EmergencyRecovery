@@ -65,12 +65,10 @@ function MobileLoginPage2(){
             <div>
                 <table>
                    <tr><td><Login /></td><h5>카카오 계정으로 로그인하기</h5></tr>
-                   <tr><td><img style={{width:"24px", height:"24px"}} src={image1} alt="네이버"></img></td><h5>네이버 계정으로 로그인하기</h5></tr>
                 </table>
             </div>
             <div>
                 <button>취소</button>
-                <button>다음</button>
             </div>
         </div>
     )
