@@ -47,7 +47,9 @@ function MyInput(){
   }
 
   function Modal({className, onClose , maskClosable , closable , visible, children})
-{
+    {
+    
+    
 
     const onMaskClick = (e) => {
         if(e.target === e.currentTarget)
