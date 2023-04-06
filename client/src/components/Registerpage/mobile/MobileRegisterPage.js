@@ -35,7 +35,6 @@ function MobileRegisterPage(){
                 <table>
                     <td> <input type="checkbox" /> </td>
                     <td> <h5>전체 약관 동의</h5> </td>
-                    <td> <button>내용보기</button> </td>
                 </table>
             </div>
             <div>
