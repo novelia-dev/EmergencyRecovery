@@ -1,9 +1,10 @@
 import React from "react";
-import aboutlogo from '../Image/about_logo.png';
-import aboutlogo2 from '../Image/about_logo2.png';
-import aboutlogo3 from '../Image/about_logo3.png';
-import aboutlogo4 from '../Image/about_logo4.png';
-import aboutlogo5 from '../Image/about_logo5.png';
+import aboutlogo from '../Image/노벨리에 설명 0.png';
+import aboutlogo2 from '../Image/노벨리에 설명 1.png';
+import aboutlogo3 from '../Image/노벨리에 설명 2.png';
+import aboutlogo4 from '../Image/노벨리에 설명 3.png';
+import aboutlogo5 from '../Image/노벨리에 설명 4.png';
+import aboutlogo6 from '../Image/노벨리에 설명 버튼.png';
 
 function About(){
     return(
@@ -13,6 +14,9 @@ function About(){
            </div>
            <div>
              <img src={aboutlogo2} alt="설명2" style={{width:'100%'}} />
+           </div>
+           <div>
+              <img src={aboutlogo6} alt="설명 버튼" style={{width:'100%'}} />
            </div>
             <div>
               <img src={aboutlogo3} alt="설명3" style={{width: '100%'}} />
